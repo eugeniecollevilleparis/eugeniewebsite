@@ -5,40 +5,34 @@ const t = content[lang].contact;
 ---
 
 <section class="contact section section--dark" id="contact">
-  <div class="contact__media" data-reveal-image>
+  <div class="contact__media">
     <div class="placeholder placeholder--dark" data-label="Atmosphere · table · candlelight · 2880×1600"></div>
     <div class="contact__overlay"></div>
   </div>
 
   <div class="contact__inner container">
-    <span class="eyebrow" data-reveal>{t.eyebrow}</span>
+    <span class="eyebrow" data-reveal>{t.tag}</span>
 
     <h2 class="display display-1 contact__title" data-reveal style="--reveal-delay:0.1s">
       {t.title}
-      <span class="italic contact__title-accent">{t.titleAccent}</span>
+      <br />
+      <em>{t.titleEm}</em>
     </h2>
+
+    <div class="contact__rule" data-reveal style="--reveal-delay:0.2s"></div>
 
     <p class="contact__sub" data-reveal style="--reveal-delay:0.25s">{t.sub}</p>
 
     <div class="contact__cta" data-reveal style="--reveal-delay:0.4s">
-      <a href={`mailto:${t.email}`} class="btn btn--invert">{t.emailLabel}</a>
-      <a href={t.websiteUrl} target="_blank" rel="noopener" class="contact__alt-link link-underline">
-        {t.websiteLabel}
-      </a>
+      <a href={`mailto:${t.email}`} class="btn btn--invert btn--solid">{t.emailLabel}</a>
+      <a href={t.website} target="_blank" rel="noopener" class="btn btn--invert">{t.websiteLabel}</a>
     </div>
 
-    <div class="contact__details" data-reveal style="--reveal-delay:0.55s">
-      <div class="contact__detail">
-        <span class="contact__detail-label">Email</span>
-        <a href={`mailto:${t.email}`} class="contact__detail-value">{t.email}</a>
-      </div>
-      <div class="contact__detail">
-        <span class="contact__detail-label">Instagram</span>
-        <a href={t.instagramUrl} target="_blank" rel="noopener" class="contact__detail-value">
-          {t.instagram}
-        </a>
-      </div>
-    </div>
+    <p class="contact__links" data-reveal style="--reveal-delay:0.55s">
+      <a href={t.instagramUrl} target="_blank" rel="noopener">{t.instagram}</a>
+      <span class="contact__sep">·</span>
+      <a href={t.website} target="_blank" rel="noopener">{t.websiteDisplay}</a>
+    </p>
   </div>
 </section>
 
@@ -82,13 +76,22 @@ const t = content[lang].contact;
 
   .contact__title {
     color: var(--paper);
-    max-width: 16ch;
+    max-width: 18ch;
+    font-weight: 300;
+    font-style: normal;
   }
 
-  .contact__title-accent {
-    display: block;
+  .contact__title em {
     font-weight: 300;
-    opacity: 0.9;
+    font-style: italic;
+    opacity: 0.92;
+  }
+
+  .contact__rule {
+    width: 4rem;
+    height: 1px;
+    background: rgba(245, 241, 234, 0.5);
+    margin: 0.75rem 0;
   }
 
   .contact__sub {
@@ -97,67 +100,60 @@ const t = content[lang].contact;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: rgba(245, 241, 234, 0.7);
-    margin-top: 0.5rem;
   }
 
   .contact__cta {
     margin-top: 2rem;
     display: flex;
     align-items: center;
-    gap: 2.5rem;
+    gap: 1.25rem;
     flex-wrap: wrap;
     justify-content: center;
   }
 
-  .contact__alt-link {
-    font-family: var(--font-body);
-    font-size: 0.7rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: rgba(245, 241, 234, 0.85);
+  .btn.btn--invert.btn--solid {
+    background: var(--paper);
+    color: var(--ink);
   }
 
-  .contact__details {
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(245, 241, 234, 0.18);
-    display: flex;
-    gap: 4rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .contact__detail {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    text-align: center;
-  }
-
-  .contact__detail-label {
-    font-family: var(--font-body);
-    font-size: 0.6rem;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: rgba(245, 241, 234, 0.55);
-  }
-
-  .contact__detail-value {
-    font-family: var(--font-display);
-    font-size: 1.05rem;
+  .btn.btn--invert.btn--solid:hover {
+    background: transparent;
     color: var(--paper);
-    font-style: italic;
+  }
+
+  .contact__links {
+    margin-top: 2.5rem;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: rgba(245, 241, 234, 0.78);
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .contact__links a {
     transition: opacity var(--dur-fast);
   }
 
-  .contact__detail-value:hover {
-    opacity: 0.7;
+  .contact__links a:hover {
+    opacity: 0.6;
+  }
+
+  .contact__sep {
+    opacity: 0.4;
   }
 
   @media (max-width: 768px) {
-    .contact__details {
-      gap: 2rem;
+    .contact__cta {
       flex-direction: column;
+      width: 100%;
+      max-width: 18rem;
+    }
+    .contact__cta .btn {
+      width: 100%;
+      justify-content: center;
     }
   }
 </style>

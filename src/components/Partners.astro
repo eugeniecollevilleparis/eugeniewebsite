@@ -1,0 +1,104 @@
+---
+import { content } from "../data/content.js";
+const lang = Astro.props.lang ?? "en";
+const t = content[lang].partners;
+---
+
+<section class="partners section" id="partners" aria-label="Partners">
+  <div class="container partners__inner">
+    <span class="partners__label" data-reveal>{t.label}</span>
+
+    <div class="partners__grid">
+      {t.items.map((p, i) => (
+        <a href={p.url} target="_blank" rel="noopener" class="partner-card" data-reveal style={`--reveal-delay:${0.1 + i * 0.08}s`}>
+          <span class="partner-card__name">{p.name}</span>
+          <span class="partner-card__cat">{p.category}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .partners {
+    background: var(--paper);
+    padding-top: clamp(3rem, 6vh, 5rem);
+    padding-bottom: clamp(3rem, 6vh, 5rem);
+  }
+
+  .partners__inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: clamp(2rem, 4vw, 4rem);
+    align-items: center;
+  }
+
+  .partners__label {
+    font-family: var(--font-body);
+    font-size: 0.55rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    align-self: center;
+    justify-self: start;
+  }
+
+  .partners__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .partner-card {
+    background: var(--white);
+    border: 1px solid var(--rule-soft);
+    border-radius: 12px;
+    padding: 2.2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    text-align: center;
+    transition: box-shadow 0.4s var(--ease), transform 0.4s var(--ease);
+  }
+
+  .partner-card:hover {
+    box-shadow: 0 8px 32px rgba(15, 13, 12, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .partner-card__name {
+    font-family: var(--font-body);
+    font-size: 0.62rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ink);
+    font-weight: 400;
+  }
+
+  .partner-card__cat {
+    font-family: var(--font-body);
+    font-size: 0.55rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(15, 13, 12, 0.45);
+  }
+
+  @media (max-width: 768px) {
+    .partners__inner {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .partners__label {
+      writing-mode: horizontal-tb;
+      transform: none;
+      text-align: center;
+      justify-self: center;
+    }
+    .partners__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

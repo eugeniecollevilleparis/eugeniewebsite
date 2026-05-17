@@ -2,26 +2,25 @@
 import { content } from "../data/content.js";
 const lang = Astro.props.lang ?? "en";
 const t = content[lang].services;
-const locations = content[lang].locations;
 ---
 
 <section class="services section section--dark" id="services">
   <div class="container">
     <header class="services__head">
-      <span class="eyebrow" data-reveal>{t.eyebrow}</span>
+      <span class="eyebrow" data-reveal>{t.tag}</span>
       <h2 class="display display-2 services__title" data-reveal style="--reveal-delay:0.1s">
-        {t.title}
-        <span class="italic services__title-accent">{t.titleAccent}</span>
+        {t.title} <em>{t.titleEm}</em>
       </h2>
-      <p class="body-lead services__intro" data-reveal style="--reveal-delay:0.2s">{t.intro}</p>
+      <div class="services__rule" data-reveal style="--reveal-delay:0.15s"></div>
+      <p class="services__intro" data-reveal style="--reveal-delay:0.2s">{t.intro}</p>
     </header>
 
     <ol class="services__list">
       {t.items.map((svc, i) => (
-        <li class="svc" data-reveal style={`--reveal-delay:${0.1 + i * 0.08}s`}>
-          <div class="svc__num">{svc.n}</div>
+        <li class="svc" data-reveal style={`--reveal-delay:${0.1 + i * 0.06}s`}>
+          <span class="svc__num">{svc.n}</span>
           <div class="svc__body">
-            <h3 class="svc__title display display-3">{svc.name}</h3>
+            <h3 class="svc__title">{svc.name}</h3>
             <p class="svc__desc">{svc.desc}</p>
           </div>
           <div class="svc__arrow" aria-hidden="true">
@@ -33,11 +32,8 @@ const locations = content[lang].locations;
       ))}
     </ol>
 
-    <div class="services__locations" data-reveal>
-      <span class="services__locations-label">{locations.eyebrow}</span>
-      <ul class="services__locations-list">
-        {locations.list.map((loc) => <li>{loc}</li>)}
-      </ul>
+    <div class="locations" data-reveal>
+      {t.locations.map((loc) => <span class="loc">{loc}</span>)}
     </div>
   </div>
 </section>
@@ -46,24 +42,35 @@ const locations = content[lang].locations;
   .services__head {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.2rem;
+    align-items: center;
+    text-align: center;
     max-width: 60rem;
-    margin-bottom: clamp(4rem, 8vh, 7rem);
+    margin: 0 auto clamp(4rem, 8vh, 6rem);
   }
 
   .services__title {
     color: var(--paper);
+    font-weight: 300;
   }
 
-  .services__title-accent {
-    display: block;
+  .services__title em {
+    font-style: italic;
     font-weight: 300;
-    max-width: 22ch;
-    opacity: 0.85;
+    color: var(--accent-soft);
+  }
+
+  .services__rule {
+    width: 4rem;
+    height: 1px;
+    background: var(--accent-soft);
+    margin: 1rem 0;
   }
 
   .services__intro {
-    max-width: 45ch;
+    max-width: 50ch;
+    font-size: 0.95rem;
+    line-height: 1.85;
   }
 
   .services__list {
@@ -73,10 +80,10 @@ const locations = content[lang].locations;
 
   .svc {
     display: grid;
-    grid-template-columns: 6rem 1fr auto;
+    grid-template-columns: 5rem 1fr auto;
     gap: clamp(1rem, 3vw, 3rem);
     align-items: center;
-    padding: clamp(2rem, 4vh, 3rem) 0;
+    padding: clamp(1.75rem, 3.5vh, 2.5rem) 0;
     border-bottom: 1px solid rgba(245, 241, 234, 0.12);
     transition: padding 0.5s var(--ease);
     cursor: default;
@@ -91,73 +98,67 @@ const locations = content[lang].locations;
     opacity: 1;
   }
 
+  .svc:hover .svc__num {
+    color: var(--paper);
+  }
+
   .svc__num {
     font-family: var(--font-display);
     font-style: italic;
     font-size: 1.4rem;
     color: var(--accent-soft);
     letter-spacing: 0.05em;
+    transition: color 0.5s var(--ease);
   }
 
   .svc__body {
     display: flex;
     flex-direction: column;
-    gap: 0.85rem;
+    gap: 0.75rem;
   }
 
   .svc__title {
     color: var(--paper);
-    font-style: normal;
+    font-family: var(--font-display);
     font-weight: 400;
+    font-size: clamp(1.4rem, 2.2vw, 2rem);
     line-height: 1.1;
+    letter-spacing: -0.005em;
   }
 
   .svc__desc {
     max-width: 60ch;
-    color: rgba(245, 241, 234, 0.7);
+    color: rgba(245, 241, 234, 0.72);
+    font-size: 0.92rem;
+    line-height: 1.7;
   }
 
   .svc__arrow {
     color: var(--paper);
     opacity: 0.4;
-    transition:
-      transform 0.5s var(--ease),
-      opacity 0.5s var(--ease);
+    transition: transform 0.5s var(--ease), opacity 0.5s var(--ease);
   }
 
-  .services__locations {
-    margin-top: clamp(4rem, 8vh, 7rem);
-    padding-top: 3rem;
+  .locations {
+    margin-top: clamp(4rem, 8vh, 6rem);
+    padding-top: 2.5rem;
     border-top: 1px solid rgba(245, 241, 234, 0.12);
-    display: grid;
-    grid-template-columns: 12rem 1fr;
-    gap: 2rem;
-    align-items: baseline;
-  }
-
-  .services__locations-label {
-    font-family: var(--font-body);
-    font-size: 0.6rem;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: rgba(245, 241, 234, 0.5);
-  }
-
-  .services__locations-list {
-    list-style: none;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem 2.5rem;
-    font-family: var(--font-display);
-    font-size: clamp(1rem, 1.3vw, 1.35rem);
-    color: var(--paper);
+    text-align: center;
   }
 
-  .services__locations-list li {
+  .loc {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1rem, 1.3vw, 1.3rem);
+    color: var(--paper);
     position: relative;
   }
 
-  .services__locations-list li:not(:last-child)::after {
+  .loc:not(:last-child)::after {
     content: "·";
     position: absolute;
     right: -1.6rem;
@@ -178,12 +179,11 @@ const locations = content[lang].locations;
       padding-left: 0;
     }
 
-    .services__locations {
-      grid-template-columns: 1fr;
-      gap: 1rem;
+    .locations {
+      gap: 0.75rem 1.75rem;
     }
 
-    .services__locations-list li:not(:last-child)::after {
+    .loc:not(:last-child)::after {
       right: -1.1rem;
     }
   }

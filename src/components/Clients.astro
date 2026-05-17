@@ -2,154 +2,183 @@
 import { content } from "../data/content.js";
 const lang = Astro.props.lang ?? "en";
 const t = content[lang].clients;
-const partners = content[lang].partners;
+// Duplicate items for seamless infinite scroll
+const row1 = [...t.row1, ...t.row1];
+const row2 = [...t.row2, ...t.row2, ...t.row2];
 ---
 
 <section class="clients section" id="clients">
-  <div class="container">
-    <header class="clients__head">
-      <span class="eyebrow" data-reveal>{t.eyebrow}</span>
-      <h2 class="display display-2 clients__title" data-reveal style="--reveal-delay:0.1s">
-        {t.title}
-        <span class="italic clients__title-accent">{t.titleAccent}</span>
-      </h2>
-      <p class="body-lead clients__intro" data-reveal style="--reveal-delay:0.2s">{t.intro}</p>
-    </header>
+  <div class="container clients__header">
+    <span class="eyebrow" data-reveal>{t.tag}</span>
+    <h2 class="display display-2 clients__title" data-reveal style="--reveal-delay:0.1s">
+      {t.title} <em>{t.titleEm}</em>
+    </h2>
+    <div class="clients__rule" data-reveal style="--reveal-delay:0.15s"></div>
+    <p class="clients__intro" data-reveal style="--reveal-delay:0.2s">{t.intro}</p>
+  </div>
 
-    <div class="clients__grid">
-      <ul class="clients__list">
-        {t.list.map((c, i) => (
-          <li data-reveal style={`--reveal-delay:${0.05 * i}s`}>{c}</li>
-        ))}
-      </ul>
+  <div class="marquee" data-reveal>
+    <div class="marquee__track marquee__track--right">
+      {row1.map((c) => (
+        <div class="m-item">
+          {c.url ? (
+            <a href={c.url} target="_blank" rel="noopener" class="m-item__name">{c.name}</a>
+          ) : (
+            <span class="m-item__name">{c.name}</span>
+          )}
+          <span class="m-item__event">{c.event}</span>
+        </div>
+      ))}
+    </div>
 
-      <aside class="partners" data-reveal>
-        <span class="partners__label">{partners.label}</span>
-        <ul class="partners__list">
-          {partners.items.map((p) => (
-            <li>
-              <a href={p.url} target="_blank" rel="noopener" class="partner">
-                <span class="partner__name">{p.name}</span>
-                <span class="partner__cat">{p.category}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </aside>
+    <div class="marquee__track marquee__track--left">
+      {row2.map((c) => (
+        <div class="m-item">
+          {c.url ? (
+            <a href={c.url} target="_blank" rel="noopener" class="m-item__name">{c.name}</a>
+          ) : (
+            <span class="m-item__name">{c.name}</span>
+          )}
+          <span class="m-item__event">{c.event}</span>
+        </div>
+      ))}
     </div>
   </div>
 </section>
 
 <style>
   .clients {
-    background: var(--paper-deep);
+    background: var(--paper);
     color: var(--ink);
+    padding-left: 0;
+    padding-right: 0;
   }
 
-  .clients__head {
+  .clients__header {
+    text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    align-items: center;
+    gap: 1.2rem;
     max-width: 60rem;
-    margin-bottom: clamp(4rem, 8vh, 6rem);
+    margin: 0 auto;
+    padding: 0 var(--gutter) clamp(3rem, 6vh, 4.5rem);
   }
 
-  .clients__title-accent {
-    display: block;
+  .clients__title {
     font-weight: 300;
+  }
+
+  .clients__title em {
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .clients__rule {
+    width: 4rem;
+    height: 1px;
+    background: var(--accent);
+    margin: 1rem auto;
   }
 
   .clients__intro {
     max-width: 50ch;
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: var(--ink-soft);
   }
 
-  .clients__grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: clamp(3rem, 6vw, 6rem);
-    align-items: start;
-  }
-
-  .clients__list {
-    list-style: none;
-    border-top: 1px solid var(--rule);
-  }
-
-  .clients__list li {
-    padding: 1.25rem 0;
-    border-bottom: 1px solid var(--rule);
-    font-family: var(--font-display);
-    font-size: clamp(1.5rem, 2.4vw, 2.4rem);
-    font-weight: 400;
-    font-style: italic;
-    color: var(--ink);
-    transition: padding-left 0.5s var(--ease);
-  }
-
-  .clients__list li:hover {
-    padding-left: 1rem;
-  }
-
-  .partners {
-    background: var(--ink);
-    color: var(--paper);
-    padding: clamp(2rem, 4vw, 3rem);
-    align-self: start;
-  }
-
-  .partners__label {
-    font-family: var(--font-body);
-    font-size: 0.6rem;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: rgba(245, 241, 234, 0.55);
-    display: block;
-    margin-bottom: 2rem;
-  }
-
-  .partners__list {
-    list-style: none;
+  .marquee {
+    overflow: hidden;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    padding: 1rem 0;
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   }
 
-  .partner {
+  .marquee__track {
+    display: flex;
+    gap: 3rem;
+    width: max-content;
+    will-change: transform;
+  }
+
+  .marquee__track--right {
+    animation: marqueeRight 55s linear infinite;
+  }
+
+  .marquee__track--left {
+    animation: marqueeLeft 45s linear infinite;
+  }
+
+  @keyframes marqueeRight {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes marqueeLeft {
+    from {
+      transform: translateX(-33.333%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .marquee:hover .marquee__track {
+    animation-play-state: paused;
+  }
+
+  .m-item {
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(245, 241, 234, 0.12);
+    gap: 0.35rem;
+    padding-right: 3rem;
+    border-right: 1px solid var(--rule);
+  }
+
+  .m-item:last-child {
+    border-right: none;
+  }
+
+  .m-item__name {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.5rem, 2.4vw, 2.4rem);
+    color: var(--ink);
+    line-height: 1;
+    letter-spacing: -0.01em;
     transition: opacity var(--dur-fast);
   }
 
-  .partners__list li:last-child .partner {
-    padding-bottom: 0;
-    border-bottom: none;
+  a.m-item__name:hover {
+    opacity: 0.6;
   }
 
-  .partner:hover {
+  .m-item__event {
+    font-family: var(--font-body);
+    font-size: 0.62rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
     opacity: 0.7;
   }
 
-  .partner__name {
-    font-family: var(--font-display);
-    font-size: 1.4rem;
-    font-style: italic;
-    line-height: 1.1;
-  }
-
-  .partner__cat {
-    font-family: var(--font-body);
-    font-size: 0.65rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: rgba(245, 241, 234, 0.55);
-  }
-
-  @media (max-width: 900px) {
-    .clients__grid {
-      grid-template-columns: 1fr;
+  @media (max-width: 768px) {
+    .m-item {
+      padding-right: 1.5rem;
+    }
+    .marquee {
+      gap: 1rem;
     }
   }
 </style>

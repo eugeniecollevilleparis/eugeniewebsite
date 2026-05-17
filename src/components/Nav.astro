@@ -2,27 +2,29 @@
 import { content } from "../data/content.js";
 const lang = Astro.props.lang ?? "en";
 const t = content[lang];
+const isFr = lang === "fr";
 ---
 
 <header class="nav" data-nav>
   <div class="nav__inner">
-    <a href="#top" class="nav__logo" aria-label="Eugénie Colleville">
+    <a href={isFr ? "/fr#top" : "/#top"} class="nav__logo" aria-label="Eugénie Colleville">
       <span class="nav__logo-first">Eugénie</span>
       <span class="nav__logo-last">Colleville</span>
     </a>
 
     <nav class="nav__links" aria-label="Primary">
-      <a href="#story">{t.nav.story}</a>
-      <a href="#services">{t.nav.services}</a>
       <a href="#clients">{t.nav.clients}</a>
+      <a href="#about">{t.nav.about}</a>
+      <a href="#services">{t.nav.services}</a>
       <a href="#press">{t.nav.press}</a>
       <a href="#contact">{t.nav.contact}</a>
+      <a href="#story">{t.nav.story}</a>
     </nav>
 
     <div class="nav__lang">
-      <a href="/" class:list={["nav__lang-btn", lang === "en" && "is-active"]}>EN</a>
+      <a href="/" class:list={["nav__lang-btn", !isFr && "is-active"]}>EN</a>
       <span class="nav__lang-sep">·</span>
-      <a href="/fr" class:list={["nav__lang-btn", lang === "fr" && "is-active"]}>FR</a>
+      <a href="/fr" class:list={["nav__lang-btn", isFr && "is-active"]}>FR</a>
     </div>
 
     <button class="nav__burger" aria-label="Menu" data-burger>
@@ -35,11 +37,12 @@ const t = content[lang];
 <!-- Mobile menu -->
 <div class="mobile-menu" data-mobile-menu aria-hidden="true">
   <nav class="mobile-menu__inner">
-    <a href="#story" data-close-menu>{t.nav.story}</a>
-    <a href="#services" data-close-menu>{t.nav.services}</a>
     <a href="#clients" data-close-menu>{t.nav.clients}</a>
+    <a href="#about" data-close-menu>{t.nav.about}</a>
+    <a href="#services" data-close-menu>{t.nav.services}</a>
     <a href="#press" data-close-menu>{t.nav.press}</a>
     <a href="#contact" data-close-menu>{t.nav.contact}</a>
+    <a href="#story" data-close-menu>{t.nav.story}</a>
     <div class="mobile-menu__lang">
       <a href="/">EN</a>
       <span>·</span>
@@ -132,9 +135,9 @@ const t = content[lang];
 
   .nav__links {
     display: flex;
-    gap: 2.25rem;
+    gap: 2rem;
     justify-content: center;
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     letter-spacing: 0.25em;
     text-transform: uppercase;
   }
@@ -236,14 +239,14 @@ const t = content[lang];
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.75rem;
     text-align: center;
   }
 
   .mobile-menu__inner a {
     font-family: var(--font-display);
     font-style: italic;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     letter-spacing: -0.01em;
   }
 
@@ -260,6 +263,13 @@ const t = content[lang];
     font-family: var(--font-body);
     font-size: 0.75rem;
     font-style: normal;
+  }
+
+  @media (max-width: 1100px) {
+    .nav__links {
+      gap: 1.25rem;
+      font-size: 0.62rem;
+    }
   }
 
   @media (max-width: 900px) {

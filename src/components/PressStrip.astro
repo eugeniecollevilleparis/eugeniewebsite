@@ -1,7 +1,7 @@
 ---
 import { content } from "../data/content.js";
 const lang = Astro.props.lang ?? "en";
-const t = content[lang].press;
+const t = content[lang].pressBar;
 ---
 
 <section class="press-strip" aria-label="Press">
@@ -9,7 +9,15 @@ const t = content[lang].press;
     <span class="press-strip__label">{t.label}</span>
     <div class="press-strip__divider"></div>
     <ul class="press-strip__list">
-      {t.names.map((name) => <li>{name}</li>)}
+      {t.items.map((item) => (
+        <li>
+          {item.url ? (
+            <a href={item.url} target="_blank" rel="noopener">{item.name}</a>
+          ) : (
+            <span>{item.name}</span>
+          )}
+        </li>
+      ))}
     </ul>
   </div>
 </section>
@@ -56,12 +64,13 @@ const t = content[lang].press;
     letter-spacing: 0.02em;
   }
 
-  .press-strip__list li {
+  .press-strip__list li a,
+  .press-strip__list li span {
     opacity: 0.85;
     transition: opacity var(--dur-fast);
   }
 
-  .press-strip__list li:hover {
+  .press-strip__list li a:hover {
     opacity: 1;
   }
 
