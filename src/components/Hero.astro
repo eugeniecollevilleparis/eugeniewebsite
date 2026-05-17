@@ -97,8 +97,9 @@ const t = content[lang].hero;
     color: var(--ink-soft);
   }
 
+  /* No dash before the hero eyebrow — looks cleaner centered */
   .hero__eyebrow::before {
-    background: var(--ink-soft);
+    display: none;
   }
 
   .hero__brand {
