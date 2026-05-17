@@ -113,7 +113,8 @@ const t = content[lang].hero;
   .hero__brand img {
     width: 100%;
     height: auto;
-    opacity: 1;
+    /* Make the white background of the PNG disappear on the cream paper */
+    mix-blend-mode: multiply;
   }
 
   .hero__title {

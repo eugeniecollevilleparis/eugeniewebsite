@@ -117,7 +117,8 @@ const isFr = lang === "fr";
   .nav__logo-img {
     height: 100%;
     width: auto;
-    filter: brightness(0);
+    /* Make the white background of the PNG disappear */
+    mix-blend-mode: multiply;
   }
 
   .nav__links {
