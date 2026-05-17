@@ -1,0 +1,80 @@
+---
+import { content } from "../data/content.js";
+const lang = Astro.props.lang ?? "en";
+const isFr = lang === "fr";
+const line = isFr ? "À votre table." : "À votre table.";
+---
+
+<section class="closing" aria-label="Closing image">
+  <div class="closing__media" data-reveal-image>
+    <img
+      src="/images/closing.jpg"
+      alt="Eugénie Colleville — caviar service on brioche"
+      loading="lazy"
+    />
+  </div>
+  <div class="closing__inner">
+    <span class="closing__line" data-reveal>{line}</span>
+  </div>
+</section>
+
+<style>
+  .closing {
+    position: relative;
+    height: clamp(60vh, 80vh, 90vh);
+    overflow: hidden;
+    background: var(--paper-deep);
+  }
+
+  .closing__media {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .closing__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    transform: scale(1.06);
+    transition: transform 1.8s var(--ease-out);
+  }
+
+  .closing__media.is-visible img {
+    transform: scale(1);
+  }
+
+  .closing__inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: clamp(2.5rem, 6vh, 5rem);
+    pointer-events: none;
+  }
+
+  .closing__line {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.5rem, 2.6vw, 2.6rem);
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 0.7rem 2rem;
+    border-radius: 0;
+  }
+
+  @media (max-width: 600px) {
+    .closing {
+      height: 70vh;
+    }
+    .closing__line {
+      padding: 0.55rem 1.4rem;
+    }
+  }
+</style>
