@@ -50,20 +50,20 @@ const t = content[lang].services;
   }
 
   .services__title {
-    color: var(--paper);
+    color: var(--ink);
     font-weight: 300;
   }
 
   .services__title em {
     font-style: italic;
     font-weight: 300;
-    color: var(--accent-soft);
+    color: var(--accent);
   }
 
   .services__rule {
     width: 4rem;
     height: 1px;
-    background: var(--accent-soft);
+    background: var(--accent);
     margin: 1rem 0;
   }
 
@@ -71,11 +71,12 @@ const t = content[lang].services;
     max-width: 50ch;
     font-size: 0.95rem;
     line-height: 1.85;
+    color: var(--ink-soft);
   }
 
   .services__list {
     list-style: none;
-    border-top: 1px solid rgba(245, 241, 234, 0.12);
+    border-top: 1px solid var(--rule);
   }
 
   .svc {
@@ -84,7 +85,7 @@ const t = content[lang].services;
     gap: clamp(1rem, 3vw, 3rem);
     align-items: center;
     padding: clamp(1.75rem, 3.5vh, 2.5rem) 0;
-    border-bottom: 1px solid rgba(245, 241, 234, 0.12);
+    border-bottom: 1px solid var(--rule);
     transition: padding 0.5s var(--ease);
     cursor: default;
   }
@@ -99,14 +100,14 @@ const t = content[lang].services;
   }
 
   .svc:hover .svc__num {
-    color: var(--paper);
+    color: var(--ink);
   }
 
   .svc__num {
     font-family: var(--font-display);
     font-style: italic;
     font-size: 1.4rem;
-    color: var(--accent-soft);
+    color: var(--accent);
     letter-spacing: 0.05em;
     transition: color 0.5s var(--ease);
   }
@@ -118,7 +119,7 @@ const t = content[lang].services;
   }
 
   .svc__title {
-    color: var(--paper);
+    color: var(--ink);
     font-family: var(--font-display);
     font-weight: 400;
     font-size: clamp(1.4rem, 2.2vw, 2rem);
@@ -128,13 +129,13 @@ const t = content[lang].services;
 
   .svc__desc {
     max-width: 60ch;
-    color: rgba(245, 241, 234, 0.72);
+    color: var(--ink-soft);
     font-size: 0.92rem;
     line-height: 1.7;
   }
 
   .svc__arrow {
-    color: var(--paper);
+    color: var(--ink);
     opacity: 0.4;
     transition: transform 0.5s var(--ease), opacity 0.5s var(--ease);
   }
@@ -142,7 +143,7 @@ const t = content[lang].services;
   .locations {
     margin-top: clamp(4rem, 8vh, 6rem);
     padding-top: 2.5rem;
-    border-top: 1px solid rgba(245, 241, 234, 0.12);
+    border-top: 1px solid var(--rule);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -154,7 +155,7 @@ const t = content[lang].services;
     font-family: var(--font-display);
     font-style: italic;
     font-size: clamp(1rem, 1.3vw, 1.3rem);
-    color: var(--paper);
+    color: var(--ink);
     position: relative;
   }
 
@@ -162,7 +163,7 @@ const t = content[lang].services;
     content: "·";
     position: absolute;
     right: -1.6rem;
-    color: var(--accent-soft);
+    color: var(--accent);
   }
 
   @media (max-width: 768px) {

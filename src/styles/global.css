@@ -145,22 +145,10 @@ p {
   padding: var(--section-y) var(--gutter);
 }
 
+/* Light "contrast" section — slightly deeper paper for visual rhythm */
 .section--dark {
-  background: var(--ink);
-  color: var(--paper);
-}
-
-.section--dark p,
-.section--dark .body-lead {
-  color: rgba(245, 241, 234, 0.78);
-}
-
-.section--dark .eyebrow {
-  color: rgba(245, 241, 234, 0.6);
-}
-
-.section--dark .eyebrow::before {
-  background: rgba(245, 241, 234, 0.5);
+  background: var(--paper-deep);
+  color: var(--ink);
 }
 
 .container {

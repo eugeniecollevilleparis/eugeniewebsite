@@ -24,10 +24,11 @@ const t = content[lang].pressBar;
 
 <style>
   .press-strip {
-    background: var(--ink);
-    color: var(--paper);
+    background: var(--paper-deep);
+    color: var(--ink);
     padding: 1.4rem var(--gutter);
-    border-bottom: 1px solid rgba(245, 241, 234, 0.08);
+    border-top: 1px solid var(--rule-soft);
+    border-bottom: 1px solid var(--rule-soft);
   }
 
   .press-strip__inner {
@@ -43,14 +44,15 @@ const t = content[lang].pressBar;
     font-size: 0.6rem;
     letter-spacing: 0.4em;
     text-transform: uppercase;
-    color: rgba(245, 241, 234, 0.55);
+    color: var(--ink-soft);
+    opacity: 0.65;
     flex-shrink: 0;
   }
 
   .press-strip__divider {
     width: 2rem;
     height: 1px;
-    background: rgba(245, 241, 234, 0.25);
+    background: var(--rule);
     flex-shrink: 0;
   }
 
