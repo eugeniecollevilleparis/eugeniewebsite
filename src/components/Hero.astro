@@ -13,7 +13,11 @@ const t = content[lang].hero;
   <div class="hero__content">
     <span class="hero__eyebrow eyebrow" data-reveal style="--reveal-delay:0.1s">{t.eyebrow}</span>
 
-    <h1 class="hero__title display display-1" data-reveal style="--reveal-delay:0.25s">
+    <div class="hero__brand" data-reveal style="--reveal-delay:0.18s">
+      <img src={t.logo} alt={t.logoAlt} loading="eager" />
+    </div>
+
+    <h1 class="hero__title display display-1" data-reveal style="--reveal-delay:0.28s">
       {t.title}
       <em class="hero__title-em">{t.titleEm}</em>
     </h1>
@@ -25,6 +29,14 @@ const t = content[lang].hero;
 
     <div class="hero__cta-row" data-reveal style="--reveal-delay:0.7s">
       <a href="#contact" class="btn btn--invert">{t.cta}</a>
+      <a href={t.instagramUrl} target="_blank" rel="noopener" class="hero__ig">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+          <circle cx="12" cy="12" r="4"></circle>
+          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"></circle>
+        </svg>
+        <span>{t.instagram}</span>
+      </a>
     </div>
   </div>
 
@@ -60,8 +72,8 @@ const t = content[lang].hero;
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 35%),
-      linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 55%);
+      linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 35%),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 55%);
   }
 
   .hero__content {
@@ -73,7 +85,7 @@ const t = content[lang].hero;
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
+    gap: 1.5rem;
   }
 
   .hero__eyebrow {
@@ -84,11 +96,25 @@ const t = content[lang].hero;
     background: rgba(245, 241, 234, 0.7);
   }
 
+  .hero__brand {
+    width: clamp(180px, 22vw, 320px);
+    margin-top: 0.5rem;
+  }
+
+  .hero__brand img {
+    width: 100%;
+    height: auto;
+    /* Invert the black logo to white for dark hero */
+    filter: brightness(0) invert(1);
+    opacity: 0.95;
+  }
+
   .hero__title {
     max-width: 16ch;
     color: var(--paper);
     font-style: normal;
     font-weight: 300;
+    margin-top: 0.5rem;
   }
 
   .hero__title-em {
@@ -117,7 +143,27 @@ const t = content[lang].hero;
   }
 
   .hero__cta-row {
-    margin-top: 1.5rem;
+    margin-top: 1.25rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .hero__ig {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(245, 241, 234, 0.85);
+    transition: color var(--dur-fast);
+  }
+
+  .hero__ig:hover {
+    color: var(--paper);
   }
 
   .hero__scroll {
@@ -172,6 +218,10 @@ const t = content[lang].hero;
     }
     .hero__scroll {
       display: none;
+    }
+    .hero__brand {
+      width: 70vw;
+      max-width: 240px;
     }
   }
 </style>

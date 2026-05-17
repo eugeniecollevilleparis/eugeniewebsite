@@ -2,6 +2,12 @@
 import { content } from "../data/content.js";
 const lang = Astro.props.lang ?? "en";
 const t = content[lang].press;
+
+const logoFor = {
+  "Vogue UK": "/images/vogue.png",
+  "Hello Magazine": "/images/hello-magazine.png",
+  Foodism: "/images/foodism.png",
+};
 ---
 
 <section class="press section" id="press">
@@ -16,7 +22,11 @@ const t = content[lang].press;
       {t.items.map((item, i) => (
         <a href={item.url} target="_blank" rel="noopener" class="press-card" data-reveal style={`--reveal-delay:${0.15 + i * 0.1}s`}>
           <div class="press-card__media" data-reveal-image>
-            <div class="placeholder" data-label={`Press · ${item.pub}`}></div>
+            <div class="press-card__logo-wrap">
+              {logoFor[item.pub] && (
+                <img src={logoFor[item.pub]} alt={`${item.pub} logo`} loading="lazy" class="press-card__logo" />
+              )}
+            </div>
           </div>
           <div class="press-card__body">
             <span class="press-card__num">0{i + 1}</span>
@@ -77,11 +87,40 @@ const t = content[lang].press;
   .press-card__media {
     aspect-ratio: 4 / 5;
     overflow: hidden;
+    background: var(--paper-light);
+    border: 1px solid var(--rule-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.5s var(--ease);
   }
 
-  .press-card__media .placeholder {
-    width: 100%;
-    height: 100%;
+  .press-card:hover .press-card__media {
+    background: var(--white);
+  }
+
+  .press-card__logo-wrap {
+    width: 70%;
+    height: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .press-card__logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    filter: grayscale(50%);
+    opacity: 0.85;
+    transition: filter 0.5s var(--ease), opacity 0.5s var(--ease), transform 0.6s var(--ease);
+  }
+
+  .press-card:hover .press-card__logo {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.04);
   }
 
   .press-card__body {

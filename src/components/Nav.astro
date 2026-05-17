@@ -7,9 +7,8 @@ const isFr = lang === "fr";
 
 <header class="nav" data-nav>
   <div class="nav__inner">
-    <a href={isFr ? "/fr#top" : "/#top"} class="nav__logo" aria-label="Eugénie Colleville">
-      <span class="nav__logo-first">Eugénie</span>
-      <span class="nav__logo-last">Colleville</span>
+    <a href={isFr ? "/fr#top" : "/#top"} class="nav__logo" aria-label="Eugénie Colleville Paris">
+      <img src="/images/eugnie-colleville-paris.png" alt="Eugénie Colleville Paris" class="nav__logo-img" />
     </a>
 
     <nav class="nav__links" aria-label="Primary">
@@ -112,25 +111,20 @@ const isFr = lang === "fr";
   }
 
   .nav__logo {
-    font-family: var(--font-display);
-    font-size: 1.05rem;
-    letter-spacing: 0.05em;
     display: flex;
-    flex-direction: column;
-    line-height: 1;
-    text-transform: uppercase;
-    font-weight: 400;
+    align-items: center;
+    height: 32px;
   }
 
-  .nav__logo-first {
-    font-style: italic;
-    font-weight: 400;
+  .nav__logo-img {
+    height: 100%;
+    width: auto;
+    filter: brightness(0) invert(1);
+    transition: filter 0.4s var(--ease);
   }
 
-  .nav__logo-last {
-    font-size: 0.55rem;
-    letter-spacing: 0.4em;
-    margin-top: 0.3rem;
+  .nav.is-scrolled .nav__logo-img {
+    filter: brightness(0);
   }
 
   .nav__links {

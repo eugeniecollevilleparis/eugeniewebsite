@@ -19,11 +19,15 @@ export const content = {
       story: "My Story",
     },
     hero: {
+      logo: "/images/eugnie-colleville-paris.png",
+      logoAlt: "Eugénie Colleville Paris",
       eyebrow: "Based in London · Built in Paris & French Riviera · International",
       title: "Haute cuisine,",
       titleEm: "at home.",
       sub: "Trained by Alain Ducasse",
       cta: "Enquire",
+      instagram: "@eugeniecollevilleparis",
+      instagramUrl: "https://www.instagram.com/eugeniecollevilleparis",
       scroll: "Scroll",
     },
     pressBar: {
@@ -196,11 +200,15 @@ export const content = {
       story: "Mon Histoire",
     },
     hero: {
+      logo: "/images/eugnie-colleville-paris.png",
+      logoAlt: "Eugénie Colleville Paris",
       eyebrow: "Basée à Londres · Construite à Paris & French Riviera · International",
       title: "Haute cuisine,",
       titleEm: "chez vous.",
       sub: "Formée par Alain Ducasse",
       cta: "Me contacter",
+      instagram: "@eugeniecollevilleparis",
+      instagramUrl: "https://www.instagram.com/eugeniecollevilleparis",
       scroll: "Défiler",
     },
     pressBar: {
