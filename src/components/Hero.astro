@@ -49,8 +49,8 @@ const t = content[lang].hero;
 <style>
   .hero {
     position: relative;
-    min-height: 100vh;
-    min-height: 100svh;
+    min-height: 78vh;
+    min-height: 78svh;
     display: flex;
     align-items: flex-end;
     color: var(--ink);
@@ -86,13 +86,13 @@ const t = content[lang].hero;
   .hero__content {
     position: relative;
     z-index: 2;
-    padding: 0 var(--gutter) clamp(4rem, 10vh, 8rem);
+    padding: clamp(8rem, 14vh, 11rem) var(--gutter) clamp(3rem, 6vh, 5rem);
     max-width: 1600px;
     margin: 0 auto;
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
   .hero__eyebrow {
