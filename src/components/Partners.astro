@@ -11,6 +11,9 @@ const t = content[lang].partners;
     <div class="partners__grid">
       {t.items.map((p, i) => (
         <a href={p.url} target="_blank" rel="noopener" class="partner-card" data-reveal style={`--reveal-delay:${0.1 + i * 0.08}s`}>
+          <div class="partner-card__logo">
+            <img src={p.logo} alt={p.name} loading="lazy" />
+          </div>
           <span class="partner-card__name">{p.name}</span>
           <span class="partner-card__cat">{p.category}</span>
         </a>
@@ -55,23 +58,47 @@ const t = content[lang].partners;
     background: var(--white);
     border: 1px solid var(--rule-soft);
     border-radius: 12px;
-    padding: 2.2rem 1.5rem;
+    padding: 2.4rem 1.5rem 1.6rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.4rem;
     text-align: center;
     transition: box-shadow 0.4s var(--ease), transform 0.4s var(--ease);
+    min-height: 200px;
+    justify-content: center;
   }
 
   .partner-card:hover {
-    box-shadow: 0 8px 32px rgba(15, 13, 12, 0.08);
-    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(15, 13, 12, 0.1);
+    transform: translateY(-3px);
+  }
+
+  .partner-card__logo {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .partner-card__logo img {
+    max-height: 100%;
+    max-width: 80%;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    filter: grayscale(40%);
+    transition: filter 0.4s var(--ease);
+  }
+
+  .partner-card:hover .partner-card__logo img {
+    filter: grayscale(0%);
   }
 
   .partner-card__name {
     font-family: var(--font-body);
-    font-size: 0.62rem;
+    font-size: 0.6rem;
     letter-spacing: 0.28em;
     text-transform: uppercase;
     color: var(--ink);

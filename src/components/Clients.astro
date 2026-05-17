@@ -19,28 +19,52 @@ const row2 = [...t.row2, ...t.row2, ...t.row2];
 
   <div class="marquee" data-reveal>
     <div class="marquee__track marquee__track--right">
-      {row1.map((c) => (
-        <div class="m-item">
-          {c.url ? (
-            <a href={c.url} target="_blank" rel="noopener" class="m-item__name">{c.name}</a>
+      {row1.map((c, i) => (
+        c.type === "logo" ? (
+          c.url ? (
+            <a href={c.url} target="_blank" rel="noopener" class="m-logo">
+              <img src={c.src} alt={c.alt} loading="lazy" class:list={["m-logo__img", c.round && "is-round"]} />
+            </a>
           ) : (
-            <span class="m-item__name">{c.name}</span>
-          )}
-          <span class="m-item__event">{c.event}</span>
-        </div>
+            <div class="m-logo">
+              <img src={c.src} alt={c.alt} loading="lazy" class:list={["m-logo__img", c.round && "is-round"]} />
+            </div>
+          )
+        ) : (
+          <div class="m-item">
+            {c.url ? (
+              <a href={c.url} target="_blank" rel="noopener" class="m-item__name">{c.name}</a>
+            ) : (
+              <span class="m-item__name">{c.name}</span>
+            )}
+            <span class="m-item__event">{c.event}</span>
+          </div>
+        )
       ))}
     </div>
 
     <div class="marquee__track marquee__track--left">
       {row2.map((c) => (
-        <div class="m-item">
-          {c.url ? (
-            <a href={c.url} target="_blank" rel="noopener" class="m-item__name">{c.name}</a>
+        c.type === "logo" ? (
+          c.url ? (
+            <a href={c.url} target="_blank" rel="noopener" class="m-logo">
+              <img src={c.src} alt={c.alt} loading="lazy" class:list={["m-logo__img", c.round && "is-round"]} />
+            </a>
           ) : (
-            <span class="m-item__name">{c.name}</span>
-          )}
-          <span class="m-item__event">{c.event}</span>
-        </div>
+            <div class="m-logo">
+              <img src={c.src} alt={c.alt} loading="lazy" class:list={["m-logo__img", c.round && "is-round"]} />
+            </div>
+          )
+        ) : (
+          <div class="m-item">
+            {c.url ? (
+              <a href={c.url} target="_blank" rel="noopener" class="m-item__name">{c.name}</a>
+            ) : (
+              <span class="m-item__name">{c.name}</span>
+            )}
+            <span class="m-item__event">{c.event}</span>
+          </div>
+        )
       ))}
     </div>
   </div>
@@ -93,7 +117,7 @@ const row2 = [...t.row2, ...t.row2, ...t.row2];
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem;
     padding: 1rem 0;
     mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
     -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
@@ -101,17 +125,18 @@ const row2 = [...t.row2, ...t.row2, ...t.row2];
 
   .marquee__track {
     display: flex;
+    align-items: center;
     gap: 3rem;
     width: max-content;
     will-change: transform;
   }
 
   .marquee__track--right {
-    animation: marqueeRight 55s linear infinite;
+    animation: marqueeRight 90s linear infinite;
   }
 
   .marquee__track--left {
-    animation: marqueeLeft 45s linear infinite;
+    animation: marqueeLeft 70s linear infinite;
   }
 
   @keyframes marqueeRight {
@@ -143,17 +168,14 @@ const row2 = [...t.row2, ...t.row2, ...t.row2];
     gap: 0.35rem;
     padding-right: 3rem;
     border-right: 1px solid var(--rule);
-  }
-
-  .m-item:last-child {
-    border-right: none;
+    align-self: center;
   }
 
   .m-item__name {
     font-family: var(--font-display);
     font-style: italic;
     font-weight: 400;
-    font-size: clamp(1.5rem, 2.4vw, 2.4rem);
+    font-size: clamp(1.3rem, 2.1vw, 2.1rem);
     color: var(--ink);
     line-height: 1;
     letter-spacing: -0.01em;
@@ -166,19 +188,52 @@ const row2 = [...t.row2, ...t.row2, ...t.row2];
 
   .m-item__event {
     font-family: var(--font-body);
-    font-size: 0.62rem;
+    font-size: 0.6rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--ink-soft);
     opacity: 0.7;
   }
 
+  .m-logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding-right: 3rem;
+    border-right: 1px solid var(--rule);
+    height: 80px;
+  }
+
+  .m-logo__img {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    opacity: 0.78;
+    filter: grayscale(60%);
+    transition: opacity var(--dur-fast), filter var(--dur-fast);
+  }
+
+  .m-logo:hover .m-logo__img {
+    opacity: 1;
+    filter: grayscale(0%);
+  }
+
+  .m-logo__img.is-round {
+    border-radius: 50%;
+    mix-blend-mode: normal;
+  }
+
   @media (max-width: 768px) {
-    .m-item {
-      padding-right: 1.5rem;
+    .m-item,
+    .m-logo {
+      padding-right: 1.75rem;
     }
-    .marquee {
-      gap: 1rem;
+    .m-logo__img {
+      height: 36px;
+    }
+    .m-logo {
+      height: 60px;
     }
   }
 </style>

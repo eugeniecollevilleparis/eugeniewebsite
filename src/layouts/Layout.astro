@@ -74,18 +74,26 @@ const {
       });
     </script>
 
-    <!-- Reveal-on-scroll -->
+    <!-- Reveal-on-scroll (re-triggers every time element enters/leaves viewport) -->
     <script>
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add("is-visible");
-              observer.unobserve(entry.target);
+            } else {
+              // Only reset if the element has fully left the viewport (top is below screen
+              // or bottom is above screen) so that elements scrolled slightly out and back
+              // do not flicker.
+              const rect = entry.boundingClientRect;
+              const fullyOut = rect.bottom < 0 || rect.top > window.innerHeight;
+              if (fullyOut) {
+                entry.target.classList.remove("is-visible");
+              }
             }
           });
         },
-        { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+        { threshold: [0, 0.12, 1], rootMargin: "0px 0px -8% 0px" },
       );
 
       document
