@@ -80,8 +80,8 @@ const t = content[lang].press;
   .press-row {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    padding: clamp(2.5rem, 5vh, 3.5rem) clamp(1rem, 2.5vw, 2rem);
+    gap: 0.6rem;
+    padding: 1.6rem 1.2rem;
     text-align: center;
     align-items: center;
     position: relative;
@@ -109,57 +109,62 @@ const t = content[lang].press;
   .press-row__num {
     font-family: var(--font-display);
     font-style: italic;
-    font-size: 1.2rem;
+    font-size: 0.85rem;
     color: var(--accent);
-    letter-spacing: 0.15em;
+    letter-spacing: 0.18em;
     line-height: 1;
+    opacity: 0.8;
   }
 
   .press-row__body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 0.55rem;
   }
 
   .press-row__pub {
     font-family: var(--font-display);
     font-weight: 400;
-    font-size: clamp(1.5rem, 2.2vw, 2.1rem);
+    font-size: 1.15rem;
     font-style: italic;
-    line-height: 1.1;
-    letter-spacing: -0.005em;
+    line-height: 1.2;
+    letter-spacing: 0;
   }
 
   .press-row__quote {
-    font-family: var(--font-display);
-    font-weight: 400;
-    font-style: italic;
-    font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-style: normal;
+    font-size: 0.78rem;
     line-height: 1.65;
     color: var(--ink-soft);
-    max-width: 55ch;
+    max-width: 32ch;
     margin: 0;
   }
 
   .press-row__mark {
     color: var(--accent);
-    font-size: 1.05em;
   }
 
   .press-row__link {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
+    gap: 0.35rem;
+    margin-top: 0.4rem;
     font-family: var(--font-body);
-    font-size: 0.65rem;
+    font-size: 0.55rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--ink);
-    opacity: 0.65;
-    padding-bottom: 0.3rem;
+    opacity: 0.6;
+    padding-bottom: 0.25rem;
     border-bottom: 1px solid currentColor;
     transition: gap 0.4s var(--ease), opacity 0.4s var(--ease);
+  }
+
+  .press-row__link svg {
+    width: 11px;
+    height: 11px;
   }
 </style>
