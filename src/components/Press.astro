@@ -2,12 +2,6 @@
 import { content } from "../data/content.js";
 const lang = Astro.props.lang ?? "en";
 const t = content[lang].press;
-
-const logoFor = {
-  "Vogue UK": "/images/vogue.png",
-  "Hello Magazine": "/images/hello-magazine.png",
-  Foodism: "/images/foodism.png",
-};
 ---
 
 <section class="press section" id="press">
@@ -18,36 +12,37 @@ const logoFor = {
       <div class="press__rule" data-reveal style="--reveal-delay:0.15s"></div>
     </header>
 
-    <div class="press__grid">
+    <ol class="press__list">
       {t.items.map((item, i) => (
-        <a href={item.url} target="_blank" rel="noopener" class="press-card" data-reveal style={`--reveal-delay:${0.15 + i * 0.1}s`}>
-          <div class="press-card__media" data-reveal-image>
-            <div class="press-card__logo-wrap">
-              {logoFor[item.pub] && (
-                <img src={logoFor[item.pub]} alt={`${item.pub} logo`} loading="lazy" class="press-card__logo" />
-              )}
-            </div>
+        <li class="press-row" data-reveal style={`--reveal-delay:${0.1 + i * 0.08}s`}>
+          <span class="press-row__num">0{i + 1}</span>
+          <div class="press-row__body">
+            <h3 class="press-row__pub">{item.pub}</h3>
+            <blockquote class="press-row__quote">
+              <span class="press-row__mark">"</span>{item.text}<span class="press-row__mark">"</span>
+            </blockquote>
           </div>
-          <div class="press-card__body">
-            <span class="press-card__num">0{i + 1}</span>
-            <h3 class="press-card__pub">{item.pub}</h3>
-            <p class="press-card__text">{item.text}</p>
-            <span class="press-card__link">
-              <span>Read</span>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M4 10L10 4M10 4H4.5M10 4V9.5" stroke="currentColor" stroke-width="0.9" />
-              </svg>
-            </span>
-          </div>
-        </a>
+          <a
+            href={item.url}
+            target="_blank"
+            rel="noopener"
+            class="press-row__link"
+            aria-label={`Read the ${item.pub} article`}
+          >
+            <span>Read</span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M4 10L10 4M10 4H4.5M10 4V9.5" stroke="currentColor" stroke-width="1" />
+            </svg>
+          </a>
+        </li>
       ))}
-    </div>
+    </ol>
   </div>
 </section>
 
 <style>
   .press {
-    background: var(--paper-deep);
+    background: var(--paper);
   }
 
   .press__head {
@@ -56,7 +51,7 @@ const logoFor = {
     align-items: center;
     text-align: center;
     gap: 1.2rem;
-    margin-bottom: clamp(4rem, 8vh, 6rem);
+    margin-bottom: clamp(3rem, 6vh, 4.5rem);
   }
 
   .press__title {
@@ -71,85 +66,73 @@ const logoFor = {
     margin: 0.75rem 0;
   }
 
-  .press__grid {
+  .press__list {
+    list-style: none;
+    border-top: 1px solid var(--rule);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .press-row {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: clamp(2rem, 4vw, 3.5rem);
-  }
-
-  .press-card {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    color: var(--ink);
-  }
-
-  .press-card__media {
-    aspect-ratio: 4 / 5;
-    overflow: hidden;
-    background: var(--paper-light);
-    border: 1px solid var(--rule-soft);
-    display: flex;
+    grid-template-columns: 5rem 1fr auto;
+    gap: clamp(1.5rem, 3vw, 3rem);
     align-items: center;
-    justify-content: center;
-    transition: background 0.5s var(--ease);
+    padding: clamp(2rem, 4vh, 2.75rem) 0;
+    border-bottom: 1px solid var(--rule);
+    transition: padding 0.5s var(--ease);
   }
 
-  .press-card:hover .press-card__media {
-    background: var(--white);
+  .press-row:hover {
+    padding-left: 0.75rem;
   }
 
-  .press-card__logo-wrap {
-    width: 70%;
-    height: 35%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .press-card__logo {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    mix-blend-mode: multiply;
-    filter: grayscale(50%);
-    opacity: 0.85;
-    transition: filter 0.5s var(--ease), opacity 0.5s var(--ease), transform 0.6s var(--ease);
-  }
-
-  .press-card:hover .press-card__logo {
-    filter: grayscale(0%);
+  .press-row:hover .press-row__link {
+    gap: 0.85rem;
     opacity: 1;
-    transform: scale(1.04);
   }
 
-  .press-card__body {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .press-card__num {
+  .press-row__num {
     font-family: var(--font-display);
     font-style: italic;
-    font-size: 0.95rem;
+    font-size: 1.5rem;
     color: var(--accent);
-    letter-spacing: 0.1em;
+    letter-spacing: 0.04em;
+    line-height: 1;
   }
 
-  .press-card__pub {
+  .press-row__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .press-row__pub {
     font-family: var(--font-display);
     font-weight: 400;
-    font-size: clamp(1.4rem, 2vw, 1.8rem);
+    font-size: clamp(1.4rem, 2vw, 1.9rem);
+    font-style: italic;
     line-height: 1.1;
+    letter-spacing: -0.005em;
   }
 
-  .press-card__text {
+  .press-row__quote {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+    line-height: 1.6;
     color: var(--ink-soft);
+    max-width: 65ch;
+    margin: 0;
   }
 
-  .press-card__link {
-    margin-top: 0.5rem;
+  .press-row__mark {
+    color: var(--accent);
+    font-size: 1.05em;
+  }
+
+  .press-row__link {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -158,21 +141,29 @@ const logoFor = {
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--ink);
-    align-self: flex-start;
+    opacity: 0.65;
     padding-bottom: 0.3rem;
-    border-bottom: 1px solid var(--ink);
-    transition: gap 0.4s var(--ease);
+    border-bottom: 1px solid currentColor;
+    align-self: center;
+    transition: gap 0.4s var(--ease), opacity 0.4s var(--ease);
   }
 
-  .press-card:hover .press-card__link {
-    gap: 0.85rem;
-  }
+  @media (max-width: 768px) {
+    .press-row {
+      grid-template-columns: 3rem 1fr;
+      grid-template-rows: auto auto;
+      gap: 0.85rem 1.25rem;
+      padding: 1.5rem 0;
+    }
 
-  @media (max-width: 900px) {
-    .press__grid {
-      grid-template-columns: 1fr;
-      max-width: 32rem;
-      margin: 0 auto;
+    .press-row__link {
+      grid-column: 2;
+      align-self: start;
+      justify-self: start;
+    }
+
+    .press-row:hover {
+      padding-left: 0;
     }
   }
 </style>
