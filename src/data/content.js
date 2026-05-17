@@ -19,7 +19,7 @@ export const content = {
       story: "My Story",
     },
     hero: {
-      logo: "/images/eugnie-colleville-paris.png",
+      logo: "/images/logo-black.png",
       logoAlt: "Eugénie Colleville Paris",
       eyebrow: "Based in London · Built in Paris & French Riviera · International",
       title: "Haute cuisine,",
@@ -196,7 +196,7 @@ export const content = {
       story: "Mon Histoire",
     },
     hero: {
-      logo: "/images/eugnie-colleville-paris.png",
+      logo: "/images/logo-black.png",
       logoAlt: "Eugénie Colleville Paris",
       eyebrow: "Basée à Londres · Construite à Paris & French Riviera · International",
       title: "Haute cuisine,",
