@@ -1,0 +1,78 @@
+---
+import { content } from "../data/content.js";
+const lang = Astro.props.lang ?? "en";
+const t = content[lang].press;
+---
+
+<section class="press-strip" aria-label="Press">
+  <div class="press-strip__inner">
+    <span class="press-strip__label">{t.label}</span>
+    <div class="press-strip__divider"></div>
+    <ul class="press-strip__list">
+      {t.names.map((name) => <li>{name}</li>)}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .press-strip {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 1.4rem var(--gutter);
+    border-bottom: 1px solid rgba(245, 241, 234, 0.08);
+  }
+
+  .press-strip__inner {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .press-strip__label {
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(245, 241, 234, 0.55);
+    flex-shrink: 0;
+  }
+
+  .press-strip__divider {
+    width: 2rem;
+    height: 1px;
+    background: rgba(245, 241, 234, 0.25);
+    flex-shrink: 0;
+  }
+
+  .press-strip__list {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    flex-wrap: wrap;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    letter-spacing: 0.02em;
+  }
+
+  .press-strip__list li {
+    opacity: 0.85;
+    transition: opacity var(--dur-fast);
+  }
+
+  .press-strip__list li:hover {
+    opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    .press-strip__inner {
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .press-strip__list {
+      font-size: 0.95rem;
+      gap: 1.25rem;
+    }
+  }
+</style>

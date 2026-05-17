@@ -1,0 +1,277 @@
+---
+import { content } from "../data/content.js";
+const lang = Astro.props.lang ?? "en";
+const t = content[lang];
+---
+
+<header class="nav" data-nav>
+  <div class="nav__inner">
+    <a href="#top" class="nav__logo" aria-label="Eugénie Colleville">
+      <span class="nav__logo-first">Eugénie</span>
+      <span class="nav__logo-last">Colleville</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#story">{t.nav.story}</a>
+      <a href="#services">{t.nav.services}</a>
+      <a href="#clients">{t.nav.clients}</a>
+      <a href="#press">{t.nav.press}</a>
+      <a href="#contact">{t.nav.contact}</a>
+    </nav>
+
+    <div class="nav__lang">
+      <a href="/" class:list={["nav__lang-btn", lang === "en" && "is-active"]}>EN</a>
+      <span class="nav__lang-sep">·</span>
+      <a href="/fr" class:list={["nav__lang-btn", lang === "fr" && "is-active"]}>FR</a>
+    </div>
+
+    <button class="nav__burger" aria-label="Menu" data-burger>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" data-mobile-menu aria-hidden="true">
+  <nav class="mobile-menu__inner">
+    <a href="#story" data-close-menu>{t.nav.story}</a>
+    <a href="#services" data-close-menu>{t.nav.services}</a>
+    <a href="#clients" data-close-menu>{t.nav.clients}</a>
+    <a href="#press" data-close-menu>{t.nav.press}</a>
+    <a href="#contact" data-close-menu>{t.nav.contact}</a>
+    <div class="mobile-menu__lang">
+      <a href="/">EN</a>
+      <span>·</span>
+      <a href="/fr">FR</a>
+    </div>
+  </nav>
+</div>
+
+<script>
+  const burger = document.querySelector("[data-burger]");
+  const menu = document.querySelector("[data-mobile-menu]");
+  burger?.addEventListener("click", () => {
+    const open = menu?.classList.toggle("is-open");
+    menu?.setAttribute("aria-hidden", open ? "false" : "true");
+    burger.classList.toggle("is-active");
+    document.body.style.overflow = open ? "hidden" : "";
+  });
+  document.querySelectorAll("[data-close-menu]").forEach((el) =>
+    el.addEventListener("click", () => {
+      menu?.classList.remove("is-open");
+      menu?.setAttribute("aria-hidden", "true");
+      burger?.classList.remove("is-active");
+      document.body.style.overflow = "";
+    }),
+  );
+</script>
+
+<style>
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1.5rem var(--gutter);
+    transition:
+      transform var(--dur) var(--ease),
+      background var(--dur) var(--ease),
+      backdrop-filter var(--dur) var(--ease),
+      padding var(--dur) var(--ease);
+    mix-blend-mode: difference;
+    color: var(--paper);
+  }
+
+  .nav.is-scrolled {
+    mix-blend-mode: normal;
+    color: var(--ink);
+    background: rgba(245, 241, 234, 0.85);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+
+  .nav.is-hidden {
+    transform: translateY(-110%);
+  }
+
+  .nav__inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .nav__logo {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    letter-spacing: 0.05em;
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  .nav__logo-first {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .nav__logo-last {
+    font-size: 0.55rem;
+    letter-spacing: 0.4em;
+    margin-top: 0.3rem;
+  }
+
+  .nav__links {
+    display: flex;
+    gap: 2.25rem;
+    justify-content: center;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+  }
+
+  .nav__links a {
+    position: relative;
+    padding: 0.3rem 0;
+  }
+
+  .nav__links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s var(--ease);
+  }
+
+  .nav__links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .nav__lang {
+    justify-self: end;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .nav__lang-btn {
+    opacity: 0.5;
+    transition: opacity var(--dur-fast);
+  }
+
+  .nav__lang-btn.is-active,
+  .nav__lang-btn:hover {
+    opacity: 1;
+  }
+
+  .nav__lang-sep {
+    opacity: 0.4;
+  }
+
+  .nav__burger {
+    display: none;
+    width: 28px;
+    height: 22px;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 110;
+  }
+
+  .nav__burger span {
+    height: 1px;
+    background: currentColor;
+    transition: transform 0.4s var(--ease), opacity 0.3s;
+  }
+
+  .nav__burger.is-active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+
+  .nav__burger.is-active span:nth-child(2) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+
+  /* Mobile menu */
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    background: var(--ink);
+    color: var(--paper);
+    z-index: 99;
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      opacity 0.5s var(--ease),
+      transform 0.5s var(--ease);
+    transform: translateY(-100%);
+  }
+
+  .mobile-menu.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .mobile-menu__inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .mobile-menu__inner a {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 2.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .mobile-menu__lang {
+    margin-top: 2rem;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .mobile-menu__lang a {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-style: normal;
+  }
+
+  @media (max-width: 900px) {
+    .nav__inner {
+      grid-template-columns: 1fr auto;
+    }
+    .nav__links,
+    .nav__lang {
+      display: none;
+    }
+    .nav__burger {
+      display: flex;
+    }
+  }
+</style>

@@ -1,0 +1,129 @@
+---
+import { content } from "../data/content.js";
+const lang = Astro.props.lang ?? "en";
+const t = content[lang].footer;
+const contact = content[lang].contact;
+---
+
+<footer class="footer">
+  <div class="footer__inner container">
+    <div class="footer__col footer__col--brand">
+      <span class="footer__brand">Eugénie Colleville</span>
+      <span class="footer__role">Private Chef &amp; Catering</span>
+    </div>
+
+    <div class="footer__col">
+      <span class="footer__label">{t.thanks}</span>
+      <p class="footer__thanks">
+        À ma famille, mes mentors, et chaque table qui m'accueille.
+      </p>
+    </div>
+
+    <div class="footer__col footer__col--links">
+      <span class="footer__label">Elsewhere</span>
+      <a href={contact.instagramUrl} target="_blank" rel="noopener">Instagram</a>
+      <a href={contact.websiteUrl} target="_blank" rel="noopener">Website</a>
+      <a href={`mailto:${contact.email}`}>Email</a>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <span class="footer__copy">{t.copy}</span>
+    <span class="footer__credit">Built with care</span>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--ink);
+    color: var(--paper);
+    padding: clamp(4rem, 8vh, 6rem) var(--gutter) 2rem;
+  }
+
+  .footer__inner {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: clamp(2rem, 4vw, 4rem);
+    padding-bottom: 4rem;
+    border-bottom: 1px solid rgba(245, 241, 234, 0.12);
+  }
+
+  .footer__col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .footer__col--brand {
+    gap: 0.4rem;
+  }
+
+  .footer__brand {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+    line-height: 1;
+  }
+
+  .footer__role {
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(245, 241, 234, 0.55);
+    margin-top: 0.4rem;
+  }
+
+  .footer__label {
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(245, 241, 234, 0.5);
+    margin-bottom: 0.4rem;
+  }
+
+  .footer__thanks {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1rem;
+    color: rgba(245, 241, 234, 0.8);
+    line-height: 1.55;
+  }
+
+  .footer__col--links a {
+    font-size: 0.85rem;
+    color: rgba(245, 241, 234, 0.8);
+    transition: opacity var(--dur-fast);
+  }
+
+  .footer__col--links a:hover {
+    opacity: 0.6;
+  }
+
+  .footer__bottom {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(245, 241, 234, 0.4);
+  }
+
+  @media (max-width: 768px) {
+    .footer__inner {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .footer__bottom {
+      flex-direction: column;
+      gap: 0.75rem;
+      text-align: center;
+    }
+  }
+</style>

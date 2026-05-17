@@ -1,7 +1,7 @@
 {
-  "name": "zany-zenith",
+  "name": "eugenie-colleville",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "node": ">=22.12.0"
   },
@@ -12,6 +12,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^6.3.3"
+    "astro": "^6.3.3",
+    "lenis": "^1.1.20"
   }
 }

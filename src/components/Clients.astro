@@ -1,0 +1,155 @@
+---
+import { content } from "../data/content.js";
+const lang = Astro.props.lang ?? "en";
+const t = content[lang].clients;
+const partners = content[lang].partners;
+---
+
+<section class="clients section" id="clients">
+  <div class="container">
+    <header class="clients__head">
+      <span class="eyebrow" data-reveal>{t.eyebrow}</span>
+      <h2 class="display display-2 clients__title" data-reveal style="--reveal-delay:0.1s">
+        {t.title}
+        <span class="italic clients__title-accent">{t.titleAccent}</span>
+      </h2>
+      <p class="body-lead clients__intro" data-reveal style="--reveal-delay:0.2s">{t.intro}</p>
+    </header>
+
+    <div class="clients__grid">
+      <ul class="clients__list">
+        {t.list.map((c, i) => (
+          <li data-reveal style={`--reveal-delay:${0.05 * i}s`}>{c}</li>
+        ))}
+      </ul>
+
+      <aside class="partners" data-reveal>
+        <span class="partners__label">{partners.label}</span>
+        <ul class="partners__list">
+          {partners.items.map((p) => (
+            <li>
+              <a href={p.url} target="_blank" rel="noopener" class="partner">
+                <span class="partner__name">{p.name}</span>
+                <span class="partner__cat">{p.category}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<style>
+  .clients {
+    background: var(--paper-deep);
+    color: var(--ink);
+  }
+
+  .clients__head {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 60rem;
+    margin-bottom: clamp(4rem, 8vh, 6rem);
+  }
+
+  .clients__title-accent {
+    display: block;
+    font-weight: 300;
+  }
+
+  .clients__intro {
+    max-width: 50ch;
+  }
+
+  .clients__grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: clamp(3rem, 6vw, 6rem);
+    align-items: start;
+  }
+
+  .clients__list {
+    list-style: none;
+    border-top: 1px solid var(--rule);
+  }
+
+  .clients__list li {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 2.4vw, 2.4rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--ink);
+    transition: padding-left 0.5s var(--ease);
+  }
+
+  .clients__list li:hover {
+    padding-left: 1rem;
+  }
+
+  .partners {
+    background: var(--ink);
+    color: var(--paper);
+    padding: clamp(2rem, 4vw, 3rem);
+    align-self: start;
+  }
+
+  .partners__label {
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(245, 241, 234, 0.55);
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .partners__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .partner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(245, 241, 234, 0.12);
+    transition: opacity var(--dur-fast);
+  }
+
+  .partners__list li:last-child .partner {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .partner:hover {
+    opacity: 0.7;
+  }
+
+  .partner__name {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-style: italic;
+    line-height: 1.1;
+  }
+
+  .partner__cat {
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(245, 241, 234, 0.55);
+  }
+
+  @media (max-width: 900px) {
+    .clients__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

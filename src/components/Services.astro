@@ -1,0 +1,190 @@
+---
+import { content } from "../data/content.js";
+const lang = Astro.props.lang ?? "en";
+const t = content[lang].services;
+const locations = content[lang].locations;
+---
+
+<section class="services section section--dark" id="services">
+  <div class="container">
+    <header class="services__head">
+      <span class="eyebrow" data-reveal>{t.eyebrow}</span>
+      <h2 class="display display-2 services__title" data-reveal style="--reveal-delay:0.1s">
+        {t.title}
+        <span class="italic services__title-accent">{t.titleAccent}</span>
+      </h2>
+      <p class="body-lead services__intro" data-reveal style="--reveal-delay:0.2s">{t.intro}</p>
+    </header>
+
+    <ol class="services__list">
+      {t.items.map((svc, i) => (
+        <li class="svc" data-reveal style={`--reveal-delay:${0.1 + i * 0.08}s`}>
+          <div class="svc__num">{svc.n}</div>
+          <div class="svc__body">
+            <h3 class="svc__title display display-3">{svc.name}</h3>
+            <p class="svc__desc">{svc.desc}</p>
+          </div>
+          <div class="svc__arrow" aria-hidden="true">
+            <svg width="32" height="12" viewBox="0 0 32 12" fill="none">
+              <path d="M1 6H30M30 6L25 1M30 6L25 11" stroke="currentColor" stroke-width="0.8" />
+            </svg>
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    <div class="services__locations" data-reveal>
+      <span class="services__locations-label">{locations.eyebrow}</span>
+      <ul class="services__locations-list">
+        {locations.list.map((loc) => <li>{loc}</li>)}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .services__head {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 60rem;
+    margin-bottom: clamp(4rem, 8vh, 7rem);
+  }
+
+  .services__title {
+    color: var(--paper);
+  }
+
+  .services__title-accent {
+    display: block;
+    font-weight: 300;
+    max-width: 22ch;
+    opacity: 0.85;
+  }
+
+  .services__intro {
+    max-width: 45ch;
+  }
+
+  .services__list {
+    list-style: none;
+    border-top: 1px solid rgba(245, 241, 234, 0.12);
+  }
+
+  .svc {
+    display: grid;
+    grid-template-columns: 6rem 1fr auto;
+    gap: clamp(1rem, 3vw, 3rem);
+    align-items: center;
+    padding: clamp(2rem, 4vh, 3rem) 0;
+    border-bottom: 1px solid rgba(245, 241, 234, 0.12);
+    transition: padding 0.5s var(--ease);
+    cursor: default;
+  }
+
+  .svc:hover {
+    padding-left: 1.5rem;
+  }
+
+  .svc:hover .svc__arrow {
+    transform: translateX(0.5rem);
+    opacity: 1;
+  }
+
+  .svc__num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--accent-soft);
+    letter-spacing: 0.05em;
+  }
+
+  .svc__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .svc__title {
+    color: var(--paper);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+
+  .svc__desc {
+    max-width: 60ch;
+    color: rgba(245, 241, 234, 0.7);
+  }
+
+  .svc__arrow {
+    color: var(--paper);
+    opacity: 0.4;
+    transition:
+      transform 0.5s var(--ease),
+      opacity 0.5s var(--ease);
+  }
+
+  .services__locations {
+    margin-top: clamp(4rem, 8vh, 7rem);
+    padding-top: 3rem;
+    border-top: 1px solid rgba(245, 241, 234, 0.12);
+    display: grid;
+    grid-template-columns: 12rem 1fr;
+    gap: 2rem;
+    align-items: baseline;
+  }
+
+  .services__locations-label {
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(245, 241, 234, 0.5);
+  }
+
+  .services__locations-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2.5rem;
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 1.3vw, 1.35rem);
+    color: var(--paper);
+  }
+
+  .services__locations-list li {
+    position: relative;
+  }
+
+  .services__locations-list li:not(:last-child)::after {
+    content: "·";
+    position: absolute;
+    right: -1.6rem;
+    color: var(--accent-soft);
+  }
+
+  @media (max-width: 768px) {
+    .svc {
+      grid-template-columns: 3rem 1fr;
+      padding: 1.5rem 0;
+    }
+
+    .svc__arrow {
+      display: none;
+    }
+
+    .svc:hover {
+      padding-left: 0;
+    }
+
+    .services__locations {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .services__locations-list li:not(:last-child)::after {
+      right: -1.1rem;
+    }
+  }
+</style>

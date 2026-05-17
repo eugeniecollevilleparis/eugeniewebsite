@@ -1,0 +1,119 @@
+---
+import { content } from "../data/content.js";
+const lang = Astro.props.lang ?? "en";
+const t = content[lang].about;
+---
+
+<section class="about section" id="about">
+  <div class="about__grid container">
+    <div class="about__media" data-reveal-image>
+      <div class="placeholder" data-label="Portrait · 1600×2000 · Eugénie portrait, kitchen / studio"></div>
+    </div>
+
+    <div class="about__copy">
+      <span class="eyebrow" data-reveal>{t.eyebrow}</span>
+
+      <h2 class="display display-2 about__title" data-reveal style="--reveal-delay:0.1s">
+        {t.title}
+        <span class="about__title-accent italic">{t.titleAccent}</span>
+      </h2>
+
+      <p class="body-lead about__lead" data-reveal style="--reveal-delay:0.2s">{t.lead}</p>
+
+      <div class="about__paragraphs" data-reveal style="--reveal-delay:0.3s">
+        <p>{t.p1}</p>
+        <p>{t.p2}</p>
+      </div>
+
+      <blockquote class="about__quote" data-reveal style="--reveal-delay:0.4s">
+        <span class="about__quote-mark">"</span>
+        <span class="about__quote-text">{t.quote}</span>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  .about__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(3rem, 6vw, 7rem);
+    align-items: center;
+  }
+
+  .about__media {
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .about__media .placeholder {
+    width: 100%;
+    height: 100%;
+  }
+
+  .about__copy {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .about__title {
+    margin-top: 0.5rem;
+  }
+
+  .about__title-accent {
+    display: block;
+    font-weight: 300;
+  }
+
+  .about__paragraphs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    max-width: 50ch;
+  }
+
+  .about__lead {
+    max-width: 32ch;
+  }
+
+  .about__quote {
+    margin-top: 1.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.05rem, 1.4vw, 1.4rem);
+    line-height: 1.5;
+    color: var(--ink);
+    max-width: 38ch;
+  }
+
+  .about__quote-mark {
+    font-size: 2.5rem;
+    line-height: 0.8;
+    color: var(--accent);
+    transform: translateY(-0.1em);
+  }
+
+  @media (max-width: 900px) {
+    .about__grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .about__media {
+      aspect-ratio: 3 / 4;
+      max-width: 32rem;
+    }
+  }
+</style>

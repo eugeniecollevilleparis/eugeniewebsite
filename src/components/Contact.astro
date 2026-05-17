@@ -1,0 +1,163 @@
+---
+import { content } from "../data/content.js";
+const lang = Astro.props.lang ?? "en";
+const t = content[lang].contact;
+---
+
+<section class="contact section section--dark" id="contact">
+  <div class="contact__media" data-reveal-image>
+    <div class="placeholder placeholder--dark" data-label="Atmosphere · table · candlelight · 2880×1600"></div>
+    <div class="contact__overlay"></div>
+  </div>
+
+  <div class="contact__inner container">
+    <span class="eyebrow" data-reveal>{t.eyebrow}</span>
+
+    <h2 class="display display-1 contact__title" data-reveal style="--reveal-delay:0.1s">
+      {t.title}
+      <span class="italic contact__title-accent">{t.titleAccent}</span>
+    </h2>
+
+    <p class="contact__sub" data-reveal style="--reveal-delay:0.25s">{t.sub}</p>
+
+    <div class="contact__cta" data-reveal style="--reveal-delay:0.4s">
+      <a href={`mailto:${t.email}`} class="btn btn--invert">{t.emailLabel}</a>
+      <a href={t.websiteUrl} target="_blank" rel="noopener" class="contact__alt-link link-underline">
+        {t.websiteLabel}
+      </a>
+    </div>
+
+    <div class="contact__details" data-reveal style="--reveal-delay:0.55s">
+      <div class="contact__detail">
+        <span class="contact__detail-label">Email</span>
+        <a href={`mailto:${t.email}`} class="contact__detail-value">{t.email}</a>
+      </div>
+      <div class="contact__detail">
+        <span class="contact__detail-label">Instagram</span>
+        <a href={t.instagramUrl} target="_blank" rel="noopener" class="contact__detail-value">
+          {t.instagram}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    position: relative;
+    overflow: hidden;
+    color: var(--paper);
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .contact__media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .contact__media .placeholder {
+    width: 100%;
+    height: 100%;
+  }
+
+  .contact__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15, 13, 12, 0.55) 0%, rgba(15, 13, 12, 0.85) 100%);
+  }
+
+  .contact__inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 1000px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .contact__title {
+    color: var(--paper);
+    max-width: 16ch;
+  }
+
+  .contact__title-accent {
+    display: block;
+    font-weight: 300;
+    opacity: 0.9;
+  }
+
+  .contact__sub {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(245, 241, 234, 0.7);
+    margin-top: 0.5rem;
+  }
+
+  .contact__cta {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .contact__alt-link {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(245, 241, 234, 0.85);
+  }
+
+  .contact__details {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(245, 241, 234, 0.18);
+    display: flex;
+    gap: 4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .contact__detail {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    text-align: center;
+  }
+
+  .contact__detail-label {
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(245, 241, 234, 0.55);
+  }
+
+  .contact__detail-value {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    color: var(--paper);
+    font-style: italic;
+    transition: opacity var(--dur-fast);
+  }
+
+  .contact__detail-value:hover {
+    opacity: 0.7;
+  }
+
+  @media (max-width: 768px) {
+    .contact__details {
+      gap: 2rem;
+      flex-direction: column;
+    }
+  }
+</style>

@@ -1,0 +1,125 @@
+---
+import { content } from "../data/content.js";
+const lang = Astro.props.lang ?? "en";
+const t = content[lang].story;
+---
+
+<section class="story section" id="story">
+  <div class="story__inner container">
+    <div class="story__head">
+      <span class="eyebrow" data-reveal>{t.eyebrow}</span>
+      <h2 class="display display-2 story__title" data-reveal style="--reveal-delay:0.1s">
+        {t.title}
+        <span class="italic story__title-accent">{t.titleAccent}</span>
+      </h2>
+    </div>
+
+    <div class="story__grid">
+      <div class="story__media story__media--1" data-reveal-image>
+        <div class="placeholder" data-label="Editorial · 1200×1500"></div>
+      </div>
+
+      <div class="story__text">
+        {t.paragraphs.map((p, i) => (
+          <p data-reveal style={`--reveal-delay:${0.1 + i * 0.1}s`}>{p}</p>
+        ))}
+      </div>
+
+      <div class="story__media story__media--2" data-reveal-image>
+        <div class="placeholder" data-label="Editorial · 1200×1600"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .story {
+    background: var(--paper-light);
+  }
+
+  .story__head {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: clamp(3rem, 6vh, 5rem);
+    max-width: 60rem;
+  }
+
+  .story__title-accent {
+    display: block;
+    font-weight: 300;
+  }
+
+  .story__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: clamp(2rem, 4vw, 4rem);
+    align-items: center;
+  }
+
+  .story__media {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .story__media--1 {
+    aspect-ratio: 3 / 4;
+    margin-top: -3rem;
+  }
+
+  .story__media--2 {
+    aspect-ratio: 3 / 4;
+    margin-bottom: -3rem;
+    transform: translateY(2rem);
+  }
+
+  .story__media .placeholder {
+    width: 100%;
+    height: 100%;
+  }
+
+  .story__text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .story__text p {
+    font-family: var(--font-display);
+    font-size: clamp(1.05rem, 1.3vw, 1.3rem);
+    font-style: italic;
+    line-height: 1.55;
+    color: var(--ink);
+    font-weight: 400;
+  }
+
+  .story__text p:first-child::first-letter {
+    font-family: var(--font-display);
+    font-size: 3.5em;
+    line-height: 0.85;
+    float: left;
+    margin-right: 0.5rem;
+    margin-top: 0.15em;
+    color: var(--accent);
+    font-style: normal;
+  }
+
+  @media (max-width: 900px) {
+    .story__grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .story__media--1,
+    .story__media--2 {
+      margin: 0;
+      transform: none;
+      max-width: 28rem;
+      width: 100%;
+    }
+
+    .story__media--2 {
+      align-self: flex-end;
+    }
+  }
+</style>

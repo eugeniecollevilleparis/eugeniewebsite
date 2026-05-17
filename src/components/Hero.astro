@@ -1,0 +1,172 @@
+---
+import { content } from "../data/content.js";
+const lang = Astro.props.lang ?? "en";
+const t = content[lang].hero;
+---
+
+<section class="hero" id="top">
+  <div class="hero__media">
+    <div class="placeholder placeholder--dark" data-label="Hero · 2880×1800 · chef portrait or signature dish"></div>
+    <div class="hero__overlay"></div>
+  </div>
+
+  <div class="hero__content">
+    <span class="hero__eyebrow eyebrow" data-reveal style="--reveal-delay:0.1s">{t.eyebrow}</span>
+
+    <h1 class="hero__title display display-1" data-reveal style="--reveal-delay:0.25s">
+      {t.title}
+      <span class="hero__title-accent">{t.titleAccent}</span>
+    </h1>
+
+    <p class="hero__sub" data-reveal style="--reveal-delay:0.5s">
+      <span class="hero__sub-line"></span>
+      {t.sub}
+    </p>
+
+    <div class="hero__cta-row" data-reveal style="--reveal-delay:0.7s">
+      <a href="#contact" class="btn btn--invert">{t.cta}</a>
+    </div>
+  </div>
+
+  <div class="hero__scroll" data-reveal style="--reveal-delay:1.2s">
+    <span>{t.scroll}</span>
+    <span class="hero__scroll-line"></span>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: flex-end;
+    color: var(--paper);
+    overflow: hidden;
+  }
+
+  .hero__media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero__media .placeholder {
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 35%),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 55%);
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 2;
+    padding: 0 var(--gutter) clamp(4rem, 10vh, 8rem);
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .hero__eyebrow {
+    color: rgba(245, 241, 234, 0.85);
+  }
+
+  .hero__eyebrow::before {
+    background: rgba(245, 241, 234, 0.7);
+  }
+
+  .hero__title {
+    max-width: 14ch;
+    color: var(--paper);
+  }
+
+  .hero__title-accent {
+    display: block;
+    font-style: italic;
+    font-weight: 300;
+    opacity: 0.9;
+  }
+
+  .hero__sub {
+    font-family: var(--font-body);
+    color: rgba(245, 241, 234, 0.85);
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .hero__sub-line {
+    width: 2.5rem;
+    height: 1px;
+    background: rgba(245, 241, 234, 0.6);
+  }
+
+  .hero__cta-row {
+    margin-top: 1.5rem;
+  }
+
+  .hero__scroll {
+    position: absolute;
+    right: var(--gutter);
+    bottom: clamp(2rem, 5vh, 4rem);
+    z-index: 2;
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(245, 241, 234, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    writing-mode: vertical-rl;
+  }
+
+  .hero__scroll-line {
+    width: 1px;
+    height: 3rem;
+    background: rgba(245, 241, 234, 0.5);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero__scroll-line::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--paper);
+    transform: translateY(-100%);
+    animation: scrollHint 2.4s var(--ease-out) infinite;
+  }
+
+  @keyframes scrollHint {
+    0% {
+      transform: translateY(-100%);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero__scroll {
+      display: none;
+    }
+  }
+</style>
