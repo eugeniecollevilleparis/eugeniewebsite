@@ -52,22 +52,23 @@ button {
 }
 
 /* --- DESIGN TOKENS --- */
+/* THEME: PURE MONOCHROME — black & white, gallery-modern. */
 :root {
   /* Colors */
-  --ink: #0f0d0c;
-  --ink-soft: #2a2622;
-  --paper: #f5f1ea;
-  --paper-deep: #ebe5d9;
-  --paper-light: #fbf9f4;
+  --ink: #000000;
+  --ink-soft: #2a2a2a;
+  --paper: #fbfbf9;
+  --paper-deep: #f0f0ee;
+  --paper-light: #ffffff;
   --white: #ffffff;
-  --accent: #8b6e4e;
-  --accent-soft: #b89878;
-  --rule: rgba(15, 13, 12, 0.14);
-  --rule-soft: rgba(15, 13, 12, 0.06);
+  --accent: #6a6a6a;
+  --accent-soft: #a8a8a8;
+  --rule: rgba(0, 0, 0, 0.16);
+  --rule-soft: rgba(0, 0, 0, 0.06);
 
   /* Typography */
-  --font-display: "Cormorant Garamond", "Sorts Mill Goudy", Garamond, serif;
-  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Sorts Mill Goudy", "Cormorant Garamond", Garamond, serif;
+  --font-body: "Inter Tight", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
   /* Spacing */
@@ -309,9 +310,9 @@ p {
 
 .placeholder--dark {
   background:
-    radial-gradient(ellipse at 30% 25%, rgba(139, 110, 78, 0.22), transparent 55%),
-    radial-gradient(ellipse at 75% 70%, rgba(40, 28, 20, 0.85), transparent 60%),
-    linear-gradient(160deg, #1f1814 0%, #0f0a08 60%, #060403 100%);
+    radial-gradient(ellipse at 30% 25%, rgba(255, 255, 255, 0.07), transparent 55%),
+    radial-gradient(ellipse at 75% 70%, rgba(0, 0, 0, 0.5), transparent 60%),
+    linear-gradient(160deg, #161616 0%, #080808 60%, #000 100%);
   position: relative;
 }
 
