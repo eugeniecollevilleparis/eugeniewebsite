@@ -6,7 +6,7 @@ const t = content[lang].hero;
 
 <section class="hero" id="top">
   <div class="hero__media">
-    <div class="placeholder hero__bg" data-label="Awaiting photo · 2880×1800"></div>
+    <div class="hero__bg"></div>
     <div class="hero__vignette"></div>
   </div>
 
@@ -64,16 +64,12 @@ const t = content[lang].hero;
   }
 
   .hero__bg {
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    inset: 0;
     background:
       radial-gradient(ellipse at 30% 25%, rgba(255, 255, 255, 0.7), transparent 55%),
       radial-gradient(ellipse at 75% 75%, rgba(233, 229, 221, 0.85), transparent 60%),
-      linear-gradient(160deg, var(--paper-light) 0%, var(--paper) 50%, var(--paper-deep) 100%) !important;
-  }
-
-  .hero__bg::after {
-    color: rgba(26, 26, 26, 0.28);
+      linear-gradient(160deg, var(--paper-light) 0%, var(--paper) 50%, var(--paper-deep) 100%);
   }
 
   .hero__vignette {
