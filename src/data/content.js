@@ -222,7 +222,7 @@ export const content = {
         "A special thank you to <strong>Chef Louis Taine</strong>, who trained me at <strong>Les Belles Envies</strong>, pioneering low glycaemic index pastry, with recipes approved by doctors. I then followed him to <strong>Ducasse sur Seine</strong>, where I was introduced to haute gastronomy very early on. His teaching shaped my understanding of nutrition and precision in cuisine from the very beginning.",
     },
     footer: {
-      copy: "© 2025 Eugénie Colleville · Private Chef & Catering",
+      copy: "© 2026 Eugénie Colleville · Private Chef & Catering",
       links: [
         { label: "Instagram", url: "https://www.instagram.com/eugeniecollevilleparis" },
       ],
@@ -446,7 +446,7 @@ export const content = {
         "Un merci tout particulier à <strong>Chef Louis Taine</strong>, qui m'a formée chez <strong>Les Belles Envies</strong>, pionnier de la pâtisserie à index glycémique bas, avec des recettes approuvées par les médecins. Je l'ai ensuite suivi chez <strong>Ducasse sur Seine</strong>, où j'ai été introduite à la haute gastronomie très tôt. Son enseignement a façonné ma compréhension de la nutrition et de la précision en cuisine dès le début.",
     },
     footer: {
-      copy: "© 2025 Eugénie Colleville · Chef privée & traiteur",
+      copy: "© 2026 Eugénie Colleville · Chef privée & traiteur",
       links: [
         { label: "Instagram", url: "https://www.instagram.com/eugeniecollevilleparis" },
       ],
