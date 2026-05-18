@@ -50,32 +50,13 @@ const t = content[lang].story;
     background-position: right center;
     background-repeat: no-repeat;
     background-size: clamp(440px, 44vw, 720px) auto;
-    opacity: 0.32;
-    filter: grayscale(20%) contrast(0.95) blur(0.6px);
+    /* multiply blend mode knocks out the white background of the photo
+       so only the plate + hands + cutlery + food remain — no rectangle. */
     mix-blend-mode: multiply;
+    opacity: 0.85;
+    filter: contrast(1.05) saturate(0.9);
     pointer-events: none;
     z-index: 0;
-    /* Very soft elliptical mask — long, gentle falloff so the photo melts into the paper */
-    -webkit-mask-image: radial-gradient(
-      ellipse 55% 60% at right 22% center,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 0.92) 10%,
-      rgba(0, 0, 0, 0.75) 25%,
-      rgba(0, 0, 0, 0.5) 45%,
-      rgba(0, 0, 0, 0.25) 65%,
-      rgba(0, 0, 0, 0.08) 85%,
-      rgba(0, 0, 0, 0) 100%
-    );
-    mask-image: radial-gradient(
-      ellipse 55% 60% at right 22% center,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 0.92) 10%,
-      rgba(0, 0, 0, 0.75) 25%,
-      rgba(0, 0, 0, 0.5) 45%,
-      rgba(0, 0, 0, 0.25) 65%,
-      rgba(0, 0, 0, 0.08) 85%,
-      rgba(0, 0, 0, 0) 100%
-    );
   }
 
   .story > * {
