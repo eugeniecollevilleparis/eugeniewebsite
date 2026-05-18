@@ -221,7 +221,7 @@ export const content = {
       quoteAuthor: "Eugénie Colleville",
       thanksLabel: "With gratitude",
       thanksHtml:
-        "A special thank you to <strong>Chef Louis Taine</strong>, who trained me at <strong>Les Belles Envies</strong>, pioneering low glycaemic index pastry, with recipes approved by doctors. His teaching shaped my understanding of nutrition and precision in pastry from the very beginning.",
+        "A special thank you to <strong>Chef Louis Taine</strong>, who trained me at <strong>Les Belles Envies</strong>, pioneering low glycaemic index pastry, with recipes approved by doctors. I then followed him to <strong>Ducasse sur Seine</strong>, where I was introduced to haute gastronomy very early on. His teaching shaped my understanding of nutrition and precision in pastry from the very beginning.",
     },
     footer: {
       copy: "© 2025 Eugénie Colleville · Private Chef & Catering",
@@ -447,7 +447,7 @@ export const content = {
       quoteAuthor: "Eugénie Colleville",
       thanksLabel: "Avec gratitude",
       thanksHtml:
-        "Un merci tout particulier à <strong>Chef Louis Taine</strong>, qui m'a formée chez <strong>Les Belles Envies</strong>, pionnier de la pâtisserie à index glycémique bas, avec des recettes approuvées par les médecins. Son enseignement a façonné ma compréhension de la nutrition et de la précision en pâtisserie dès le début.",
+        "Un merci tout particulier à <strong>Chef Louis Taine</strong>, qui m'a formée chez <strong>Les Belles Envies</strong>, pionnier de la pâtisserie à index glycémique bas, avec des recettes approuvées par les médecins. Je l'ai ensuite suivi chez <strong>Ducasse sur Seine</strong>, où j'ai été introduite à la haute gastronomie très tôt. Son enseignement a façonné ma compréhension de la nutrition et de la précision en pâtisserie dès le début.",
     },
     footer: {
       copy: "© 2025 Eugénie Colleville · Chef privée & traiteur",
