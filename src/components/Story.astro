@@ -34,7 +34,48 @@ const t = content[lang].story;
 
 <style>
   .story {
+    position: relative;
     background: var(--paper-light);
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  /* Tartare + caviar photo as a discreet watermark on the right side */
+  .story::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/images/bg-tartare.jpg");
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: clamp(360px, 36vw, 580px) auto;
+    opacity: 0.16;
+    filter: grayscale(28%) contrast(0.95);
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .story::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--paper-light) 0%, rgba(251, 249, 244, 0) 30%, rgba(251, 249, 244, 0) 70%, var(--paper-light) 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .story > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  @media (max-width: 768px) {
+    .story::before {
+      background-size: 75vw auto;
+      background-position: right -10vw center;
+      opacity: 0.1;
+    }
   }
 
   .story__head {
