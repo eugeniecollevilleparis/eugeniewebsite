@@ -59,22 +59,18 @@ const line = isFr ? "À votre table." : "À votre table.";
     font-family: var(--font-display);
     font-style: italic;
     font-weight: 300;
-    font-size: clamp(1.5rem, 2.6vw, 2.6rem);
-    color: var(--ink);
+    font-size: clamp(1.7rem, 3vw, 3rem);
+    color: var(--paper);
     letter-spacing: -0.01em;
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    padding: 0.7rem 2rem;
-    border-radius: 0;
+    /* Subtle drop shadow so it reads on the photo without a pill background */
+    text-shadow:
+      0 1px 18px rgba(0, 0, 0, 0.45),
+      0 1px 3px rgba(0, 0, 0, 0.35);
   }
 
   @media (max-width: 600px) {
     .closing {
       height: 70vh;
-    }
-    .closing__line {
-      padding: 0.55rem 1.4rem;
     }
   }
 </style>
