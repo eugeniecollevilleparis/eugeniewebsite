@@ -1,12 +1,12 @@
 // ============================================
-// CONTENT — 1:1 reproduction of original site
-// Eugénie Colleville — Private Chef · Paris · London
+// CONTENT, 1:1 reproduction of original site
+// Eugénie Colleville, Private Chef · Paris · London
 // ============================================
 
 export const content = {
   en: {
     meta: {
-      title: "Eugénie Colleville — Private Chef · Paris · London",
+      title: "Eugénie Colleville, Private Chef · Paris · London",
       description:
         "Bespoke private chef experiences. Trained by Alain Ducasse. Serving private clients, UHNWI families and brands in London, Paris, the French Riviera and internationally.",
     },
@@ -87,13 +87,13 @@ export const content = {
       photo: "/images/eugnie-colleville-with-alain-ducasse.png",
       photoCaption: "With Alain Ducasse",
       p1Html:
-        "Originally from Paris, Eugénie trained with <strong>Alain Ducasse</strong> in Paris and at <strong>Kauri Cliffs</strong> in New Zealand, before joining <strong>Alain Ducasse at The Dorchester ★★★</strong> in London. Based in London, built in Paris and the French Riviera — and internationally — she brings gourmet French cuisine into the comfort of your home.",
+        "Originally from Paris, Eugénie trained with <strong>Alain Ducasse</strong> in Paris and at <strong>Kauri Cliffs</strong> in New Zealand, before joining <strong>Alain Ducasse at The Dorchester ★★★</strong> in London. Based in London, built in Paris and the French Riviera, and internationally, she brings gourmet French cuisine into the comfort of your home.",
       p2Html:
-        "With over a decade catering for <strong>VIP events, UHNWI families and royal households</strong> across London, Paris, US &amp; South America and beyond, she brings gourmet French cuisine — featuring seasonal luxury ingredients like truffle, lobster and fine seafood.",
+        "With over a decade catering for <strong>VIP events, UHNWI families and royal households</strong> across London, Paris, US &amp; South America and beyond, she brings gourmet French cuisine, featuring seasonal luxury ingredients like truffle, lobster and fine seafood.",
       p3:
-        "Expert in dietary requirements — Keto, Vegan, Gluten-free, Coeliac — and fluent in three languages.",
+        "Expert in dietary requirements, Keto, Vegan, Gluten-free, Coeliac, and fluent in three languages.",
       quote:
-        "A dish is more than just flavours — it's an emotion, a memory in the making.",
+        "A dish is more than just flavours, it's an emotion, a memory in the making.",
       quoteAuthor: "Eugénie Colleville",
       stats: [
         { n: "3★", l: "Michelin\nestablishments" },
@@ -115,16 +115,16 @@ export const content = {
       title: "Bespoke dining",
       titleEm: "experiences",
       intro:
-        "From intimate family dinners to grand events for hundreds — every service is entirely tailored around the season, the occasion, and your guests.",
+        "From intimate family dinners to grand events for hundreds, every service is entirely tailored around the season, the occasion, and your guests.",
       cta: "View work",
       items: [
         { n: "01", name: "Private Home Dining", desc: "Bespoke tasting menus prepared in your kitchen. Michelin-level cuisine, zero hosting stress.", thumb: "/images/hero.jpg" },
         { n: "02", name: "Events & Supperclubs", desc: "From intimate gatherings to 180+ guests. Fashion brands, gallery openings, magazine editors.", thumb: "/images/portfolio/tasting-duo.jpg" },
         { n: "03", name: "Household Chef", desc: "Full or part-time for UHNWI and royal families. Daily menus, dietary management, travel included.", thumb: "/images/portfolio/duck-cherry.jpg" },
         { n: "04", name: "Chalets & Villas", desc: "Seasonal placements in Courchevel, French Riviera and beyond. All meals, all diets.", thumb: null },
-        { n: "05", name: "Nutrition & Wellness", desc: "Personalised nutrition plans. KETO, Vegan, Gluten-free, Coeliac — every diet expertly handled.", thumb: "/images/portfolio/amuse-corn.jpg" },
+        { n: "05", name: "Nutrition & Wellness", desc: "Personalised nutrition plans. KETO, Vegan, Gluten-free, Coeliac, every diet expertly handled.", thumb: "/images/portfolio/amuse-corn.jpg" },
         { n: "06", name: "Pâtisserie & Cakes", desc: "Award-recognised pastry expertise. Custom celebration cakes and refined dessert menus.", thumb: "/images/portfolio/pastry-bundt.jpg", href: "/patisserie" },
-        { n: "07", name: "Designer Events", desc: "Bespoke catering for fashion houses, design studios and luxury brands. Showroom dinners, runway after-parties, editorial showcases and brand activations — composed to match the universe of the house.", thumb: "/images/portfolio/chef-amuse.jpg" },
+        { n: "07", name: "Designer Events", desc: "Bespoke catering for fashion houses, design studios and luxury brands. Showroom dinners, runway after-parties, editorial showcases and brand activations, composed to match the universe of the house.", thumb: "/images/portfolio/chef-amuse.jpg" },
       ],
       locations: ["London", "Paris", "French Riviera", "Ski Chalets", "US & South America", "New Zealand", "International"],
     },
@@ -133,7 +133,7 @@ export const content = {
       title: "Selected",
       titleEm: "work",
       intro:
-        "A visual selection from private dinners, brand events and seasonal residencies — every plate composed around the season and the guests.",
+        "A visual selection from private dinners, brand events and seasonal residencies, every plate composed around the season and the guests.",
       items: [
         { src: "/images/portfolio/chef-paris.jpg", title: "Plating in Paris", category: "Private Dining · Paris", span: "" },
         { src: "/images/hero.jpg", title: "Seared scallop, beurre blanc, caviar", category: "Private Dining", span: "" },
@@ -150,14 +150,14 @@ export const content = {
     },
     patisserie: {
       meta: {
-        title: "Pâtisserie — Eugénie Colleville · Paris",
+        title: "Pâtisserie, Eugénie Colleville · Paris",
         description: "Award-recognised pastry expertise. Custom celebration cakes and refined dessert menus by Eugénie Colleville.",
       },
       tag: "Pâtisserie & Cakes",
       title: "An ode to",
       titleEm: "the sweet table.",
       intro:
-        "Award-recognised pastry — bespoke celebration cakes, French classics revisited, and refined dessert menus composed around the season and the occasion.",
+        "Award-recognised pastry, bespoke celebration cakes, French classics revisited, and refined dessert menus composed around the season and the occasion.",
       back: "Back to home",
       cta: "Order a custom cake",
       ctaHref: "mailto:eugeniecolleville.paris@gmail.com?subject=Custom%20cake%20enquiry",
@@ -165,7 +165,7 @@ export const content = {
         { src: "/images/portfolio/pastry-bundt.jpg", title: "Vanilla bundt, passion fruit cream", category: "Signature" },
         { src: "/images/portfolio/pastry-paris-brest.jpg", title: "Paris-Brest, praline cream", category: "Classic" },
         { src: "/images/portfolio/pastry-strawberry.jpg", title: "Strawberry fraisier", category: "Seasonal · London" },
-        { src: "/images/portfolio/pastry-flower-cake.jpg", title: "Celebration cake — meringue blooms", category: "Birthday" },
+        { src: "/images/portfolio/pastry-flower-cake.jpg", title: "Celebration cake, meringue blooms", category: "Birthday" },
         { src: "/images/portfolio/pastry-tiramisu.jpg", title: "Tiramisu, the house way", category: "Signature" },
         { src: "/images/portfolio/pastry-pavlova.png", title: "Pavlova, raspberry heart", category: "Dessert" },
         { src: "/images/portfolio/pastry-chestnut.png", title: "Mont-blanc, chestnut & cream", category: "Seasonal" },
@@ -180,7 +180,7 @@ export const content = {
       items: [
         {
           pub: "Vogue UK",
-          text: "Featured in Vogue UK's guide to the private chef experience — the new way London's most discerning hosts entertain.",
+          text: "Featured in Vogue UK's guide to the private chef experience, the new way London's most discerning hosts entertain.",
           url: "https://www.vogue.co.uk/article/private-chef-experience",
         },
         {
@@ -210,18 +210,18 @@ export const content = {
       title: "From Paris,",
       titleEm: "with love",
       paragraphsHtml: [
-        "I am a French private chef, based in London. I studied Biochemistry, then Economics &amp; Management — a combination that shaped the way I think about food: precise, nutritional, and always mindful of value.",
-        "I like to challenge myself and exceed people's expectations. After training at a culinary school in Paris, I began my career with <strong>Alain Ducasse</strong>. In 2019, I came <strong>3rd place at the Rotary Pastry Competition</strong> — out of over 40 participants.",
+        "I am a French private chef, based in London. I studied Biochemistry, then Economics &amp; Management, a combination that shaped the way I think about food: precise, nutritional, and always mindful of value.",
+        "I like to challenge myself and exceed people's expectations. After training at a culinary school in Paris, I began my career with <strong>Alain Ducasse</strong>. In 2019, I came <strong>3rd place at the Rotary Pastry Competition</strong>, out of over 40 participants.",
         "I love to travel. I worked in New Zealand at <strong>Kauri Cliffs</strong>, a Relais &amp; Châteaux resort, before joining <strong>Alain Ducasse at The Dorchester ★★★</strong> in London.",
-        "Since then, I have worked exclusively in private settings — for <strong>VHNWI and royal families</strong> in London, chalets in <strong>Courchevel</strong>, villas on the <strong>French Riviera</strong>, and bespoke events across London and internationally.",
-        "There is nothing more fulfilling than satisfying a family through food. I believe it is the most important part of general well-being — and I bring that conviction to every table.",
+        "Since then, I have worked exclusively in private settings, for <strong>VHNWI and royal families</strong> in London, chalets in <strong>Courchevel</strong>, villas on the <strong>French Riviera</strong>, and bespoke events across London and internationally.",
+        "There is nothing more fulfilling than satisfying a family through food. I believe it is the most important part of general well-being, and I bring that conviction to every table.",
       ],
       quote:
-        "Food is the most important part of general well-being. I want to bring the very best — with care, precision, and a touch of Paris.",
+        "Food is the most important part of general well-being. I want to bring the very best, with care, precision, and a touch of Paris.",
       quoteAuthor: "Eugénie Colleville",
       thanksLabel: "With gratitude",
       thanksHtml:
-        "A special thank you to <strong>Chef Louis Taine</strong>, who trained me at <strong>Les Belles Envies</strong> — pioneering low glycaemic index pastry, with recipes approved by doctors. His teaching shaped my understanding of nutrition and precision in pastry from the very beginning.",
+        "A special thank you to <strong>Chef Louis Taine</strong>, who trained me at <strong>Les Belles Envies</strong>, pioneering low glycaemic index pastry, with recipes approved by doctors. His teaching shaped my understanding of nutrition and precision in pastry from the very beginning.",
     },
     footer: {
       copy: "© 2025 Eugénie Colleville · Private Chef & Catering",
@@ -233,7 +233,7 @@ export const content = {
 
   fr: {
     meta: {
-      title: "Eugénie Colleville — Chef privée · Paris · Londres",
+      title: "Eugénie Colleville, Chef privée · Paris · Londres",
       description:
         "Expérience de chef privée sur mesure. Formée par Alain Ducasse. Au service de clients privés, familles UHNWI et marques à Londres, Paris, sur la Côte d'Azur et à l'international.",
     },
@@ -316,10 +316,10 @@ export const content = {
       p1Html:
         "Originaire de Paris, Eugénie a débuté son parcours culinaire chez <strong>Alain Ducasse sur Seine</strong> avant de poursuivre au <strong>Kauri Cliffs</strong> en Nouvelle-Zélande et au <strong>Plaza Athénée</strong> à Paris. Basée à Chelsea, elle apporte la gastronomie française dans l'intimité de votre foyer.",
       p2Html:
-        "Avec plus d'une décennie au service d'<strong>événements VIP, de familles UHNWI et de familles royales</strong> à Londres, Paris, US &amp; South America et au-delà, elle propose une cuisine française gastronomique aux ingrédients de luxe — truffe, homard, fruits de mer.",
-      p3: "Experte en régimes alimentaires — Keto, Vegan, Sans gluten, Cœliaque — et trilingue.",
+        "Avec plus d'une décennie au service d'<strong>événements VIP, de familles UHNWI et de familles royales</strong> à Londres, Paris, US &amp; South America et au-delà, elle propose une cuisine française gastronomique aux ingrédients de luxe, truffe, homard, fruits de mer.",
+      p3: "Experte en régimes alimentaires, Keto, Vegan, Sans gluten, Cœliaque, et trilingue.",
       quote:
-        "« Un plat, c'est bien plus que des saveurs — c'est une émotion, un souvenir qui se crée. »",
+        "« Un plat, c'est bien plus que des saveurs, c'est une émotion, un souvenir qui se crée. »",
       quoteAuthor: "Eugénie Colleville",
       stats: [
         { n: "3★", l: "Établissements\nMichelin" },
@@ -341,16 +341,16 @@ export const content = {
       title: "Des expériences culinaires",
       titleEm: "sur mesure",
       intro:
-        "Des dîners en famille aux grands événements — chaque prestation est entièrement personnalisée selon la saison, l'occasion et vos invités.",
+        "Des dîners en famille aux grands événements, chaque prestation est entièrement personnalisée selon la saison, l'occasion et vos invités.",
       cta: "Voir le travail",
       items: [
         { n: "01", name: "Dîners privés à domicile", desc: "Menus dégustation préparés dans votre cuisine. Gastronomie de niveau Michelin, zéro stress.", thumb: "/images/hero.jpg" },
         { n: "02", name: "Événements & Supperclubs", desc: "De réunions intimes à 180+ convives. Marques de mode, vernissages, rédactions de magazines.", thumb: "/images/portfolio/tasting-duo.jpg" },
         { n: "03", name: "Cheffe de maison", desc: "Temps plein ou partiel pour familles UHNWI et royales. Menus quotidiens, gestion des régimes, déplacements inclus.", thumb: "/images/portfolio/duck-cherry.jpg" },
         { n: "04", name: "Chalets & Villas", desc: "Missions saisonnières à Courchevel, Côte d'Azur et ailleurs. Tous repas, tous régimes.", thumb: null },
-        { n: "05", name: "Nutrition & Bien-être", desc: "Plans nutritionnels personnalisés. KETO, Vegan, Sans gluten, Cœliaque — chaque régime maîtrisé.", thumb: "/images/portfolio/amuse-corn.jpg" },
+        { n: "05", name: "Nutrition & Bien-être", desc: "Plans nutritionnels personnalisés. KETO, Vegan, Sans gluten, Cœliaque, chaque régime maîtrisé.", thumb: "/images/portfolio/amuse-corn.jpg" },
         { n: "06", name: "Pâtisserie & Gâteaux", desc: "Expertise pâtissière primée. Gâteaux de célébration sur mesure et menus desserts raffinés.", thumb: "/images/portfolio/pastry-bundt.jpg", href: "/fr/patisserie" },
-        { n: "07", name: "Événements Designer", desc: "Traiteur sur mesure pour maisons de mode, studios de design et marques de luxe. Dîners showroom, after-parties de défilé, événements éditoriaux et activations de marque — composés pour épouser l'univers de la maison.", thumb: "/images/portfolio/chef-amuse.jpg" },
+        { n: "07", name: "Événements Designer", desc: "Traiteur sur mesure pour maisons de mode, studios de design et marques de luxe. Dîners showroom, after-parties de défilé, événements éditoriaux et activations de marque, composés pour épouser l'univers de la maison.", thumb: "/images/portfolio/chef-amuse.jpg" },
       ],
       locations: ["Londres", "Paris", "Côte d'Azur", "Chalets de ski", "US & Amérique du Sud", "Nouvelle-Zélande", "International"],
     },
@@ -359,7 +359,7 @@ export const content = {
       title: "Sélection",
       titleEm: "de travaux",
       intro:
-        "Une sélection visuelle issue de dîners privés, événements de marque et résidences saisonnières — chaque assiette composée autour de la saison et des invités.",
+        "Une sélection visuelle issue de dîners privés, événements de marque et résidences saisonnières, chaque assiette composée autour de la saison et des invités.",
       items: [
         { src: "/images/portfolio/chef-paris.jpg", title: "Dressage à Paris", category: "Dîner privé · Paris", span: "" },
         { src: "/images/hero.jpg", title: "Saint-Jacques, beurre blanc, caviar", category: "Dîner privé", span: "" },
@@ -376,14 +376,14 @@ export const content = {
     },
     patisserie: {
       meta: {
-        title: "Pâtisserie — Eugénie Colleville · Paris",
+        title: "Pâtisserie, Eugénie Colleville · Paris",
         description: "Expertise pâtissière primée. Gâteaux de célébration sur mesure et menus desserts raffinés par Eugénie Colleville.",
       },
       tag: "Pâtisserie & Gâteaux",
       title: "Une ode à",
       titleEm: "la table sucrée.",
       intro:
-        "Pâtisserie primée — gâteaux de célébration sur mesure, classiques français revisités et menus desserts raffinés composés autour de la saison et de l'occasion.",
+        "Pâtisserie primée, gâteaux de célébration sur mesure, classiques français revisités et menus desserts raffinés composés autour de la saison et de l'occasion.",
       back: "Retour à l'accueil",
       cta: "Commander un gâteau sur mesure",
       ctaHref: "mailto:eugeniecolleville.paris@gmail.com?subject=Demande%20g%C3%A2teau%20sur%20mesure",
@@ -391,7 +391,7 @@ export const content = {
         { src: "/images/portfolio/pastry-bundt.jpg", title: "Bundt vanille, crème fruit de la passion", category: "Signature" },
         { src: "/images/portfolio/pastry-paris-brest.jpg", title: "Paris-Brest, crème praliné", category: "Classique" },
         { src: "/images/portfolio/pastry-strawberry.jpg", title: "Fraisier", category: "Saison · Londres" },
-        { src: "/images/portfolio/pastry-flower-cake.jpg", title: "Gâteau de célébration — meringues fleuries", category: "Anniversaire" },
+        { src: "/images/portfolio/pastry-flower-cake.jpg", title: "Gâteau de célébration, meringues fleuries", category: "Anniversaire" },
         { src: "/images/portfolio/pastry-tiramisu.jpg", title: "Tiramisu, version maison", category: "Signature" },
         { src: "/images/portfolio/pastry-pavlova.png", title: "Pavlova, cœur framboise", category: "Dessert" },
         { src: "/images/portfolio/pastry-chestnut.png", title: "Mont-blanc, marron & crème", category: "Saison" },
@@ -406,7 +406,7 @@ export const content = {
       items: [
         {
           pub: "Vogue UK",
-          text: "Mise en avant dans le guide Vogue UK sur l'expérience du chef privé — la nouvelle façon de recevoir des hôtes londoniens les plus exigeants.",
+          text: "Mise en avant dans le guide Vogue UK sur l'expérience du chef privé, la nouvelle façon de recevoir des hôtes londoniens les plus exigeants.",
           url: "https://www.vogue.co.uk/article/private-chef-experience",
         },
         {
@@ -436,18 +436,18 @@ export const content = {
       title: "De Paris,",
       titleEm: "avec amour",
       paragraphsHtml: [
-        "Je suis une chef privée française, basée à Londres. J'ai étudié la Biochimie, puis l'Économie &amp; Gestion — une combinaison qui a façonné ma façon de penser la cuisine : précise, nutritionnelle, et toujours attentive à la valeur.",
-        "J'aime me challenger et dépasser les attentes. Après une formation à une école culinaire à Paris, j'ai débuté ma carrière avec <strong>Alain Ducasse</strong>. En 2019, j'ai obtenu la <strong>3e place au Rotary Pastry Competition</strong> — sur plus de 40 participants.",
+        "Je suis une chef privée française, basée à Londres. J'ai étudié la Biochimie, puis l'Économie &amp; Gestion, une combinaison qui a façonné ma façon de penser la cuisine : précise, nutritionnelle, et toujours attentive à la valeur.",
+        "J'aime me challenger et dépasser les attentes. Après une formation à une école culinaire à Paris, j'ai débuté ma carrière avec <strong>Alain Ducasse</strong>. En 2019, j'ai obtenu la <strong>3e place au Rotary Pastry Competition</strong>, sur plus de 40 participants.",
         "J'aime voyager. J'ai travaillé en Nouvelle-Zélande au <strong>Kauri Cliffs</strong>, un Relais &amp; Châteaux, avant de rejoindre <strong>Alain Ducasse at The Dorchester ★★★</strong> à Londres.",
-        "Depuis, j'ai travaillé exclusivement en cadre privé — pour des <strong>familles VHNWI et royales</strong> à Londres, des chalets à <strong>Courchevel</strong>, des villas sur la <strong>Côte d'Azur</strong>, et des événements sur mesure à Londres et à l'international.",
-        "Rien n'est plus accomplissant que de combler une famille par la cuisine. C'est, à mes yeux, la part la plus importante du bien-être — et c'est cette conviction que j'apporte à chaque table.",
+        "Depuis, j'ai travaillé exclusivement en cadre privé, pour des <strong>familles VHNWI et royales</strong> à Londres, des chalets à <strong>Courchevel</strong>, des villas sur la <strong>Côte d'Azur</strong>, et des événements sur mesure à Londres et à l'international.",
+        "Rien n'est plus accomplissant que de combler une famille par la cuisine. C'est, à mes yeux, la part la plus importante du bien-être, et c'est cette conviction que j'apporte à chaque table.",
       ],
       quote:
-        "La cuisine est la part la plus importante du bien-être. Je veux apporter le meilleur — avec soin, précision, et une touche de Paris.",
+        "La cuisine est la part la plus importante du bien-être. Je veux apporter le meilleur, avec soin, précision, et une touche de Paris.",
       quoteAuthor: "Eugénie Colleville",
       thanksLabel: "Avec gratitude",
       thanksHtml:
-        "Un merci tout particulier à <strong>Chef Louis Taine</strong>, qui m'a formée chez <strong>Les Belles Envies</strong> — pionnier de la pâtisserie à index glycémique bas, avec des recettes approuvées par les médecins. Son enseignement a façonné ma compréhension de la nutrition et de la précision en pâtisserie dès le début.",
+        "Un merci tout particulier à <strong>Chef Louis Taine</strong>, qui m'a formée chez <strong>Les Belles Envies</strong>, pionnier de la pâtisserie à index glycémique bas, avec des recettes approuvées par les médecins. Son enseignement a façonné ma compréhension de la nutrition et de la précision en pâtisserie dès le début.",
     },
     footer: {
       copy: "© 2025 Eugénie Colleville · Chef privée & traiteur",
