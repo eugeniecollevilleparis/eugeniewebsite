@@ -145,7 +145,6 @@ export const content = {
         { src: "/images/portfolio/chef-caviar.jpg", title: "Caviar service", category: "Cocktail", span: "" },
         { src: "/images/portfolio/chef-amuse.jpg", title: "Plating amuse-bouches", category: "Cocktail · Paris", span: "" },
         { src: "/images/portfolio/event-service.jpg", title: "Service in motion", category: "Event · London", span: "" },
-        { src: "/images/portfolio/dumplings.jpg", title: "House dumplings, chili oil", category: "Private Dining", span: "" },
       ],
       view: "View",
     },
@@ -212,7 +211,7 @@ export const content = {
       titleEm: "with love",
       paragraphsHtml: [
         "I am a French private chef, based in London. I studied Biochemistry, then Economics &amp; Management — a combination that shaped the way I think about food: precise, nutritional, and always mindful of value.",
-        "I like to challenge myself and exceed people's expectations. After training at a culinary school in Paris, I began my career with <strong>Alain Ducasse</strong> — one of the most celebrated chefs in the world. In 2019, I came <strong>3rd place at the Rotary Pastry Competition</strong> — out of over 40 participants.",
+        "I like to challenge myself and exceed people's expectations. After training at a culinary school in Paris, I began my career with <strong>Alain Ducasse</strong>. In 2019, I came <strong>3rd place at the Rotary Pastry Competition</strong> — out of over 40 participants.",
         "I love to travel. I worked in New Zealand at <strong>Kauri Cliffs</strong>, a Relais &amp; Châteaux resort, before joining <strong>Alain Ducasse at The Dorchester ★★★</strong> in London.",
         "Since then, I have worked exclusively in private settings — for <strong>VHNWI and royal families</strong> in London, chalets in <strong>Courchevel</strong>, villas on the <strong>French Riviera</strong>, and bespoke events across London and internationally.",
         "There is nothing more fulfilling than satisfying a family through food. I believe it is the most important part of general well-being — and I bring that conviction to every table.",
@@ -372,7 +371,6 @@ export const content = {
         { src: "/images/portfolio/chef-caviar.jpg", title: "Service caviar", category: "Cocktail", span: "" },
         { src: "/images/portfolio/chef-amuse.jpg", title: "Dressage amuse-bouches", category: "Cocktail · Paris", span: "" },
         { src: "/images/portfolio/event-service.jpg", title: "Service en action", category: "Événement · Londres", span: "" },
-        { src: "/images/portfolio/dumplings.jpg", title: "Raviolis maison, huile pimentée", category: "Dîner privé", span: "" },
       ],
       view: "Voir",
     },
@@ -439,7 +437,7 @@ export const content = {
       titleEm: "avec amour",
       paragraphsHtml: [
         "Je suis une chef privée française, basée à Londres. J'ai étudié la Biochimie, puis l'Économie &amp; Gestion — une combinaison qui a façonné ma façon de penser la cuisine : précise, nutritionnelle, et toujours attentive à la valeur.",
-        "J'aime me challenger et dépasser les attentes. Après une formation à une école culinaire à Paris, j'ai débuté ma carrière avec <strong>Alain Ducasse</strong> — l'un des chefs les plus célébrés au monde. En 2019, j'ai obtenu la <strong>3e place au Rotary Pastry Competition</strong> — sur plus de 40 participants.",
+        "J'aime me challenger et dépasser les attentes. Après une formation à une école culinaire à Paris, j'ai débuté ma carrière avec <strong>Alain Ducasse</strong>. En 2019, j'ai obtenu la <strong>3e place au Rotary Pastry Competition</strong> — sur plus de 40 participants.",
         "J'aime voyager. J'ai travaillé en Nouvelle-Zélande au <strong>Kauri Cliffs</strong>, un Relais &amp; Châteaux, avant de rejoindre <strong>Alain Ducasse at The Dorchester ★★★</strong> à Londres.",
         "Depuis, j'ai travaillé exclusivement en cadre privé — pour des <strong>familles VHNWI et royales</strong> à Londres, des chalets à <strong>Courchevel</strong>, des villas sur la <strong>Côte d'Azur</strong>, et des événements sur mesure à Londres et à l'international.",
         "Rien n'est plus accomplissant que de combler une famille par la cuisine. C'est, à mes yeux, la part la plus importante du bien-être — et c'est cette conviction que j'apporte à chaque table.",
