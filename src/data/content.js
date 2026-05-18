@@ -35,10 +35,10 @@ export const content = {
     pressBar: {
       label: "As seen in",
       items: [
-        { name: "Vogue UK", url: "https://www.vogue.co.uk/article/private-chef-experience" },
-        { name: "Hello Magazine", url: "https://www.instagram.com/p/DS4waTogvA0/?img_index=1" },
+        { name: "Vogue UK", url: null },
+        { name: "Hello Magazine", url: null },
         { name: "The Times", url: null },
-        { name: "Foodism", url: "https://foodism.co.uk/features/interviews/hala-sayess-honesty-best-policy/" },
+        { name: "Foodism", url: null },
         { name: "Givenchy", url: null },
         { name: "The Real Housewives", url: null },
       ],
@@ -105,8 +105,8 @@ export const content = {
     partners: {
       label: "Trained & worked with",
       items: [
-        { name: "Brimoncourt", category: "Champagne", url: "https://brimoncourt.com", logo: "/images/brimoncourt-white.png", dark: true },
         { name: "Château Laffitte Carcasset", category: "Vin · Saint-Estèphe", url: "https://laffittecarcasset.com/en/", logo: "/images/chteau-laffitte-carcasset.png" },
+        { name: "Brimoncourt", category: "Champagne", url: "https://brimoncourt.com", logo: "/images/brimoncourt-white.png", dark: true },
         { name: "Cut Caviar", category: "Caviar", url: "https://cutcaviar.com", logo: "/images/cut-caviar.png" },
       ],
     },
@@ -260,10 +260,10 @@ export const content = {
     pressBar: {
       label: "Dans les médias",
       items: [
-        { name: "Vogue UK", url: "https://www.vogue.co.uk/article/private-chef-experience" },
-        { name: "Hello Magazine", url: "https://www.instagram.com/p/DS4waTogvA0/?img_index=1" },
+        { name: "Vogue UK", url: null },
+        { name: "Hello Magazine", url: null },
         { name: "The Times", url: null },
-        { name: "Foodism", url: "https://foodism.co.uk/features/interviews/hala-sayess-honesty-best-policy/" },
+        { name: "Foodism", url: null },
         { name: "Givenchy", url: null },
         { name: "The Real Housewives", url: null },
       ],
@@ -329,8 +329,8 @@ export const content = {
     partners: {
       label: "Formée & collaborations",
       items: [
-        { name: "Brimoncourt", category: "Champagne", url: "https://brimoncourt.com", logo: "/images/brimoncourt-white.png", dark: true },
         { name: "Château Laffitte Carcasset", category: "Vin · Saint-Estèphe", url: "https://laffittecarcasset.com/en/", logo: "/images/chteau-laffitte-carcasset.png" },
+        { name: "Brimoncourt", category: "Champagne", url: "https://brimoncourt.com", logo: "/images/brimoncourt-white.png", dark: true },
         { name: "Cut Caviar", category: "Caviar", url: "https://cutcaviar.com", logo: "/images/cut-caviar.png" },
       ],
     },
