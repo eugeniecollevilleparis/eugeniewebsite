@@ -44,13 +44,13 @@ const t = content[lang].contact;
     isolation: isolate;
   }
 
-  /* Wagyu + lobster + caviar — anchored to the left, more visible than the Story watermark */
+  /* Wagyu + lobster + caviar — anchored to the right, more visible than the Story watermark */
   .contact::before {
     content: "";
     position: absolute;
     inset: 0;
     background-image: url("/images/bg-wagyu.jpg");
-    background-position: left center;
+    background-position: right center;
     background-repeat: no-repeat;
     background-size: clamp(380px, 38vw, 620px) auto;
     opacity: 0.55;
@@ -77,7 +77,7 @@ const t = content[lang].contact;
   @media (max-width: 768px) {
     .contact::before {
       background-size: 75vw auto;
-      background-position: left -10vw center;
+      background-position: right -10vw center;
       opacity: 0.35;
     }
   }
