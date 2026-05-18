@@ -105,7 +105,7 @@ export const content = {
     partners: {
       label: "Trained & worked with",
       items: [
-        { name: "Brimoncourt", category: "Champagne", url: "https://brimoncourt.com", logo: "/images/brimoncourt.jpg" },
+        { name: "Brimoncourt", category: "Champagne", url: "https://brimoncourt.com", logo: "/images/brimoncourt-white.png", dark: true },
         { name: "Château Laffitte Carcasset", category: "Vin · Saint-Estèphe", url: "https://laffittecarcasset.com/en/", logo: "/images/chteau-laffitte-carcasset.png" },
         { name: "Cut Caviar", category: "Caviar", url: "https://cutcaviar.com", logo: "/images/cut-caviar.png" },
       ],
@@ -331,7 +331,7 @@ export const content = {
     partners: {
       label: "Formée & collaborations",
       items: [
-        { name: "Brimoncourt", category: "Champagne", url: "https://brimoncourt.com", logo: "/images/brimoncourt.jpg" },
+        { name: "Brimoncourt", category: "Champagne", url: "https://brimoncourt.com", logo: "/images/brimoncourt-white.png", dark: true },
         { name: "Château Laffitte Carcasset", category: "Vin · Saint-Estèphe", url: "https://laffittecarcasset.com/en/", logo: "/images/chteau-laffitte-carcasset.png" },
         { name: "Cut Caviar", category: "Caviar", url: "https://cutcaviar.com", logo: "/images/cut-caviar.png" },
       ],

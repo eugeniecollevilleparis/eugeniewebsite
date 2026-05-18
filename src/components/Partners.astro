@@ -10,7 +10,14 @@ const t = content[lang].partners;
 
     <div class="partners__grid">
       {t.items.map((p, i) => (
-        <a href={p.url} target="_blank" rel="noopener" class="partner-card" data-reveal style={`--reveal-delay:${0.1 + i * 0.08}s`}>
+        <a
+          href={p.url}
+          target="_blank"
+          rel="noopener"
+          class:list={["partner-card", p.dark && "partner-card--dark"]}
+          data-reveal
+          style={`--reveal-delay:${0.1 + i * 0.08}s`}
+        >
           <div class="partner-card__logo">
             <img src={p.logo} alt={p.name} loading="lazy" />
           </div>
@@ -111,6 +118,31 @@ const t = content[lang].partners;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: rgba(15, 13, 12, 0.45);
+  }
+
+  /* Dark variant — white logo on ink background */
+  .partner-card--dark {
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+
+  .partner-card--dark .partner-card__logo img {
+    mix-blend-mode: normal;
+    filter: none;
+    opacity: 0.95;
+  }
+
+  .partner-card--dark:hover .partner-card__logo img {
+    filter: none;
+    opacity: 1;
+  }
+
+  .partner-card--dark .partner-card__name {
+    color: var(--paper);
+  }
+
+  .partner-card--dark .partner-card__cat {
+    color: rgba(245, 241, 234, 0.55);
   }
 
   @media (max-width: 768px) {
