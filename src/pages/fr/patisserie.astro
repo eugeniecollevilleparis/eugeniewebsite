@@ -177,5 +177,5 @@ const t = content[lang].patisserie;
   .lightbox__nav--prev { left: clamp(1rem, 3vw, 2rem); top: 50%; transform: translateY(-50%); }
   .lightbox__nav--next { right: clamp(1rem, 3vw, 2rem); top: 50%; transform: translateY(-50%); }
   @media (max-width: 900px) { .pp-grid { grid-template-columns: repeat(2, 1fr); } .lightbox__nav { width: 38px; height: 38px; } }
-  @media (max-width: 560px) { .pp-grid { grid-template-columns: 1fr; gap: 0.5rem; } }
+  @media (max-width: 560px) { .pp-grid { grid-template-columns: repeat(2, 1fr); gap: 0.35rem; } .pp-item { aspect-ratio: 1 / 1; } .pp-item__caption { padding: 0.75rem 0.6rem; } .pp-item__title { font-size: 0.85rem; } .pp-item__category { font-size: 0.5rem; } }
 </style>

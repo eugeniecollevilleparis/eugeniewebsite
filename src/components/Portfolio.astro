@@ -418,16 +418,29 @@ const t = content[lang].portfolio;
     }
   }
 
+  /* Mosaic on mobile: keep 2 columns, tighter gap, square-ish tiles */
   @media (max-width: 560px) {
     .portfolio__grid {
-      grid-template-columns: 1fr;
-      gap: 0.5rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.35rem;
+    }
+    .pf-item {
+      aspect-ratio: 1 / 1;
     }
     .pf-item--wide,
     .pf-item--tall {
       grid-column: auto;
       grid-row: auto;
-      aspect-ratio: 4 / 5;
+      aspect-ratio: 1 / 1;
+    }
+    .pf-item__caption {
+      padding: 0.75rem 0.6rem;
+    }
+    .pf-item__title {
+      font-size: 0.85rem;
+    }
+    .pf-item__category {
+      font-size: 0.5rem;
     }
   }
 </style>
