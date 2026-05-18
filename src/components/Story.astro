@@ -42,7 +42,7 @@ const t = content[lang].story;
 
   /* Tartare + caviar photo as a discreet watermark on the right side
      — radial mask attenuates the edges so only the plate stays visible. */
-  /* Tartare + caviar photo — anchored to the LEFT, more transparent */
+  /* Tartare + caviar photo — anchored to the LEFT, clearly visible */
   .story::before {
     content: "";
     position: absolute;
@@ -51,8 +51,8 @@ const t = content[lang].story;
     background-position: left center;
     background-repeat: no-repeat;
     background-size: clamp(380px, 38vw, 620px) auto;
-    opacity: 0.1;
-    filter: grayscale(28%) contrast(0.95);
+    opacity: 0.45;
+    filter: grayscale(15%) contrast(0.98);
     mix-blend-mode: multiply;
     pointer-events: none;
     z-index: 0;
