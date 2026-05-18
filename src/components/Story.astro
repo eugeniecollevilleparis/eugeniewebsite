@@ -40,7 +40,8 @@ const t = content[lang].story;
     isolation: isolate;
   }
 
-  /* Tartare + caviar photo as a discreet watermark on the right side */
+  /* Tartare + caviar photo as a discreet watermark on the right side
+     — radial mask attenuates the edges so only the plate stays visible. */
   .story::before {
     content: "";
     position: absolute;
@@ -48,21 +49,27 @@ const t = content[lang].story;
     background-image: url("/images/bg-tartare.jpg");
     background-position: right center;
     background-repeat: no-repeat;
-    background-size: clamp(360px, 36vw, 580px) auto;
-    opacity: 0.16;
-    filter: grayscale(28%) contrast(0.95);
+    background-size: clamp(420px, 42vw, 680px) auto;
+    opacity: 0.26;
+    filter: grayscale(20%) contrast(0.96);
     mix-blend-mode: multiply;
     pointer-events: none;
     z-index: 0;
-  }
-
-  .story::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, var(--paper-light) 0%, rgba(251, 249, 244, 0) 30%, rgba(251, 249, 244, 0) 70%, var(--paper-light) 100%);
-    pointer-events: none;
-    z-index: 1;
+    /* Radial mask centered on where the plate sits → fades edges away */
+    -webkit-mask-image: radial-gradient(
+      ellipse at right 18% center,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.85) 22%,
+      rgba(0, 0, 0, 0.4) 45%,
+      rgba(0, 0, 0, 0) 65%
+    );
+    mask-image: radial-gradient(
+      ellipse at right 18% center,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.85) 22%,
+      rgba(0, 0, 0, 0.4) 45%,
+      rgba(0, 0, 0, 0) 65%
+    );
   }
 
   .story > * {
@@ -72,9 +79,9 @@ const t = content[lang].story;
 
   @media (max-width: 768px) {
     .story::before {
-      background-size: 75vw auto;
-      background-position: right -10vw center;
-      opacity: 0.1;
+      background-size: 80vw auto;
+      background-position: right -15vw center;
+      opacity: 0.16;
     }
   }
 

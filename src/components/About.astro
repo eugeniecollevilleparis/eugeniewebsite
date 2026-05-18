@@ -60,7 +60,8 @@ const t = content[lang].about;
     isolation: isolate;
   }
 
-  /* Discreet wagyu+lobster+caviar watermark on the left side */
+  /* Wagyu+lobster+caviar watermark on the left side
+     — radial mask attenuates the edges so only the bowl stays visible. */
   .about::before {
     content: "";
     position: absolute;
@@ -68,21 +69,26 @@ const t = content[lang].about;
     background-image: url("/images/bg-wagyu.jpg");
     background-position: left center;
     background-repeat: no-repeat;
-    background-size: clamp(360px, 36vw, 580px) auto;
-    opacity: 0.16;
-    filter: grayscale(28%) contrast(0.95);
+    background-size: clamp(420px, 42vw, 680px) auto;
+    opacity: 0.26;
+    filter: grayscale(20%) contrast(0.96);
     mix-blend-mode: multiply;
     pointer-events: none;
     z-index: 0;
-  }
-
-  .about::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, var(--paper-light) 0%, rgba(251, 249, 244, 0) 30%, rgba(251, 249, 244, 0) 70%, var(--paper-light) 100%);
-    pointer-events: none;
-    z-index: 1;
+    -webkit-mask-image: radial-gradient(
+      ellipse at left 18% center,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.85) 22%,
+      rgba(0, 0, 0, 0.4) 45%,
+      rgba(0, 0, 0, 0) 65%
+    );
+    mask-image: radial-gradient(
+      ellipse at left 18% center,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.85) 22%,
+      rgba(0, 0, 0, 0.4) 45%,
+      rgba(0, 0, 0, 0) 65%
+    );
   }
 
   .about > * {
@@ -92,9 +98,9 @@ const t = content[lang].about;
 
   @media (max-width: 768px) {
     .about::before {
-      background-size: 75vw auto;
-      background-position: left -10vw center;
-      opacity: 0.1;
+      background-size: 80vw auto;
+      background-position: left -15vw center;
+      opacity: 0.16;
     }
   }
 
