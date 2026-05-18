@@ -41,6 +41,45 @@ const t = content[lang].contact;
     align-items: center;
     border-top: 1px solid var(--rule-soft);
     border-bottom: 1px solid var(--rule-soft);
+    isolation: isolate;
+  }
+
+  /* Wagyu + lobster + caviar — sits under the title, more visible than the Story watermark */
+  .contact::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/images/bg-wagyu.jpg");
+    background-position: center 78%;
+    background-repeat: no-repeat;
+    background-size: clamp(280px, 32vw, 460px) auto;
+    opacity: 0.55;
+    filter: grayscale(15%) contrast(0.98);
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .contact::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at center 78%, transparent 0%, transparent 25%, var(--paper-light) 75%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .contact > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  @media (max-width: 768px) {
+    .contact::before {
+      background-size: 70vw auto;
+      opacity: 0.4;
+    }
   }
 
   .contact__inner {
