@@ -12,13 +12,14 @@ const isFr = lang === "fr";
     </a>
 
     <nav class="nav__links" aria-label="Primary">
-      <a href="#clients">{t.nav.clients}</a>
-      <a href="#about">{t.nav.about}</a>
-      <a href="#services">{t.nav.services}</a>
-      <a href="#portfolio">{t.nav.portfolio}</a>
-      <a href="#press">{t.nav.press}</a>
-      <a href="#contact">{t.nav.contact}</a>
-      <a href="#story">{t.nav.story}</a>
+      <a href={isFr ? "/fr#clients" : "/#clients"}>{t.nav.clients}</a>
+      <a href={isFr ? "/fr#about" : "/#about"}>{t.nav.about}</a>
+      <a href={isFr ? "/fr#services" : "/#services"}>{t.nav.services}</a>
+      <a href={isFr ? "/fr#portfolio" : "/#portfolio"}>{t.nav.portfolio}</a>
+      <a href={isFr ? "/fr/patisserie" : "/patisserie"}>{t.nav.patisserie}</a>
+      <a href={isFr ? "/fr#press" : "/#press"}>{t.nav.press}</a>
+      <a href={isFr ? "/fr#contact" : "/#contact"}>{t.nav.contact}</a>
+      <a href={isFr ? "/fr#story" : "/#story"}>{t.nav.story}</a>
     </nav>
 
     <div class="nav__lang">
@@ -37,13 +38,14 @@ const isFr = lang === "fr";
 <!-- Mobile menu -->
 <div class="mobile-menu" data-mobile-menu aria-hidden="true">
   <nav class="mobile-menu__inner">
-    <a href="#clients" data-close-menu>{t.nav.clients}</a>
-    <a href="#about" data-close-menu>{t.nav.about}</a>
-    <a href="#services" data-close-menu>{t.nav.services}</a>
-    <a href="#portfolio" data-close-menu>{t.nav.portfolio}</a>
-    <a href="#press" data-close-menu>{t.nav.press}</a>
-    <a href="#contact" data-close-menu>{t.nav.contact}</a>
-    <a href="#story" data-close-menu>{t.nav.story}</a>
+    <a href={isFr ? "/fr#clients" : "/#clients"} data-close-menu>{t.nav.clients}</a>
+    <a href={isFr ? "/fr#about" : "/#about"} data-close-menu>{t.nav.about}</a>
+    <a href={isFr ? "/fr#services" : "/#services"} data-close-menu>{t.nav.services}</a>
+    <a href={isFr ? "/fr#portfolio" : "/#portfolio"} data-close-menu>{t.nav.portfolio}</a>
+    <a href={isFr ? "/fr/patisserie" : "/patisserie"} data-close-menu>{t.nav.patisserie}</a>
+    <a href={isFr ? "/fr#press" : "/#press"} data-close-menu>{t.nav.press}</a>
+    <a href={isFr ? "/fr#contact" : "/#contact"} data-close-menu>{t.nav.contact}</a>
+    <a href={isFr ? "/fr#story" : "/#story"} data-close-menu>{t.nav.story}</a>
     <div class="mobile-menu__lang">
       <a href="/">EN</a>
       <span>·</span>
@@ -123,10 +125,10 @@ const isFr = lang === "fr";
 
   .nav__links {
     display: flex;
-    gap: 2rem;
+    gap: 1.4rem;
     justify-content: center;
-    font-size: 0.68rem;
-    letter-spacing: 0.25em;
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
   }
 

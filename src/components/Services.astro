@@ -18,7 +18,7 @@ const t = content[lang].services;
     <ol class="services__list">
       {t.items.map((svc, i) => (
         <li class="svc-li" data-reveal style={`--reveal-delay:${0.1 + i * 0.06}s`}>
-          <a class="svc" href="#portfolio">
+          <a class="svc" href={svc.href ?? "#portfolio"}>
             <span class="svc__num">{svc.n}</span>
             <div class="svc__body">
               <h3 class="svc__title">{svc.name}</h3>
