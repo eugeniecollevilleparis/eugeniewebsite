@@ -14,7 +14,6 @@ export const content = {
       clients: "Clients",
       about: "About",
       services: "Services",
-      catalogue: "Catalogue",
       portfolio: "Portfolio",
       press: "Press",
       contact: "Contact",
@@ -126,51 +125,6 @@ export const content = {
       ],
       locations: ["London", "Paris", "French Riviera", "Ski Chalets", "US & South America", "New Zealand", "International"],
     },
-    catalogue: {
-      tag: "Catalogue",
-      title: "A Considered",
-      titleEm: "journey.",
-      intro:
-        "A travel-led canapé experience — each piece a destination, each bite a memory. Composed for receptions, brand events, and intimate gatherings. Bespoke menus available on request.",
-      courses: [
-        {
-          label: "Course One",
-          title: "Savoury Canapés",
-          subtitle: "Five pieces per guest · a journey through signature destinations",
-          items: [
-            { i: "i", place: "Tuscany", name: "Truffled Pecorino Tartlet", desc: "Aged pecorino, rosemary honey, white peach shaving · pâte sablée", tag: "Cold" },
-            { i: "ii", place: "The Cyclades", name: "Slow-Confit Feta Spoon", desc: "Thyme-confit feta, cucumber pearl, Kalamata olive, Amalfi lemon oil", tag: "Cold" },
-            { i: "iii", place: "Marrakech", name: "Crispy Lamb & Apricot Brick", desc: "Slow-braised lamb shoulder, apricot, ras el hanout · mint yoghurt", tag: "Served warm" },
-            { i: "iv", place: "Méribel", name: "Beaufort Sablé", desc: "Aged Beaufort cheese sablé, génépi-confit onion, candied walnut", tag: "Cold" },
-            { i: "v", place: "Botswana", name: "Beef Tartare, Mild Piri-Piri", desc: "Hand-cut Aberdeen Angus tartare, charcoal crouton, micro-coriander", tag: "Cold" },
-          ],
-        },
-        {
-          label: "Course Two",
-          title: "Signature Mignardise",
-          subtitle: "One signature sweet bite per guest · closing the journey in Paris",
-          items: [
-            { i: "i", place: "Paris · House Signature", name: "Signature Macaron — Vanilla or Raspberry-Rose", desc: "Crisp Parisian shell · choice of Madagascar vanilla bean cream or whipped rose ganache with fresh raspberry centre · flavour to be confirmed at booking", tag: "Signature" },
-          ],
-        },
-      ],
-      pricing: {
-        label: "Investment",
-        from: "From £55 per guest",
-        note: "Fully turnkey — platters, verrines, napkins & accessories included. Transport quoted separately. VAT not applicable.",
-      },
-      cta: {
-        label: "Request a personalised menu",
-        href: "mailto:eugeniecolleville.paris@gmail.com?subject=Personalised%20menu%20enquiry",
-      },
-      otherMenusLabel: "Other menus on request",
-      otherMenus: [
-        "Bespoke tasting menus",
-        "Seasonal dinner parties",
-        "Pastry & celebration cakes",
-        "Wellness & dietary menus",
-      ],
-    },
     portfolio: {
       tag: "Portfolio",
       title: "Selected",
@@ -256,7 +210,6 @@ export const content = {
       clients: "Clients",
       about: "À propos",
       services: "Services",
-      catalogue: "Catalogue",
       portfolio: "Portfolio",
       press: "Presse",
       contact: "Contact",
@@ -366,51 +319,6 @@ export const content = {
         { n: "06", name: "Pâtisserie & Gâteaux", desc: "Expertise pâtissière primée. Gâteaux de célébration sur mesure et menus desserts raffinés." },
       ],
       locations: ["Londres", "Paris", "Côte d'Azur", "Chalets de ski", "US & Amérique du Sud", "Nouvelle-Zélande", "International"],
-    },
-    catalogue: {
-      tag: "Catalogue",
-      title: "A Considered",
-      titleEm: "journey.",
-      intro:
-        "Une expérience de canapés en voyage — chaque pièce une destination, chaque bouchée un souvenir. Composée pour réceptions, événements de marque et dîners intimes. Menus sur mesure sur demande.",
-      courses: [
-        {
-          label: "Service Un",
-          title: "Canapés Salés",
-          subtitle: "Cinq pièces par convive · une traversée de destinations signature",
-          items: [
-            { i: "i", place: "Toscane", name: "Tartelette Pecorino Truffé", desc: "Pecorino affiné, miel au romarin, copeau de pêche blanche · pâte sablée", tag: "Froid" },
-            { i: "ii", place: "Les Cyclades", name: "Cuillère de Feta Confite", desc: "Feta confite au thym, perle de concombre, olive de Kalamata, huile de citron d'Amalfi", tag: "Froid" },
-            { i: "iii", place: "Marrakech", name: "Brick Croustillant Agneau & Abricot", desc: "Épaule d'agneau confite, abricot, ras el hanout · yaourt à la menthe", tag: "Servi chaud" },
-            { i: "iv", place: "Méribel", name: "Sablé Beaufort", desc: "Sablé au Beaufort affiné, oignon confit au génépi, noix confite", tag: "Froid" },
-            { i: "v", place: "Botswana", name: "Tartare de Bœuf, Piri-Piri Doux", desc: "Tartare d'Aberdeen Angus coupé au couteau, crouton au charbon, micro-coriandre", tag: "Froid" },
-          ],
-        },
-        {
-          label: "Service Deux",
-          title: "Mignardise Signature",
-          subtitle: "Une bouchée sucrée signature par convive · clôture parisienne",
-          items: [
-            { i: "i", place: "Paris · Signature Maison", name: "Macaron Signature — Vanille ou Framboise-Rose", desc: "Coque parisienne croustillante · au choix crème vanille de Madagascar ou ganache montée à la rose et cœur framboise fraîche · parfum à confirmer à la réservation", tag: "Signature" },
-          ],
-        },
-      ],
-      pricing: {
-        label: "Investissement",
-        from: "À partir de £55 par convive",
-        note: "Service entièrement clé-en-main — plateaux, verrines, serviettes et accessoires inclus. Transport sur devis séparé. TVA non applicable.",
-      },
-      cta: {
-        label: "Demander un menu personnalisé",
-        href: "mailto:eugeniecolleville.paris@gmail.com?subject=Demande%20de%20menu%20personnalis%C3%A9",
-      },
-      otherMenusLabel: "Autres menus sur demande",
-      otherMenus: [
-        "Menus dégustation sur mesure",
-        "Dîners de saison",
-        "Pâtisserie & gâteaux de célébration",
-        "Menus bien-être & régimes",
-      ],
     },
     portfolio: {
       tag: "Portfolio",
