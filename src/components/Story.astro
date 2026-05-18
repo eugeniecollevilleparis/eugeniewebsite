@@ -34,49 +34,7 @@ const t = content[lang].story;
 
 <style>
   .story {
-    position: relative;
     background: var(--paper-light);
-    overflow: hidden;
-    isolation: isolate;
-  }
-
-  /* Discreet, very light watermark of the tartare-caviar plate behind the story text */
-  .story::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("/images/bg-tartare.jpg");
-    background-position: right center;
-    background-repeat: no-repeat;
-    background-size: clamp(380px, 38vw, 620px) auto;
-    opacity: 0.18;
-    filter: grayscale(28%) contrast(0.95);
-    mix-blend-mode: multiply;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  /* Fade the right edge of the watermark so it blends into the paper */
-  .story::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, var(--paper-light) 0%, rgba(251, 249, 244, 0) 30%, rgba(251, 249, 244, 0) 70%, var(--paper-light) 100%);
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  .story > * {
-    position: relative;
-    z-index: 2;
-  }
-
-  @media (max-width: 768px) {
-    .story::before {
-      background-size: 80vw auto;
-      background-position: right -10vw center;
-      opacity: 0.1;
-    }
   }
 
   .story__head {
