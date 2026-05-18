@@ -46,15 +46,12 @@ const t = content[lang].story;
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("/images/bg-tartare.jpg");
+    /* PNG cutout — true transparent background, just the subject floats */
+    background-image: url("/images/bg-tartare-cutout.png");
     background-position: right center;
     background-repeat: no-repeat;
-    background-size: clamp(440px, 44vw, 720px) auto;
-    /* multiply blend mode knocks out the white background of the photo
-       so only the plate + hands + cutlery + food remain — no rectangle. */
-    mix-blend-mode: multiply;
+    background-size: clamp(380px, 38vw, 580px) auto;
     opacity: 0.85;
-    filter: contrast(1.05) saturate(0.9);
     pointer-events: none;
     z-index: 0;
   }

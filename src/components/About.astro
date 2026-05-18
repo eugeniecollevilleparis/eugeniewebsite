@@ -66,14 +66,12 @@ const t = content[lang].about;
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("/images/bg-wagyu.jpg");
+    /* PNG cutout — true transparent background, just the subject floats */
+    background-image: url("/images/bg-wagyu-cutout.png");
     background-position: left center;
     background-repeat: no-repeat;
-    background-size: clamp(440px, 44vw, 720px) auto;
-    /* multiply knocks out the white background — only the subject remains. */
-    mix-blend-mode: multiply;
+    background-size: clamp(380px, 38vw, 580px) auto;
     opacity: 0.85;
-    filter: contrast(1.05) saturate(0.9);
     pointer-events: none;
     z-index: 0;
   }
