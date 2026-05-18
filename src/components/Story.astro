@@ -49,26 +49,32 @@ const t = content[lang].story;
     background-image: url("/images/bg-tartare.jpg");
     background-position: right center;
     background-repeat: no-repeat;
-    background-size: clamp(420px, 42vw, 680px) auto;
-    opacity: 0.26;
-    filter: grayscale(20%) contrast(0.96);
+    background-size: clamp(440px, 44vw, 720px) auto;
+    opacity: 0.32;
+    filter: grayscale(20%) contrast(0.95) blur(0.6px);
     mix-blend-mode: multiply;
     pointer-events: none;
     z-index: 0;
-    /* Radial mask centered on where the plate sits → fades edges away */
+    /* Very soft elliptical mask — long, gentle falloff so the photo melts into the paper */
     -webkit-mask-image: radial-gradient(
-      ellipse at right 18% center,
+      ellipse 55% 60% at right 22% center,
       rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 0.85) 22%,
-      rgba(0, 0, 0, 0.4) 45%,
-      rgba(0, 0, 0, 0) 65%
+      rgba(0, 0, 0, 0.92) 10%,
+      rgba(0, 0, 0, 0.75) 25%,
+      rgba(0, 0, 0, 0.5) 45%,
+      rgba(0, 0, 0, 0.25) 65%,
+      rgba(0, 0, 0, 0.08) 85%,
+      rgba(0, 0, 0, 0) 100%
     );
     mask-image: radial-gradient(
-      ellipse at right 18% center,
+      ellipse 55% 60% at right 22% center,
       rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 0.85) 22%,
-      rgba(0, 0, 0, 0.4) 45%,
-      rgba(0, 0, 0, 0) 65%
+      rgba(0, 0, 0, 0.92) 10%,
+      rgba(0, 0, 0, 0.75) 25%,
+      rgba(0, 0, 0, 0.5) 45%,
+      rgba(0, 0, 0, 0.25) 65%,
+      rgba(0, 0, 0, 0.08) 85%,
+      rgba(0, 0, 0, 0) 100%
     );
   }
 
