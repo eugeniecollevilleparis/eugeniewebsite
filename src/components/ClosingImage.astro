@@ -60,12 +60,12 @@ const line = isFr ? "À votre table." : "À votre table.";
     font-style: italic;
     font-weight: 300;
     font-size: clamp(1.7rem, 3vw, 3rem);
-    color: var(--paper);
+    color: var(--ink);
     letter-spacing: -0.01em;
-    /* Subtle drop shadow so it reads on the photo without a pill background */
+    /* Soft light halo so the black text reads on any part of the photo */
     text-shadow:
-      0 1px 18px rgba(0, 0, 0, 0.45),
-      0 1px 3px rgba(0, 0, 0, 0.35);
+      0 1px 18px rgba(255, 255, 255, 0.55),
+      0 1px 3px rgba(255, 255, 255, 0.4);
   }
 
   @media (max-width: 600px) {
