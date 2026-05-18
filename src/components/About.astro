@@ -53,8 +53,49 @@ const t = content[lang].about;
 
 <style>
   .about {
+    position: relative;
     background: var(--paper-light);
     color: var(--ink);
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  /* Discreet wagyu+lobster+caviar watermark on the left side */
+  .about::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/images/bg-wagyu.jpg");
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: clamp(360px, 36vw, 580px) auto;
+    opacity: 0.16;
+    filter: grayscale(28%) contrast(0.95);
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .about::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--paper-light) 0%, rgba(251, 249, 244, 0) 30%, rgba(251, 249, 244, 0) 70%, var(--paper-light) 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .about > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  @media (max-width: 768px) {
+    .about::before {
+      background-size: 75vw auto;
+      background-position: left -10vw center;
+      opacity: 0.1;
+    }
   }
 
   .about__grid {
