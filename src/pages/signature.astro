@@ -7,7 +7,22 @@ const description =
 ---
 
 <Layout lang="en" title={title} description={description}>
-  <main class="sig">
+
+  <!-- ===== PASSCODE GATE ===== -->
+  <div id="sigGate" class="sig-gate" data-code="carcasset" aria-hidden="false">
+    <div class="sig-gate__bg" style="background-image: url('/images/signature/cover.jpg');"></div>
+    <div class="sig-gate__inner">
+      <p class="sig-gate__brand">SIGNATURE</p>
+      <p class="sig-gate__sub">No. 01 &nbsp;·&nbsp; By invitation only</p>
+      <form class="sig-gate__form" id="sigGateForm">
+        <input type="text" id="sigGateInput" autocomplete="off" placeholder="Access&nbsp;code" aria-label="Access code" autocapitalize="none" autocorrect="off" spellcheck="false">
+        <button type="submit">Enter</button>
+      </form>
+      <p class="sig-gate__err" id="sigGateErr" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <main class="sig" id="sigMain" hidden>
 
     <!-- ===== COVER ===== -->
     <section class="sig-page sig-page--cover">
@@ -125,6 +140,38 @@ const description =
         </p>
       </div>
       <div class="sig-page__num" aria-hidden="true">07</div>
+    </section>
+
+    <!-- ===== PRACTICAL — CALENDAR / RESERVE / NEWSLETTER ===== -->
+    <section class="sig-practical">
+      <div class="sig-practical__inner">
+
+        <div class="sig-card" data-reveal>
+          <p class="sig-card__eyebrow">Save the date</p>
+          <p class="sig-card__title">27 September 2026</p>
+          <p class="sig-card__sub">From 6&nbsp;PM until midnight<br>Château Laffitte Carcasset · Saint-Estèphe</p>
+          <a class="sig-card__cta" href="/signature.ics" download>Add to calendar</a>
+        </div>
+
+        <div class="sig-card" data-reveal style="--reveal-delay:0.15s">
+          <p class="sig-card__eyebrow">Reserve your place</p>
+          <p class="sig-card__title">Tickets</p>
+          <p class="sig-card__sub">By invitation only.<br>An email confirms your reservation.</p>
+          <a class="sig-card__cta" href="mailto:eugeniecolleville.paris@gmail.com?subject=Signature%20No.%2001%20%E2%80%94%20Reservation&body=Hello%20Eug%C3%A9nie%2C%0A%0AI%20would%20like%20to%20reserve%20___%20place(s)%20for%20Signature%20No.%2001%20on%2027%20September%202026.%0A%0AName%3A%20%0APhone%3A%20%0ADietary%20notes%3A%20%0A%0AThank%20you.">Reserve by email</a>
+        </div>
+
+        <div class="sig-card" data-reveal style="--reveal-delay:0.3s">
+          <p class="sig-card__eyebrow">Stay close</p>
+          <p class="sig-card__title">Newsletter</p>
+          <p class="sig-card__sub">Future editions, private dinners and seasonal menus.</p>
+          <form class="sig-news" id="sigNews">
+            <input type="email" name="email" required placeholder="your@email.com" aria-label="Your email" autocomplete="email">
+            <button type="submit">Subscribe</button>
+          </form>
+          <p class="sig-news__ok" id="sigNewsOk" hidden>Thank you. An email opened — just press send.</p>
+        </div>
+
+      </div>
     </section>
 
     <!-- ===== COLOPHON ===== -->
@@ -417,6 +464,192 @@ const description =
   }
   .sig-end__contact a:hover { opacity: 0.7; }
 
+  /* ============ PASSCODE GATE ============ */
+  .sig-gate {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--sig-ink);
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 0.6s var(--ease, ease);
+  }
+  .sig-gate[aria-hidden="true"] { opacity: 0; pointer-events: none; }
+  .sig-gate__bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px) brightness(0.45);
+    z-index: 0;
+  }
+  .sig-gate__inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: var(--sig-cream);
+    padding: 2rem;
+    max-width: 28rem;
+  }
+  .sig-gate__brand {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    letter-spacing: 0.35em;
+    text-indent: 0.35em;
+    margin: 0 0 0.75rem;
+  }
+  .sig-gate__sub {
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(240, 233, 221, 0.7);
+    margin: 0 0 2.5rem;
+  }
+  .sig-gate__form {
+    display: flex;
+    gap: 0.5rem;
+    align-items: stretch;
+    justify-content: center;
+  }
+  .sig-gate__form input {
+    background: rgba(240, 233, 221, 0.08);
+    border: 1px solid rgba(240, 233, 221, 0.35);
+    color: var(--sig-cream);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    padding: 0.85rem 1rem;
+    width: 14rem;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  .sig-gate__form input::placeholder { color: rgba(240, 233, 221, 0.4); letter-spacing: 0.05em; }
+  .sig-gate__form input:focus { border-color: rgba(240, 233, 221, 0.85); }
+  .sig-gate__form button {
+    background: var(--sig-cream);
+    color: var(--sig-ink);
+    border: none;
+    padding: 0.85rem 1.4rem;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+  .sig-gate__form button:hover { opacity: 0.85; }
+  .sig-gate__err {
+    min-height: 1.2em;
+    margin-top: 1rem;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: rgba(240, 233, 221, 0.7);
+  }
+
+  /* ============ PRACTICAL (Calendar / Reserve / Newsletter) ============ */
+  .sig-practical {
+    background: var(--sig-ink);
+    color: var(--sig-cream);
+    padding: clamp(5rem, 12vh, 8rem) 1.5rem;
+    border-top: 1px solid rgba(240, 233, 221, 0.08);
+  }
+  .sig-practical__inner {
+    max-width: 70rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .sig-card {
+    background: rgba(240, 233, 221, 0.04);
+    border: 1px solid rgba(240, 233, 221, 0.12);
+    padding: 2.25rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .sig-card__eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(240, 233, 221, 0.55);
+    margin: 0 0 0.5rem;
+  }
+  .sig-card__title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.4rem, 2vw, 1.7rem);
+    line-height: 1.15;
+    margin: 0;
+    color: var(--sig-cream);
+  }
+  .sig-card__sub {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: rgba(240, 233, 221, 0.78);
+    margin: 0;
+    flex: 1;
+  }
+  .sig-card__cta,
+  .sig-news button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    background: var(--sig-cream);
+    color: var(--sig-ink);
+    border: none;
+    padding: 0.85rem 1.25rem;
+    font-family: var(--font-body);
+    font-size: 0.62rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    align-self: flex-start;
+  }
+  .sig-card__cta:hover,
+  .sig-news button:hover { opacity: 0.85; }
+
+  .sig-news {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+  }
+  .sig-news input {
+    background: rgba(240, 233, 221, 0.06);
+    border: 1px solid rgba(240, 233, 221, 0.25);
+    color: var(--sig-cream);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    padding: 0.75rem 0.9rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  .sig-news input::placeholder { color: rgba(240, 233, 221, 0.4); }
+  .sig-news input:focus { border-color: rgba(240, 233, 221, 0.7); }
+  .sig-news button { margin-top: 0.5rem; }
+  .sig-news__ok {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.85rem;
+    color: rgba(240, 233, 221, 0.78);
+    margin: 0.75rem 0 0;
+  }
+
+  @media (max-width: 800px) {
+    .sig-practical__inner { grid-template-columns: 1fr; }
+  }
+
   @media (max-width: 600px) {
     .sig-cover__title { letter-spacing: 0.25em; text-indent: 0.25em; font-size: 2.2rem; }
     .sig-act__label { margin-bottom: 3rem; }
@@ -424,10 +657,70 @@ const description =
     .sig-page__content--upper { padding-top: 4rem; }
     .sig-mani__lead { font-size: 1.5rem; }
     .sig-act__line { font-size: 1.45rem; }
+    .sig-gate__form { flex-direction: column; align-items: stretch; }
+    .sig-gate__form input { width: 100%; }
   }
 </style>
 
 <script>
+  // ===== Passcode gate (client-side; security-by-obscurity, fine for private invites) =====
+  const gate = document.getElementById("sigGate") as HTMLElement | null;
+  const main = document.getElementById("sigMain") as HTMLElement | null;
+  const form = document.getElementById("sigGateForm") as HTMLFormElement | null;
+  const input = document.getElementById("sigGateInput") as HTMLInputElement | null;
+  const err = document.getElementById("sigGateErr") as HTMLElement | null;
+
+  const unlock = () => {
+    if (!gate || !main) return;
+    main.hidden = false;
+    gate.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    setTimeout(() => gate.remove(), 700);
+    try {
+      sessionStorage.setItem("sigUnlocked", "1");
+    } catch {}
+  };
+
+  if (gate && main && form && input) {
+    try {
+      if (sessionStorage.getItem("sigUnlocked") === "1") {
+        unlock();
+      } else {
+        document.body.style.overflow = "hidden";
+        setTimeout(() => input.focus(), 300);
+      }
+    } catch {
+      document.body.style.overflow = "hidden";
+    }
+
+    const expected = (gate.dataset.code || "").trim().toLowerCase();
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const v = input.value.trim().toLowerCase();
+      if (v === expected) {
+        unlock();
+      } else if (err) {
+        err.textContent = "Code not recognised.";
+        input.select();
+      }
+    });
+  }
+
+  // ===== Newsletter: open prefilled email =====
+  const news = document.getElementById("sigNews") as HTMLFormElement | null;
+  const newsOk = document.getElementById("sigNewsOk") as HTMLElement | null;
+  if (news) {
+    news.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = (news.querySelector('input[name="email"]') as HTMLInputElement).value.trim();
+      if (!email) return;
+      const subject = encodeURIComponent("Signature — Newsletter");
+      const body = encodeURIComponent(`Hello Eugénie,\n\nPlease add me to the Signature newsletter.\n\nEmail: ${email}\n\nThank you.`);
+      window.location.href = `mailto:eugeniecolleville.paris@gmail.com?subject=${subject}&body=${body}`;
+      if (newsOk) newsOk.hidden = false;
+    });
+  }
+
   // Subtle parallax on background photos
   const bgs = document.querySelectorAll<HTMLElement>(".sig-page__bg");
   if (bgs.length && window.matchMedia("(min-width: 768px)").matches) {
