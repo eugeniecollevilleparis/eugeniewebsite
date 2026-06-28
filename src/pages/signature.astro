@@ -1,0 +1,438 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const title = "SIGNATURE — No. 01 · September 2026";
+const description =
+  "Signature is a series of meaningful moments where architecture, light, sound, gastronomy, conversation and performance are conceived as one.";
+---
+
+<Layout lang="en" title={title} description={description}>
+  <main class="sig">
+
+    <!-- ===== COVER ===== -->
+    <section class="sig-cover">
+      <div class="sig-cover__inner">
+        <h1 class="sig-cover__title">Signature</h1>
+        <div class="sig-cover__rule"></div>
+        <p class="sig-cover__edition">No. 01</p>
+        <p class="sig-cover__date">September&nbsp;·&nbsp;2026</p>
+      </div>
+      <div class="sig-cover__scroll" aria-hidden="true">
+        <span>Begin</span>
+        <span class="sig-cover__line"></span>
+      </div>
+    </section>
+
+    <!-- ===== MANIFESTO ===== -->
+    <section class="sig-manifesto">
+      <div class="sig-manifesto__inner">
+        <p class="sig-manifesto__lead" data-reveal>
+          We shape environments.<br>
+          People shape the experience.
+        </p>
+        <div class="sig-manifesto__body" data-reveal style="--reveal-delay:0.2s">
+          <p>
+            The places we inhabit influence how we think, behave and connect with one another.
+            Light, sound, architecture, gastronomy, conversation and performance are conceived as one.
+          </p>
+          <p>
+            Signature begins with a simple belief: meaningful moments don't happen by accident.
+            They emerge when every element works in harmony.
+          </p>
+        </div>
+        <p class="sig-manifesto__close" data-reveal style="--reveal-delay:0.45s">
+          <em>What Signature becomes will evolve.<br>
+          The intention will not.</em>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== ACT I ===== -->
+    <section class="act act--dark">
+      <div class="act__numeral" aria-hidden="true">I</div>
+      <div class="act__inner">
+        <span class="act__label" data-reveal>Act I</span>
+        <h2 class="act__line" data-reveal style="--reveal-delay:0.15s">
+          Every edition begins with a place chosen<br>
+          for what it already possesses.
+        </h2>
+        <p class="act__under" data-reveal style="--reveal-delay:0.35s">
+          <em>Its identity isn't reinvented. It's revealed.</em>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== ACT II ===== -->
+    <section class="act act--light">
+      <div class="act__numeral" aria-hidden="true">II</div>
+      <div class="act__inner">
+        <span class="act__label" data-reveal>Act II</span>
+        <h2 class="act__line" data-reveal style="--reveal-delay:0.15s">
+          Every place follows its own rhythm.
+        </h2>
+        <p class="act__under" data-reveal style="--reveal-delay:0.35s">
+          <em>Not everything asks for immediate attention.</em>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== ACT III ===== -->
+    <section class="act act--dark">
+      <div class="act__numeral" aria-hidden="true">III</div>
+      <div class="act__inner">
+        <span class="act__label" data-reveal>Act III</span>
+        <h2 class="act__line" data-reveal style="--reveal-delay:0.15s">
+          Some conversations deserve a setting.
+        </h2>
+        <p class="act__under" data-reveal style="--reveal-delay:0.35s">
+          <em>The evening begins before a single note is played.</em>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== ACT IV ===== -->
+    <section class="act act--light">
+      <div class="act__numeral" aria-hidden="true">IV</div>
+      <div class="act__inner">
+        <span class="act__label" data-reveal>Act IV</span>
+        <h2 class="act__line" data-reveal style="--reveal-delay:0.15s">
+          As daylight fades.
+        </h2>
+        <p class="act__under" data-reveal style="--reveal-delay:0.35s">
+          <em>The soundtrack arrives quietly.</em>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== ACT V ===== -->
+    <section class="act act--dark act--last">
+      <div class="act__numeral" aria-hidden="true">V</div>
+      <div class="act__inner">
+        <span class="act__label" data-reveal>Act V</span>
+        <h2 class="act__line" data-reveal style="--reveal-delay:0.15s">
+          The day finds its own pace.
+        </h2>
+        <p class="act__under" data-reveal style="--reveal-delay:0.35s">
+          <em>Nothing is rushed. Nothing is imposed.</em>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== COLOPHON ===== -->
+    <section class="sig-end">
+      <div class="sig-end__inner" data-reveal>
+        <div class="sig-end__mark">·</div>
+        <p class="sig-end__line"><em>Signature</em></p>
+        <p class="sig-end__small">No. 01 &nbsp; — &nbsp; September 2026</p>
+        <p class="sig-end__contact">For invitations and conversation&nbsp;: <a href="mailto:eugeniecolleville.paris@gmail.com">eugeniecolleville.paris@gmail.com</a></p>
+      </div>
+    </section>
+
+  </main>
+</Layout>
+
+<style>
+  :root {
+    --sig-ink: #0c0a08;
+    --sig-cream: #f3eee5;
+    --sig-cream-warm: #ece4d4;
+    --sig-accent: #7a6b54;
+  }
+
+  html, body { background: var(--sig-cream); }
+
+  .sig {
+    color: var(--sig-ink);
+    font-family: var(--font-body);
+  }
+
+  /* ============ COVER ============ */
+  .sig-cover {
+    min-height: 100vh;
+    min-height: 100svh;
+    background: var(--sig-ink);
+    color: var(--sig-cream);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 4rem 1.5rem;
+    overflow: hidden;
+  }
+  /* Faint warm radial halo for cinema vibe */
+  .sig-cover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at center, rgba(122, 107, 84, 0.18) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 90%, rgba(20, 16, 10, 0.6) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .sig-cover__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  .sig-cover__title {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(4.2rem, 11vw, 9rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--sig-cream);
+  }
+  .sig-cover__rule {
+    width: 4.5rem;
+    height: 1px;
+    background: rgba(243, 238, 229, 0.55);
+    margin: 1.25rem 0 0.5rem;
+  }
+  .sig-cover__edition {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: rgba(243, 238, 229, 0.82);
+    padding-left: 0.5em;
+  }
+  .sig-cover__date {
+    font-family: var(--font-body);
+    font-size: 0.62rem;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: rgba(243, 238, 229, 0.55);
+    margin-top: 0.25rem;
+    padding-left: 0.42em;
+  }
+
+  .sig-cover__scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-body);
+    font-size: 0.55rem;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: rgba(243, 238, 229, 0.55);
+  }
+  .sig-cover__line {
+    width: 1px;
+    height: 3rem;
+    background: rgba(243, 238, 229, 0.4);
+    position: relative;
+    overflow: hidden;
+  }
+  .sig-cover__line::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--sig-cream);
+    transform: translateY(-100%);
+    animation: sigScroll 2.6s var(--ease-out) infinite;
+  }
+  @keyframes sigScroll {
+    0% { transform: translateY(-100%); }
+    50% { transform: translateY(0); }
+    100% { transform: translateY(100%); }
+  }
+
+  /* ============ MANIFESTO ============ */
+  .sig-manifesto {
+    min-height: 100vh;
+    background: var(--sig-cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 1.5rem;
+  }
+  .sig-manifesto__inner {
+    max-width: 56rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .sig-manifesto__lead {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.8rem, 3.4vw, 3.1rem);
+    line-height: 1.25;
+    color: var(--sig-ink);
+    letter-spacing: -0.005em;
+  }
+  .sig-manifesto__body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+  .sig-manifesto__body p {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: clamp(0.92rem, 1.05vw, 1.05rem);
+    line-height: 1.85;
+    color: var(--sig-ink);
+    opacity: 0.78;
+  }
+  .sig-manifesto__close {
+    font-family: var(--font-display);
+    font-size: clamp(1.05rem, 1.4vw, 1.4rem);
+    line-height: 1.5;
+    color: var(--sig-ink);
+    opacity: 0.9;
+  }
+  .sig-manifesto__close em { font-style: italic; }
+
+  /* ============ ACTS ============ */
+  .act {
+    min-height: 100vh;
+    min-height: 100svh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 1.5rem;
+    overflow: hidden;
+  }
+  .act--dark {
+    background: var(--sig-ink);
+    color: var(--sig-cream);
+  }
+  .act--light {
+    background: var(--sig-cream);
+    color: var(--sig-ink);
+  }
+  .act--last {
+    border-bottom: 1px solid rgba(243, 238, 229, 0.12);
+  }
+
+  /* Giant roman numeral as background watermark */
+  .act__numeral {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(20rem, 50vw, 44rem);
+    line-height: 0.85;
+    user-select: none;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .act--dark .act__numeral { color: rgba(243, 238, 229, 0.05); }
+  .act--light .act__numeral { color: rgba(12, 10, 8, 0.05); }
+
+  .act__inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 56rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .act__label {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 0.65rem;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+  .act--dark .act__label { color: var(--sig-cream); }
+  .act--light .act__label { color: var(--sig-ink); }
+
+  .act__line {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(1.8rem, 4.2vw, 3.6rem);
+    line-height: 1.25;
+    letter-spacing: -0.005em;
+  }
+  .act--dark .act__line { color: var(--sig-cream); }
+  .act--light .act__line { color: var(--sig-ink); }
+
+  .act__under {
+    font-family: var(--font-display);
+    font-size: clamp(1.05rem, 1.4vw, 1.4rem);
+    line-height: 1.5;
+    opacity: 0.75;
+    max-width: 40rem;
+  }
+  .act__under em { font-style: italic; }
+
+  /* ============ END / COLOPHON ============ */
+  .sig-end {
+    min-height: 60vh;
+    background: var(--sig-ink);
+    color: var(--sig-cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 1.5rem;
+    text-align: center;
+  }
+  .sig-end__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .sig-end__mark {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--sig-accent);
+    margin-bottom: 0.5rem;
+  }
+  .sig-end__line {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    color: var(--sig-cream);
+    line-height: 1;
+  }
+  .sig-end__small {
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(243, 238, 229, 0.55);
+    margin-top: 0.5rem;
+  }
+  .sig-end__contact {
+    margin-top: 2.5rem;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    color: rgba(243, 238, 229, 0.7);
+    letter-spacing: 0.05em;
+  }
+  .sig-end__contact a {
+    color: var(--sig-cream);
+    border-bottom: 1px solid rgba(243, 238, 229, 0.35);
+    padding-bottom: 1px;
+    transition: opacity 0.4s var(--ease);
+  }
+  .sig-end__contact a:hover { opacity: 0.7; }
+
+  @media (max-width: 600px) {
+    .sig-cover__title { letter-spacing: -0.01em; }
+    .act__numeral { font-size: clamp(14rem, 70vw, 24rem); }
+  }
+</style>

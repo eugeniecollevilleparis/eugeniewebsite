@@ -267,6 +267,8 @@ const t = content[lang].portfolio;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     opacity: 0.85;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   .pf-item__title {
@@ -274,6 +276,8 @@ const t = content[lang].portfolio;
     font-style: italic;
     font-size: 1.1rem;
     line-height: 1.2;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   .pf-item__view {
@@ -434,13 +438,15 @@ const t = content[lang].portfolio;
       aspect-ratio: 1 / 1;
     }
     .pf-item__caption {
-      padding: 0.75rem 0.6rem;
+      padding: 0.7rem 0.55rem;
     }
     .pf-item__title {
-      font-size: 0.85rem;
+      font-size: 0.78rem;
+      line-height: 1.15;
     }
     .pf-item__category {
-      font-size: 0.5rem;
+      font-size: 0.46rem;
+      letter-spacing: 0.18em;
     }
   }
 </style>
