@@ -163,7 +163,7 @@ const description =
             <p>At the heart of the Médoc, an estate has stood since 1759. Three centuries of vintages, harvests, and corsairs' tales — a terroir, a memory, a quiet legend.</p>
             <p>This dinner has been conceived as a passage through that memory — each course answering to a fragment of the estate's history, paired with the wines it grew.</p>
             <p>One hundred guests, one season. Late September, harvest underway. Cèpes from the Médoc woods, black figs from the South-West, Gironde caviar, oysters from Arcachon Bay, hams and poultry from the Landes, Bazas beef. A cuisine rooted in its place, written for its moment.</p>
-            <p>The composition that follows pays tribute to the Bordeaux terroir and to the memory of the estate — from the beef cheek braised in the house wine to the closing tartlet. A vegetarian variation runs in parallel. The gesture remains one: the table as a narrative.</p>
+            <p>The composition that follows pays tribute to the Bordeaux terroir and to the memory of the estate — from the beef cheek braised in the house wine to the closing tartlet. The gesture remains one: the table as a narrative.</p>
           </div>
         </article>
 
@@ -231,70 +231,6 @@ const description =
             <div class="sig-course sig-course--signature">
               <p class="sig-course__label">Signature</p>
               <p class="sig-course__dish">Tartlet of single-origin dark chocolate, Gironde caviar, fleur de sel</p>
-            </div>
-          </div>
-
-          <!-- ===== VEGETARIAN ===== -->
-          <div class="sig-menu__col" data-reveal style="--reveal-delay:0.25s">
-            <p class="sig-menu__col-kicker">Vegetarian Option</p>
-            <h3 class="sig-menu__col-title"><em>Vegetarian Variation</em></h3>
-            <p class="sig-menu__col-note">For guests who don't eat meat or fish</p>
-
-            <div class="sig-course">
-              <p class="sig-course__label">Apéro &nbsp;·&nbsp; Standing Welcome</p>
-              <p class="sig-course__wine"><em>Crémant de Bordeaux</em></p>
-              <p class="sig-course__dish">Roasted pumpkin and Ossau-Iraty AOP croquettes, silky béchamel</p>
-            </div>
-
-            <div class="sig-course">
-              <p class="sig-course__label">Canapé I</p>
-              <p class="sig-course__wine"><em>Crémant de Bordeaux</em></p>
-              <p class="sig-course__dish">Savoury canelé with stewed Ente plums and confit Bordeaux sweet onion</p>
-              <p class="sig-course__hint"><em>A second canapé, chosen from the two proposals below.</em></p>
-            </div>
-
-            <div class="sig-course">
-              <p class="sig-course__label">Canapé II</p>
-              <p class="sig-course__dish">Thin tartlet of Médoc orchard apples, Ossau-Iraty AOP shavings, roasted hazelnut oil, fleur de sel</p>
-            </div>
-
-            <div class="sig-course">
-              <p class="sig-course__label">Canapé III &nbsp;·&nbsp; In the Chai</p>
-              <p class="sig-course__dish">Granita of the estate's partially-fermented grape must, ribot milk, botrytised Sauternes jelly, fresh Périgord walnuts</p>
-            </div>
-
-            <div class="sig-course">
-              <p class="sig-course__label">Breads &amp; Butter &nbsp;·&nbsp; At the Table</p>
-              <p class="sig-course__dish">Artisan breads from the South-West, house-churned butter with Atlantic seaweed, olive oil</p>
-            </div>
-
-            <div class="sig-course">
-              <p class="sig-course__label">Starter</p>
-              <p class="sig-course__wine"><em>Pessac-Léognan blanc</em></p>
-              <p class="sig-course__dish">Perfect egg at 64°C with lemon verbena and wild fennel, warm Graves white wine beurre blanc, garden pickles (cucumber, fennel, pink shallot, pink radish), watercress, fleur de sel</p>
-            </div>
-
-            <div class="sig-course">
-              <p class="sig-course__label">Main Course</p>
-              <p class="sig-course__wine"><em>Château Laffitte Carcasset, young vintage</em></p>
-              <p class="sig-course__dish">Pithiviers of Médoc cèpes, autumn truffle and Périgord chestnuts, full-bodied vegetable jus with the house wine, celeriac crush with brown butter, glazed vegetables</p>
-            </div>
-
-            <div class="sig-course">
-              <p class="sig-course__label">Dessert &mdash; Estate Honey</p>
-              <p class="sig-course__wine"><em>Sauternes</em></p>
-              <p class="sig-course__dish">Estate honey &mdash; Basque farm-yoghurt siphon with honey and rosemary, flowing gel of South-West black fig, caramelised buckwheat tuile, edible flowers</p>
-              <p class="sig-course__hint"><em>Set with agar-agar &mdash; strictly vegetarian.</em></p>
-            </div>
-
-            <div class="sig-course">
-              <p class="sig-course__label">Mignardises with Coffee</p>
-              <p class="sig-course__dish">Pâte de fruit of the house wine</p>
-            </div>
-
-            <div class="sig-course sig-course--signature">
-              <p class="sig-course__label">Signature</p>
-              <p class="sig-course__dish">Tartlet of single-origin dark chocolate, fleur de sel, yuzu zest</p>
             </div>
           </div>
 
@@ -816,20 +752,13 @@ const description =
   .sig-story__body p:last-child { margin-bottom: 0; }
   .sig-story__body em { font-style: italic; }
 
-  /* Two-column menu grid */
+  /* Menu column (single, centered) */
   .sig-menu__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(2.5rem, 5vw, 4.5rem);
     margin: 0 auto;
-    max-width: 70rem;
+    max-width: 38rem;
   }
   .sig-menu__col {
     position: relative;
-  }
-  .sig-menu__col + .sig-menu__col {
-    padding-left: clamp(2.5rem, 5vw, 4.5rem);
-    border-left: 1px solid rgba(240, 233, 221, 0.12);
   }
   .sig-menu__col-kicker {
     font-family: var(--font-body);
@@ -917,16 +846,6 @@ const description =
     color: rgba(240, 233, 221, 0.35);
   }
 
-  @media (max-width: 780px) {
-    .sig-menu__grid { grid-template-columns: 1fr; gap: 0; }
-    .sig-menu__col + .sig-menu__col {
-      padding-left: 0;
-      border-left: none;
-      border-top: 1px solid rgba(240, 233, 221, 0.18);
-      margin-top: 4rem;
-      padding-top: 4rem;
-    }
-  }
 
   /* ============ PRACTICAL (Calendar / Reserve / Newsletter) ============ */
   .sig-practical {
