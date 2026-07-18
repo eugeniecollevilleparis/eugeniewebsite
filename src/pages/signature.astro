@@ -10,7 +10,11 @@ const description =
 
   <!-- ===== PASSCODE GATE ===== -->
   <div id="sigGate" class="sig-gate" data-code="carcasset" aria-hidden="false">
-    <div class="sig-gate__bg" style="background-image: url('/images/signature/cover.jpg');"></div>
+    <div class="sig-gate__bg sig-gate__bg--video">
+      <video autoplay muted loop playsinline preload="auto" poster="/videos/signature/seal-poster.jpg">
+        <source src="/videos/signature/seal.mp4" type="video/mp4">
+      </video>
+    </div>
     <div class="sig-gate__inner">
       <p class="sig-gate__brand">SIGNATURE</p>
       <p class="sig-gate__sub">No. 01 &nbsp;·&nbsp; By invitation only</p>
@@ -24,16 +28,14 @@ const description =
 
   <main class="sig" id="sigMain" hidden>
 
-    <!-- ===== COVER ===== -->
-    <section class="sig-page sig-page--cover">
-      <div class="sig-page__bg" style="background-image: url('/images/signature/cover.jpg');"></div>
-      <div class="sig-page__veil"></div>
-      <div class="sig-page__content sig-page__content--center">
-        <h1 class="sig-cover__title">SIGNATURE</h1>
-        <div class="sig-cover__rule" aria-hidden="true"></div>
-        <p class="sig-cover__edition">No. 01</p>
-        <p class="sig-cover__date">September&nbsp;2026</p>
+    <!-- ===== COVER — cinematic reveal (finger + brochure) ===== -->
+    <section class="sig-page sig-page--cover sig-page--cover-video">
+      <div class="sig-page__bg sig-page__bg--video">
+        <video autoplay muted loop playsinline preload="auto" poster="/videos/signature/reveal-poster.jpg">
+          <source src="/videos/signature/reveal.mp4" type="video/mp4">
+        </video>
       </div>
+      <div class="sig-page__veil sig-page__veil--cover"></div>
       <div class="sig-page__footer">
         <span>Château Laffitte Carcasset</span>
         <span class="sep">·</span>
@@ -327,6 +329,16 @@ const description =
     filter: saturate(1.05) contrast(1.04);
     will-change: transform;
   }
+  /* Video variant: <video> child fills the box like a background-cover image */
+  .sig-page__bg--video { filter: none; }
+  .sig-page__bg--video video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
 
   /* Dark veil for text legibility, gentler at top */
   .sig-page__veil {
@@ -347,6 +359,17 @@ const description =
         rgba(8, 4, 4, 0.05) 40%,
         rgba(8, 4, 4, 0.35) 100%);
   }
+  /* Cover uses the video itself — only slightly darken the very top/bottom for readability of the venue caption + page number */
+  .sig-page__veil--cover {
+    background:
+      linear-gradient(180deg,
+        rgba(0, 0, 0, 0.25) 0%,
+        rgba(0, 0, 0, 0) 20%,
+        rgba(0, 0, 0, 0) 75%,
+        rgba(0, 0, 0, 0.55) 100%);
+  }
+  /* Cover-with-video: kill the padding constraints so video is truly full-bleed */
+  .sig-page--cover-video { padding: 0; }
 
   /* Content slot — text positioning */
   .sig-page__content {
@@ -586,6 +609,25 @@ const description =
     background-position: center;
     filter: blur(2px) brightness(0.45);
     z-index: 0;
+    overflow: hidden;
+  }
+  .sig-gate__bg--video video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  /* When we have a video, also add a darker overlay so the form is readable
+     over any bright frame */
+  .sig-gate__bg--video::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at center, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.75) 80%);
+    pointer-events: none;
   }
   .sig-gate__inner {
     position: relative;
@@ -1016,8 +1058,8 @@ const description =
     });
   }
 
-  // Subtle parallax on background photos
-  const bgs = document.querySelectorAll<HTMLElement>(".sig-page__bg");
+  // Subtle parallax on photo backgrounds only (skip video backgrounds — video already has cinematic motion)
+  const bgs = document.querySelectorAll<HTMLElement>(".sig-page__bg:not(.sig-page__bg--video)");
   if (bgs.length && window.matchMedia("(min-width: 768px)").matches) {
     const update = () => {
       bgs.forEach((bg) => {
