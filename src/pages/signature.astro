@@ -26,6 +26,9 @@ const description =
     </div>
   </div>
 
+  <!-- ===== POST-UNLOCK CEREMONY (short black fade + SIGNATURE reveal, then vanishes) ===== -->
+  <div id="sigCeremony" class="sig-ceremony" aria-hidden="true"></div>
+
   <main class="sig" id="sigMain" hidden>
 
     <!-- ===== COVER — cinematic reveal (finger + brochure) ===== -->
@@ -41,11 +44,15 @@ const description =
         <span class="sep">·</span>
         <span>Saint-Estèphe</span>
       </div>
+      <a class="sig-scroll" href="#sig-manifesto" aria-label="Scroll to enter">
+        <span>Scroll</span>
+        <span class="sig-scroll__line"></span>
+      </a>
       <div class="sig-page__num" aria-hidden="true">01</div>
     </section>
 
     <!-- ===== MANIFESTO ===== -->
-    <section class="sig-page sig-page--manifesto">
+    <section id="sig-manifesto" class="sig-page sig-page--manifesto">
       <div class="sig-page__bg" style="background-image: url('/images/signature/manifesto.jpg');"></div>
       <div class="sig-page__veil sig-page__veil--soft"></div>
       <div class="sig-page__content sig-page__content--upper">
@@ -62,154 +69,6 @@ const description =
         </p>
       </div>
       <div class="sig-page__num" aria-hidden="true">02</div>
-    </section>
-
-    <!-- ===== ACT I ===== -->
-    <section class="sig-page sig-page--act">
-      <div class="sig-page__bg" style="background-image: url('/images/signature/act1.jpg');"></div>
-      <div class="sig-page__veil"></div>
-      <div class="sig-page__content sig-page__content--upper">
-        <span class="sig-act__label" data-reveal>ACT&nbsp;&nbsp;I.</span>
-        <h2 class="sig-act__line" data-reveal style="--reveal-delay:0.15s">
-          Every edition begins with a place chosen for what it already possesses.
-        </h2>
-        <p class="sig-act__under" data-reveal style="--reveal-delay:0.35s">
-          <em>Its identity isn't reinvented. It's revealed.</em>
-        </p>
-      </div>
-      <div class="sig-page__num" aria-hidden="true">03</div>
-    </section>
-
-    <!-- ===== ACT II ===== -->
-    <section class="sig-page sig-page--act">
-      <div class="sig-page__bg" style="background-image: url('/images/signature/act2.jpg');"></div>
-      <div class="sig-page__veil"></div>
-      <div class="sig-page__content sig-page__content--upper">
-        <span class="sig-act__label" data-reveal>ACT&nbsp;&nbsp;II.</span>
-        <h2 class="sig-act__line" data-reveal style="--reveal-delay:0.15s">
-          Every place follows its own rhythm.
-        </h2>
-        <p class="sig-act__under" data-reveal style="--reveal-delay:0.35s">
-          <em>Not everything asks for immediate attention.</em>
-        </p>
-      </div>
-      <div class="sig-page__num" aria-hidden="true">04</div>
-    </section>
-
-    <!-- ===== ACT III ===== -->
-    <section class="sig-page sig-page--act">
-      <div class="sig-page__bg" style="background-image: url('/images/signature/act3.jpg');"></div>
-      <div class="sig-page__veil"></div>
-      <div class="sig-page__content sig-page__content--upper">
-        <span class="sig-act__label" data-reveal>ACT&nbsp;&nbsp;III.</span>
-        <h2 class="sig-act__line" data-reveal style="--reveal-delay:0.15s">
-          Some conversations deserve a setting.
-        </h2>
-        <p class="sig-act__under" data-reveal style="--reveal-delay:0.35s">
-          <em>The evening begins before a single note is played.</em>
-        </p>
-      </div>
-      <div class="sig-page__num" aria-hidden="true">05</div>
-    </section>
-
-    <!-- ===== ACT IV ===== -->
-    <section class="sig-page sig-page--act">
-      <div class="sig-page__bg" style="background-image: url('/images/signature/act4.jpg');"></div>
-      <div class="sig-page__veil"></div>
-      <div class="sig-page__content sig-page__content--upper">
-        <span class="sig-act__label" data-reveal>ACT&nbsp;&nbsp;IV.</span>
-        <h2 class="sig-act__line" data-reveal style="--reveal-delay:0.15s">
-          As daylight fades.
-        </h2>
-        <p class="sig-act__under" data-reveal style="--reveal-delay:0.35s">
-          <em>The soundtrack arrives quietly.</em>
-        </p>
-      </div>
-      <div class="sig-page__num" aria-hidden="true">06</div>
-    </section>
-
-    <!-- ===== ACT V ===== -->
-    <section class="sig-page sig-page--act sig-page--last">
-      <div class="sig-page__bg" style="background-image: url('/images/signature/act5.jpg');"></div>
-      <div class="sig-page__veil"></div>
-      <div class="sig-page__content sig-page__content--upper">
-        <span class="sig-act__label" data-reveal>ACT&nbsp;&nbsp;V.</span>
-        <h2 class="sig-act__line" data-reveal style="--reveal-delay:0.15s">
-          The day finds its own pace.
-        </h2>
-        <p class="sig-act__under" data-reveal style="--reveal-delay:0.35s">
-          <em>Nothing is rushed. Nothing is imposed.</em>
-        </p>
-      </div>
-      <div class="sig-page__num" aria-hidden="true">07</div>
-    </section>
-
-    <!-- ===== 24 HOURS — the full programme ===== -->
-    <section class="sig-hours">
-      <div class="sig-hours__inner">
-
-        <header class="sig-hours__head" data-reveal>
-          <p class="sig-hours__kicker">The Programme</p>
-          <h2 class="sig-hours__title">24&nbsp;Hours</h2>
-          <p class="sig-hours__sub">26–27 September 2026</p>
-          <div class="sig-hours__rule"></div>
-        </header>
-
-        <div class="sig-hours__grid">
-
-          <div class="sig-day" data-reveal style="--reveal-delay:0.05s">
-            <p class="sig-day__label">Day 01 &nbsp;·&nbsp; Evening</p>
-            <ol class="sig-day__list">
-              <li><span class="t">18:30</span><span class="e">Arrival</span><span class="s"><em>Signature cocktail</em></span></li>
-              <li><span class="t">19:30</span><span class="e">Golden Hour</span><span class="s"><em>Explore the Estate</em></span></li>
-              <li><span class="t">20:00</span><span class="e">Dinner</span><span class="s"><em>Seasonal gathering</em></span></li>
-              <li><span class="t">22:00</span><span class="e">Ambience</span><span class="s"><em>The rise</em></span></li>
-              <li><span class="t">23:00</span><span class="e">Rave</span><span class="s"><em>The show is on</em></span></li>
-              <li><span class="t">03:00</span><span class="e">Late Night</span><span class="s"><em>After glow</em></span></li>
-            </ol>
-          </div>
-
-          <div class="sig-day" data-reveal style="--reveal-delay:0.2s">
-            <p class="sig-day__label">Day 02 &nbsp;·&nbsp; Morning Energy</p>
-            <ol class="sig-day__list">
-              <li><span class="t">10:00</span><span class="e">Le Petit Déjeuner</span><span class="s"><em>Coffee, pastries</em></span></li>
-              <li><span class="t">11:30</span><span class="e">Brunch</span><span class="s"><em>The perfect recovery</em></span></li>
-              <li><span class="t">13:30</span><span class="e">Breath</span><span class="s"><em>Yoga, breath work, pilates</em></span></li>
-              <li><span class="t">14:00</span><span class="e">Reconnect</span><span class="s"><em>Poolside, lounge, terrace</em></span></li>
-              <li><span class="t">17:00</span><span class="e">Curtain Close</span><span class="s"><em>Act · 01 over</em></span></li>
-            </ol>
-          </div>
-
-        </div>
-
-        <div class="sig-hours__foot" data-reveal>
-          <p class="sig-hours__foot-title"><em>The Next Day</em></p>
-          <p>No rush. No schedule. Just breakfast, brunch and relaxing time on the menu. Follow the yoga instructor at first light, or rest by the poolside.</p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ===== SCENERY / PLACE / MUSIC — three quiet blocks ===== -->
-    <section class="sig-notes">
-      <div class="sig-notes__inner">
-
-        <article class="sig-note" data-reveal>
-          <p class="sig-note__label">The Scenery</p>
-          <p class="sig-note__body">Architecture is never hidden. Every detail is designed to reveal the character of the place rather than transform it. Light, fabric and sound are introduced with restraint, allowing the architecture to remain at the centre of the experience.</p>
-        </article>
-
-        <article class="sig-note" data-reveal style="--reveal-delay:0.15s">
-          <p class="sig-note__label">Place</p>
-          <p class="sig-note__body">Built in the eighteenth century and surrounded by the vineyards of Saint-Estèphe, Château Laffitte Carcasset reflects the character of the Médoc through its architecture, history and landscape.</p>
-        </article>
-
-        <article class="sig-note" data-reveal style="--reveal-delay:0.3s">
-          <p class="sig-note__label">Music</p>
-          <p class="sig-note__body">Music direction shaped by years behind the decks, drawing from underground electronic music with a focus on atmosphere, rhythm and progression.</p>
-        </article>
-
-      </div>
     </section>
 
     <!-- ===== THE MENU ===== -->
@@ -313,6 +172,96 @@ const description =
       </div>
     </section>
 
+    <!-- ===== ACT I ===== -->
+    <section class="sig-page sig-page--act">
+      <div class="sig-page__bg" style="background-image: url('/images/signature/act1.jpg');"></div>
+      <div class="sig-page__veil"></div>
+      <div class="sig-page__content sig-page__content--upper">
+        <span class="sig-act__label" data-reveal>ACT&nbsp;&nbsp;I.</span>
+        <h2 class="sig-act__line" data-reveal style="--reveal-delay:0.15s">
+          Every edition begins with a place chosen for what it already possesses.
+        </h2>
+        <p class="sig-act__under" data-reveal style="--reveal-delay:0.35s">
+          <em>Its identity isn't reinvented. It's revealed.</em>
+        </p>
+      </div>
+      <div class="sig-page__num" aria-hidden="true">03</div>
+    </section>
+
+    <!-- ===== ACT II ===== -->
+    <section class="sig-page sig-page--act">
+      <div class="sig-page__bg" style="background-image: url('/images/signature/act2.jpg');"></div>
+      <div class="sig-page__veil"></div>
+      <div class="sig-page__content sig-page__content--upper">
+        <span class="sig-act__label" data-reveal>ACT&nbsp;&nbsp;II.</span>
+        <h2 class="sig-act__line" data-reveal style="--reveal-delay:0.15s">
+          Every place follows its own rhythm.
+        </h2>
+        <p class="sig-act__under" data-reveal style="--reveal-delay:0.35s">
+          <em>Not everything asks for immediate attention.</em>
+        </p>
+      </div>
+      <div class="sig-page__num" aria-hidden="true">04</div>
+    </section>
+
+    <!-- ===== ACT III ===== -->
+    <section class="sig-page sig-page--act">
+      <div class="sig-page__bg" style="background-image: url('/images/signature/act3.jpg');"></div>
+      <div class="sig-page__veil"></div>
+      <div class="sig-page__content sig-page__content--upper">
+        <span class="sig-act__label" data-reveal>ACT&nbsp;&nbsp;III.</span>
+        <h2 class="sig-act__line" data-reveal style="--reveal-delay:0.15s">
+          Some conversations deserve a setting.
+        </h2>
+        <p class="sig-act__under" data-reveal style="--reveal-delay:0.35s">
+          <em>The evening begins before a single note is played.</em>
+        </p>
+      </div>
+      <div class="sig-page__num" aria-hidden="true">05</div>
+    </section>
+
+    <!-- ===== ACT IV ===== -->
+    <section class="sig-page sig-page--act">
+      <div class="sig-page__bg" style="background-image: url('/images/signature/act4.jpg');"></div>
+      <div class="sig-page__veil"></div>
+      <div class="sig-page__content sig-page__content--upper">
+        <span class="sig-act__label" data-reveal>ACT&nbsp;&nbsp;IV.</span>
+        <h2 class="sig-act__line" data-reveal style="--reveal-delay:0.15s">
+          As daylight fades.
+        </h2>
+        <p class="sig-act__under" data-reveal style="--reveal-delay:0.35s">
+          <em>The soundtrack arrives quietly.</em>
+        </p>
+      </div>
+      <div class="sig-page__num" aria-hidden="true">06</div>
+    </section>
+
+    <!-- ===== ACT V ===== -->
+    <section class="sig-page sig-page--act sig-page--last">
+      <div class="sig-page__bg" style="background-image: url('/images/signature/act5.jpg');"></div>
+      <div class="sig-page__veil"></div>
+      <div class="sig-page__content sig-page__content--upper">
+        <span class="sig-act__label" data-reveal>ACT&nbsp;&nbsp;V.</span>
+        <h2 class="sig-act__line" data-reveal style="--reveal-delay:0.15s">
+          The day finds its own pace.
+        </h2>
+        <p class="sig-act__under" data-reveal style="--reveal-delay:0.35s">
+          <em>Nothing is rushed. Nothing is imposed.</em>
+        </p>
+      </div>
+      <div class="sig-page__num" aria-hidden="true">07</div>
+    </section>
+
+    <!-- ===== PROGRAMME TEASER ===== -->
+    <section class="sig-tease">
+      <a class="sig-tease__card" href="/programme" data-reveal>
+        <p class="sig-tease__kicker">The Programme</p>
+        <h2 class="sig-tease__title">24&nbsp;Hours</h2>
+        <p class="sig-tease__sub"><em>Day 01 · Evening &nbsp; — &nbsp; Day 02 · Morning Energy</em></p>
+        <span class="sig-tease__cta">See the full programme →</span>
+      </a>
+    </section>
+
     <!-- ===== PRACTICAL — CALENDAR / RESERVE / NEWSLETTER ===== -->
     <section class="sig-practical">
       <div class="sig-practical__inner">
@@ -352,7 +301,7 @@ const description =
         <p class="sig-end__line">SIGNATURE</p>
         <p class="sig-end__small">No. 01 &nbsp;·&nbsp; 26-27 September 2026</p>
         <p class="sig-end__venue"><em>Château Laffitte Carcasset</em> · Saint-Estèphe · Bordeaux</p>
-        <p class="sig-end__contact">For invitations and conversation&nbsp;: <a href="mailto:eugeniecolleville.paris@gmail.com">eugeniecolleville.paris@gmail.com</a></p>
+        <p class="sig-end__contact"><a href="mailto:eugeniecolleville.paris@gmail.com?subject=SIGNATURE%20No.%2001">For invitations &amp; conversation →</a></p>
       </div>
     </section>
 
@@ -1128,6 +1077,158 @@ const description =
     .sig-notes__inner { grid-template-columns: 1fr; gap: 2.5rem; }
   }
 
+  /* ============ SCROLL INDICATOR (on cover, top-right corner) ============ */
+  .sig-scroll {
+    position: absolute;
+    top: 50%;
+    right: clamp(1.5rem, 3vw, 2.5rem);
+    transform: translateY(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+    text-decoration: none;
+    color: rgba(240, 233, 221, 0.8);
+    font-family: var(--font-body);
+    font-size: 0.55rem;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    padding-left: 0.5em;
+    writing-mode: vertical-rl;
+    transition: color 0.3s ease, opacity 0.4s ease;
+    animation: sigScrollFadeIn 1s 1.4s ease-out both;
+  }
+  .sig-scroll:hover { color: var(--sig-cream); }
+  .sig-scroll__line {
+    width: 1px;
+    height: 3rem;
+    background: rgba(240, 233, 221, 0.35);
+    position: relative;
+    overflow: hidden;
+    writing-mode: horizontal-tb;
+  }
+  .sig-scroll__line::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--sig-cream);
+    transform: translateY(-100%);
+    animation: sigScrollPulse 2.4s ease-in-out infinite;
+  }
+  @keyframes sigScrollFadeIn {
+    from { opacity: 0; transform: translateY(-50%) translateX(8px); }
+    to   { opacity: 1; transform: translateY(-50%); }
+  }
+  @keyframes sigScrollPulse {
+    0%   { transform: translateY(-100%); }
+    50%  { transform: translateY(0); }
+    100% { transform: translateY(100%); }
+  }
+  @media (max-width: 600px) {
+    .sig-scroll { right: 1rem; font-size: 0.5rem; letter-spacing: 0.4em; }
+    .sig-scroll__line { height: 2rem; }
+  }
+
+  /* ============ POST-UNLOCK CEREMONY ============ */
+  .sig-ceremony {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+  }
+  .sig-ceremony[aria-hidden="false"] {
+    animation: sigCeremony 1.4s ease-out forwards;
+  }
+  .sig-ceremony::before {
+    content: "SIGNATURE";
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(1.4rem, 3.2vw, 2.4rem);
+    letter-spacing: 0.5em;
+    text-indent: 0.5em;
+    color: var(--sig-cream);
+    opacity: 0;
+    text-transform: uppercase;
+  }
+  .sig-ceremony[aria-hidden="false"]::before {
+    animation: sigCeremonyText 1.4s ease-out forwards;
+  }
+  @keyframes sigCeremony {
+    0%   { opacity: 1; }
+    75%  { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  @keyframes sigCeremonyText {
+    0%   { opacity: 0; letter-spacing: 0.8em; text-indent: 0.8em; }
+    30%  { opacity: 1; letter-spacing: 0.5em; text-indent: 0.5em; }
+    75%  { opacity: 1; letter-spacing: 0.5em; text-indent: 0.5em; }
+    100% { opacity: 0; letter-spacing: 0.4em; text-indent: 0.4em; }
+  }
+
+  /* ============ PROGRAMME TEASER (linked card to /programme) ============ */
+  .sig-tease {
+    background: var(--sig-ink);
+    color: var(--sig-cream);
+    padding: clamp(4rem, 10vh, 6rem) 1.5rem;
+    border-top: 1px solid rgba(240, 233, 221, 0.06);
+  }
+  .sig-tease__card {
+    display: block;
+    max-width: 36rem;
+    margin: 0 auto;
+    padding: clamp(2.75rem, 5vw, 4rem) clamp(1.75rem, 4vw, 3rem);
+    text-align: center;
+    text-decoration: none;
+    color: var(--sig-cream);
+    border: 1px solid rgba(240, 233, 221, 0.14);
+    transition: border-color 0.4s ease, background 0.4s ease, transform 0.5s var(--ease, ease);
+  }
+  .sig-tease__card:hover {
+    border-color: rgba(240, 233, 221, 0.55);
+    background: rgba(240, 233, 221, 0.03);
+    transform: translateY(-2px);
+  }
+  .sig-tease__kicker {
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(240, 233, 221, 0.6);
+    margin: 0 0 1.1rem;
+    padding-left: 0.4em;
+  }
+  .sig-tease__title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1;
+    margin: 0 0 0.75rem;
+    color: var(--sig-cream);
+  }
+  .sig-tease__sub {
+    font-family: var(--font-display);
+    font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+    color: rgba(240, 233, 221, 0.75);
+    margin: 0 0 1.75rem;
+  }
+  .sig-tease__sub em { font-style: italic; }
+  .sig-tease__cta {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.62rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(240, 233, 221, 0.85);
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(240, 233, 221, 0.25);
+  }
+
   /* ============ PRACTICAL (Calendar / Reserve / Newsletter) ============ */
   .sig-practical {
     background: var(--sig-ink);
@@ -1246,7 +1347,9 @@ const description =
   const input = document.getElementById("sigGateInput") as HTMLInputElement | null;
   const err = document.getElementById("sigGateErr") as HTMLElement | null;
 
-  const unlock = () => {
+  const ceremony = document.getElementById("sigCeremony") as HTMLElement | null;
+
+  const unlock = (withCeremony = true) => {
     if (!gate || !main) return;
     main.hidden = false;
     gate.setAttribute("aria-hidden", "true");
@@ -1255,12 +1358,19 @@ const description =
     try {
       sessionStorage.setItem("sigUnlocked", "1");
     } catch {}
+    // Play the ceremony overlay only on fresh unlock (not on session restore)
+    if (withCeremony && ceremony) {
+      ceremony.setAttribute("aria-hidden", "false");
+      setTimeout(() => ceremony.remove(), 1500);
+    } else if (ceremony) {
+      ceremony.remove();
+    }
   };
 
   if (gate && main && form && input) {
     try {
       if (sessionStorage.getItem("sigUnlocked") === "1") {
-        unlock();
+        unlock(false);
       } else {
         document.body.style.overflow = "hidden";
         setTimeout(() => input.focus(), 300);
