@@ -27,9 +27,17 @@ const description = "The full 24-hour programme of Signature No. 01 at Château 
 
   <main class="prg" id="sigMain" hidden>
 
+    <nav class="prg-nav">
+      <a href="/signature">← Invitation</a>
+      <span class="prg-nav__links">
+        <a href="/menu">Menu</a>
+        <a href="/creators">Creators</a>
+        <a href="/contact">Contact</a>
+      </span>
+    </nav>
+
     <!-- ===== HEADER ===== -->
     <header class="prg-hero">
-      <a class="prg-back" href="/signature" aria-label="Back to invitation">← Invitation</a>
       <p class="prg-eyebrow">The Programme</p>
       <h1 class="prg-title">24&nbsp;Hours</h1>
       <p class="prg-sub"><em>26–27 September 2026 &nbsp;·&nbsp; Château Laffitte Carcasset</em></p>
@@ -203,25 +211,28 @@ const description = "The full 24-hour programme of Signature No. 01 at Château 
     color: rgba(240, 233, 221, 0.7);
   }
 
+  /* ==== NAV ==== */
+  .prg-nav {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: clamp(1.1rem, 2vh, 1.5rem) clamp(1.5rem, 4vw, 3rem);
+    font-family: var(--font-body); font-size: 0.6rem;
+    letter-spacing: 0.35em; text-transform: uppercase;
+    background: rgba(10, 7, 7, 0.85);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(240, 233, 221, 0.06);
+  }
+  .prg-nav a { color: rgba(240, 233, 221, 0.72); text-decoration: none; transition: color 0.3s ease; padding-left: 0.35em; }
+  .prg-nav a:hover { color: var(--sig-cream); }
+  .prg-nav__links { display: flex; gap: clamp(1rem, 3vw, 2.2rem); }
+  @media (max-width: 600px) { .prg-nav { font-size: 0.55rem; letter-spacing: 0.28em; } .prg-nav__links { gap: 1rem; } }
+
   /* ==== HERO ==== */
   .prg-hero {
     padding: clamp(4rem, 10vh, 7rem) 1.5rem clamp(2rem, 5vh, 3.5rem);
     text-align: center;
     position: relative;
   }
-  .prg-back {
-    position: absolute;
-    top: clamp(1.4rem, 3vh, 2rem);
-    left: clamp(1.5rem, 4vw, 3rem);
-    font-family: var(--font-body);
-    font-size: 0.62rem;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: rgba(240, 233, 221, 0.7);
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  .prg-back:hover { color: var(--sig-cream); }
   .prg-eyebrow {
     font-family: var(--font-body);
     font-size: 0.6rem;

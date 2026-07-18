@@ -1,0 +1,204 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SigGate from "../components/SigGate.astro";
+
+const title = "SIGNATURE — Contact";
+const description = "Get in touch about Signature No. 01 — for invitations, reservations and the newsletter.";
+---
+
+<Layout lang="en" title={title} description={description}>
+  <SigGate subtitle="Contact · By invitation only" />
+
+  <main class="pg" id="sigMain" hidden>
+
+    <nav class="pg-nav">
+      <a href="/signature">← Invitation</a>
+      <span class="pg-nav__links">
+        <a href="/menu">Menu</a>
+        <a href="/programme">Programme</a>
+        <a href="/creators">Creators</a>
+      </span>
+    </nav>
+
+    <header class="pg-hero">
+      <p class="pg-eyebrow">By invitation</p>
+      <h1 class="pg-title">Get&nbsp;in&nbsp;Touch</h1>
+      <p class="pg-sub"><em>For invitations, reservations, and conversation.</em></p>
+      <div class="pg-rule"></div>
+    </header>
+
+    <section class="pg-contact">
+
+      <a class="pg-tile" href="mailto:eugeniecolleville.paris@gmail.com?subject=SIGNATURE%20No.%2001">
+        <p class="pg-tile__eyebrow">Write to us</p>
+        <p class="pg-tile__title">Invitations &amp; conversation</p>
+        <p class="pg-tile__sub">A word about you, and we come back to you.</p>
+        <span class="pg-tile__cta">Open mail →</span>
+      </a>
+
+      <a class="pg-tile" href="mailto:eugeniecolleville.paris@gmail.com?subject=SIGNATURE%20No.%2001%20%E2%80%94%20Reservation&body=Hello%20Eug%C3%A9nie%2C%0A%0AI%20would%20like%20to%20reserve%20___%20place(s)%20for%20Signature%20No.%2001%20on%2026-27%20September%202026.%0A%0AName%3A%20%0APhone%3A%20%0ADietary%20notes%3A%20%0A%0AThank%20you.">
+        <p class="pg-tile__eyebrow">Reserve</p>
+        <p class="pg-tile__title">Your place at the table</p>
+        <p class="pg-tile__sub">A short reply confirms your seat for the evening.</p>
+        <span class="pg-tile__cta">Reserve by mail →</span>
+      </a>
+
+      <div class="pg-tile pg-tile--form">
+        <p class="pg-tile__eyebrow">Newsletter</p>
+        <p class="pg-tile__title">Stay close</p>
+        <p class="pg-tile__sub">Future editions, private dinners and seasonal menus.</p>
+        <form class="pg-news" id="pgNews">
+          <input type="email" name="email" required placeholder="your@email.com" aria-label="Your email" autocomplete="email">
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="pg-news__ok" id="pgNewsOk" hidden>Thank you. An email opened — just press send.</p>
+      </div>
+
+    </section>
+
+    <section class="pg-cta">
+      <a href="/signature" class="pg-cta__link">Return to the invitation</a>
+    </section>
+
+  </main>
+</Layout>
+
+<style>
+  html, body { background: #0a0707; }
+  .pg { color: #f0e9dd; font-family: var(--font-body); background: #0a0707; }
+
+  .pg-nav {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: clamp(1.1rem, 2vh, 1.5rem) clamp(1.5rem, 4vw, 3rem);
+    font-family: var(--font-body); font-size: 0.6rem;
+    letter-spacing: 0.35em; text-transform: uppercase;
+    background: rgba(10, 7, 7, 0.85);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(240, 233, 221, 0.06);
+  }
+  .pg-nav a { color: rgba(240, 233, 221, 0.72); text-decoration: none; transition: color 0.3s ease; padding-left: 0.35em; }
+  .pg-nav a:hover { color: #f0e9dd; }
+  .pg-nav__links { display: flex; gap: clamp(1rem, 3vw, 2.2rem); }
+  @media (max-width: 600px) { .pg-nav { font-size: 0.55rem; letter-spacing: 0.28em; } .pg-nav__links { gap: 1rem; } }
+
+  .pg-hero { padding: clamp(4rem, 10vh, 7rem) 1.5rem clamp(2rem, 5vh, 3.5rem); text-align: center; }
+  .pg-eyebrow { font-family: var(--font-body); font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: rgba(240, 233, 221, 0.6); margin: 0 0 1.4rem; padding-left: 0.4em; }
+  .pg-title { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.6rem, 5.5vw, 4.4rem); line-height: 1; margin: 0 0 0.6rem; letter-spacing: -0.005em; }
+  .pg-sub { font-family: var(--font-display); font-size: clamp(1rem, 1.4vw, 1.25rem); color: rgba(240, 233, 221, 0.85); margin: 0; }
+  .pg-sub em { font-style: italic; }
+  .pg-rule { width: 3.5rem; height: 1px; background: rgba(240, 233, 221, 0.4); margin: 1.75rem auto 0; }
+
+  .pg-contact {
+    max-width: 72rem; margin: 0 auto;
+    padding: clamp(3rem, 6vh, 5rem) clamp(1.5rem, 4vw, 3rem);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1.25rem, 2vw, 1.75rem);
+  }
+  .pg-tile {
+    display: flex; flex-direction: column;
+    padding: 2.25rem 1.75rem;
+    background: rgba(240, 233, 221, 0.03);
+    border: 1px solid rgba(240, 233, 221, 0.14);
+    text-decoration: none;
+    color: #f0e9dd;
+    transition: border-color 0.4s ease, background 0.4s ease, transform 0.5s ease;
+  }
+  a.pg-tile:hover {
+    border-color: rgba(240, 233, 221, 0.55);
+    background: rgba(240, 233, 221, 0.06);
+    transform: translateY(-2px);
+  }
+  .pg-tile__eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase;
+    color: rgba(240, 233, 221, 0.55);
+    margin: 0 0 0.6rem; padding-left: 0.4em;
+  }
+  .pg-tile__title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+    line-height: 1.15;
+    margin: 0 0 0.6rem;
+    color: #f0e9dd;
+  }
+  .pg-tile__sub {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: rgba(240, 233, 221, 0.72);
+    margin: 0 0 1.5rem;
+    flex: 1;
+  }
+  .pg-tile__cta {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.62rem; letter-spacing: 0.35em; text-transform: uppercase;
+    color: rgba(240, 233, 221, 0.85);
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(240, 233, 221, 0.25);
+    align-self: flex-start;
+  }
+
+  .pg-news { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 0.5rem; }
+  .pg-news input {
+    background: rgba(240, 233, 221, 0.06);
+    border: 1px solid rgba(240, 233, 221, 0.25);
+    color: #f0e9dd;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    padding: 0.75rem 0.9rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  .pg-news input::placeholder { color: rgba(240, 233, 221, 0.4); }
+  .pg-news input:focus { border-color: rgba(240, 233, 221, 0.7); }
+  .pg-news button {
+    background: #f0e9dd;
+    color: #0a0707;
+    border: none;
+    padding: 0.85rem 1.25rem;
+    font-family: var(--font-body);
+    font-size: 0.62rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    margin-top: 0.35rem;
+  }
+  .pg-news button:hover { opacity: 0.85; }
+  .pg-news__ok {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.85rem;
+    color: rgba(240, 233, 221, 0.78);
+    margin: 0.75rem 0 0;
+  }
+
+  @media (max-width: 800px) {
+    .pg-contact { grid-template-columns: 1fr; }
+  }
+
+  .pg-cta { padding: clamp(5rem, 10vh, 7rem) 1.5rem; text-align: center; border-top: 1px solid rgba(240, 233, 221, 0.06); }
+  .pg-cta__link { font-family: var(--font-body); font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: #f0e9dd; text-decoration: none; padding: 1rem 2rem; border: 1px solid rgba(240, 233, 221, 0.35); transition: border-color 0.3s ease, background 0.3s ease; }
+  .pg-cta__link:hover { border-color: rgba(240, 233, 221, 0.85); background: rgba(240, 233, 221, 0.05); }
+</style>
+
+<script>
+  const news = document.getElementById("pgNews") as HTMLFormElement | null;
+  const newsOk = document.getElementById("pgNewsOk") as HTMLElement | null;
+  if (news) {
+    news.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = (news.querySelector('input[name="email"]') as HTMLInputElement).value.trim();
+      if (!email) return;
+      const subject = encodeURIComponent("Signature — Newsletter");
+      const body = encodeURIComponent(`Hello Eugénie,\n\nPlease add me to the Signature newsletter.\n\nEmail: ${email}\n\nThank you.`);
+      window.location.href = `mailto:eugeniecolleville.paris@gmail.com?subject=${subject}&body=${body}`;
+      if (newsOk) newsOk.hidden = false;
+    });
+  }
+</script>

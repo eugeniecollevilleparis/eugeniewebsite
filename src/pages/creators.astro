@@ -1,0 +1,149 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SigGate from "../components/SigGate.astro";
+
+const title = "SIGNATURE — Creators";
+const description = "The hands and minds behind Signature No. 01.";
+---
+
+<Layout lang="en" title={title} description={description}>
+  <SigGate subtitle="Creators · By invitation only" />
+
+  <main class="pg" id="sigMain" hidden>
+
+    <nav class="pg-nav">
+      <a href="/signature">← Invitation</a>
+      <span class="pg-nav__links">
+        <a href="/menu">Menu</a>
+        <a href="/programme">Programme</a>
+        <a href="/contact">Contact</a>
+      </span>
+    </nav>
+
+    <header class="pg-hero">
+      <p class="pg-eyebrow">The hands behind the evening</p>
+      <h1 class="pg-title">Creators</h1>
+      <p class="pg-sub"><em>Three hands. One evening.</em></p>
+      <div class="pg-rule"></div>
+    </header>
+
+    <section class="pg-creators">
+
+      <article class="pg-creator">
+        <p class="pg-creator__label">The Chef</p>
+        <h2 class="pg-creator__name"><em>Eugénie Colleville</em></h2>
+        <p class="pg-creator__body">French chef, whose cuisine combines French culinary heritage with a contemporary, ingredient-led approach. Signature composes the dinner course by course, wine by wine — a table written for one evening.</p>
+      </article>
+
+      <article class="pg-creator">
+        <p class="pg-creator__label">Music Direction</p>
+        <h2 class="pg-creator__name"><em>Accard Production</em></h2>
+        <p class="pg-creator__body">A selection shaped by years behind the decks, drawing from underground electronic music with a focus on atmosphere, rhythm and progression. From the golden hour to late night, the room is scored, not soundtracked.</p>
+      </article>
+
+      <article class="pg-creator">
+        <p class="pg-creator__label">The Setting</p>
+        <h2 class="pg-creator__name"><em>Château Laffitte Carcasset</em></h2>
+        <p class="pg-creator__body">Built in the eighteenth century and surrounded by the vineyards of Saint-Estèphe, the estate reflects the character of the Médoc through its architecture, history and landscape. The house wines pour throughout the evening.</p>
+      </article>
+
+    </section>
+
+    <section class="pg-creators__note">
+      <p><em>Every Signature is a collaboration. Each edition draws on new hands.</em></p>
+    </section>
+
+    <section class="pg-cta">
+      <a href="/signature" class="pg-cta__link">Return to the invitation</a>
+    </section>
+
+  </main>
+</Layout>
+
+<style>
+  html, body { background: #0a0707; }
+  .pg { color: #f0e9dd; font-family: var(--font-body); background: #0a0707; }
+
+  .pg-nav {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: clamp(1.1rem, 2vh, 1.5rem) clamp(1.5rem, 4vw, 3rem);
+    font-family: var(--font-body); font-size: 0.6rem;
+    letter-spacing: 0.35em; text-transform: uppercase;
+    background: rgba(10, 7, 7, 0.85);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(240, 233, 221, 0.06);
+  }
+  .pg-nav a { color: rgba(240, 233, 221, 0.72); text-decoration: none; transition: color 0.3s ease; padding-left: 0.35em; }
+  .pg-nav a:hover { color: #f0e9dd; }
+  .pg-nav__links { display: flex; gap: clamp(1rem, 3vw, 2.2rem); }
+  @media (max-width: 600px) { .pg-nav { font-size: 0.55rem; letter-spacing: 0.28em; } .pg-nav__links { gap: 1rem; } }
+
+  .pg-hero { padding: clamp(4rem, 10vh, 7rem) 1.5rem clamp(2rem, 5vh, 3.5rem); text-align: center; }
+  .pg-eyebrow { font-family: var(--font-body); font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: rgba(240, 233, 221, 0.6); margin: 0 0 1.4rem; padding-left: 0.4em; }
+  .pg-title { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.6rem, 5.5vw, 4.4rem); line-height: 1; margin: 0 0 0.6rem; letter-spacing: -0.005em; }
+  .pg-sub { font-family: var(--font-display); font-size: clamp(1rem, 1.4vw, 1.25rem); color: rgba(240, 233, 221, 0.85); margin: 0; }
+  .pg-sub em { font-style: italic; }
+  .pg-rule { width: 3.5rem; height: 1px; background: rgba(240, 233, 221, 0.4); margin: 1.75rem auto 0; }
+
+  .pg-creators {
+    max-width: 62rem; margin: 0 auto;
+    padding: clamp(3rem, 6vh, 5rem) clamp(1.5rem, 5vw, 4rem);
+    display: grid; gap: clamp(3rem, 6vh, 4.5rem);
+  }
+  .pg-creator {
+    padding-top: clamp(2rem, 4vh, 3rem);
+    border-top: 1px solid rgba(240, 233, 221, 0.08);
+    display: grid; grid-template-columns: 1fr 2fr;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    align-items: baseline;
+  }
+  .pg-creator:first-child { border-top: none; padding-top: 0; }
+  .pg-creator__label {
+    font-family: var(--font-body);
+    font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase;
+    color: rgba(240, 233, 221, 0.6);
+    margin: 0; padding-left: 0.4em;
+  }
+  .pg-creator__name {
+    grid-column: 2 / 3;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+    line-height: 1.1;
+    margin: 0 0 1.1rem;
+    color: #f0e9dd;
+  }
+  .pg-creator__name em { font-style: italic; }
+  .pg-creator__body {
+    grid-column: 2 / 3;
+    font-family: var(--font-display);
+    font-size: clamp(0.98rem, 1.15vw, 1.08rem);
+    line-height: 1.65;
+    color: rgba(240, 233, 221, 0.82);
+    margin: 0;
+  }
+  @media (max-width: 700px) {
+    .pg-creator { grid-template-columns: 1fr; gap: 0.8rem; }
+    .pg-creator__name, .pg-creator__body { grid-column: 1 / 2; }
+    .pg-creator__name { margin-bottom: 0.6rem; }
+  }
+
+  .pg-creators__note {
+    max-width: 36rem; margin: 0 auto;
+    padding: clamp(2rem, 4vh, 3rem) 1.5rem clamp(4rem, 8vh, 6rem);
+    text-align: center;
+  }
+  .pg-creators__note p {
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 1.3vw, 1.2rem);
+    line-height: 1.6;
+    color: rgba(240, 233, 221, 0.7);
+    margin: 0;
+  }
+  .pg-creators__note em { font-style: italic; }
+
+  .pg-cta { padding: clamp(5rem, 10vh, 7rem) 1.5rem; text-align: center; border-top: 1px solid rgba(240, 233, 221, 0.06); }
+  .pg-cta__link { font-family: var(--font-body); font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: #f0e9dd; text-decoration: none; padding: 1rem 2rem; border: 1px solid rgba(240, 233, 221, 0.35); transition: border-color 0.3s ease, background 0.3s ease; }
+  .pg-cta__link:hover { border-color: rgba(240, 233, 221, 0.85); background: rgba(240, 233, 221, 0.05); }
+</style>

@@ -1,0 +1,177 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SigGate from "../components/SigGate.astro";
+
+const title = "SIGNATURE — Menu · A Médoc Composition";
+const description = "The full menu for Signature No. 01. A Médoc composition — course by course.";
+---
+
+<Layout lang="en" title={title} description={description}>
+  <SigGate subtitle="Menu · By invitation only" />
+
+  <main class="pg" id="sigMain" hidden>
+
+    <nav class="pg-nav">
+      <a href="/signature">← Invitation</a>
+      <span class="pg-nav__links">
+        <a href="/programme">Programme</a>
+        <a href="/creators">Creators</a>
+        <a href="/contact">Contact</a>
+      </span>
+    </nav>
+
+    <header class="pg-hero">
+      <p class="pg-eyebrow">An evening · By invitation</p>
+      <h1 class="pg-title">The&nbsp;Menu</h1>
+      <p class="pg-sub"><em>A Médoc Composition</em></p>
+      <div class="pg-rule"></div>
+    </header>
+
+    <article class="pg-story">
+      <p class="pg-story__kicker">The story of the dinner</p>
+      <h2 class="pg-story__title"><em>Three centuries, one table</em></h2>
+      <div class="pg-story__body">
+        <p>At the heart of the Médoc, an estate has stood since 1759. Three centuries of vintages, harvests, and corsairs' tales — a terroir, a memory, a quiet legend.</p>
+        <p>This dinner has been conceived as a passage through that memory — each course answering to a fragment of the estate's history, paired with the wines it grew.</p>
+        <p>One hundred guests, one season. Late September, harvest underway. Cèpes from the Médoc woods, black figs from the South-West, Gironde caviar, oysters from Arcachon Bay, hams and poultry from the Landes, Bazas beef. A cuisine rooted in its place, written for its moment.</p>
+        <p>The composition that follows pays tribute to the Bordeaux terroir and to the memory of the estate — from the beef cheek braised in the house wine to the closing tartlet. The gesture remains one: the table as a narrative.</p>
+      </div>
+    </article>
+
+    <section class="pg-menu">
+      <div class="pg-menu__col">
+        <p class="pg-menu__col-kicker">The Composition</p>
+        <h3 class="pg-menu__col-title"><em>A Médoc Composition</em></h3>
+        <p class="pg-menu__col-note">A passage through the estate, course by course</p>
+
+        <div class="pg-course">
+          <p class="pg-course__label">Apéro &nbsp;·&nbsp; Standing Welcome</p>
+          <p class="pg-course__wine"><em>Crémant de Bordeaux</em></p>
+          <p class="pg-course__dish">Bayonne ham croquettes, Ossau-Iraty béchamel</p>
+        </div>
+
+        <div class="pg-course">
+          <p class="pg-course__label">Canapé I</p>
+          <p class="pg-course__wine"><em>Crémant de Bordeaux</em></p>
+          <p class="pg-course__dish">Savoury canelé with South-West confit duck, Ente plum compote</p>
+          <p class="pg-course__hint"><em>A second canapé, chosen from the two proposals below.</em></p>
+        </div>
+
+        <div class="pg-course">
+          <p class="pg-course__label">Canapé II</p>
+          <p class="pg-course__dish">Arcachon Bay oyster, mignonette of the estate's red wine and pink shallot, Graves white wine espuma</p>
+        </div>
+
+        <div class="pg-course">
+          <p class="pg-course__label">Canapé III &nbsp;·&nbsp; In the Chai</p>
+          <p class="pg-course__dish">Granita of the estate's partially-fermented grape must, ribot milk, botrytised Sauternes jelly, fresh Périgord walnuts</p>
+          <p class="pg-course__hint"><em>Served on a porcelain spoon among the barrels — a salute to the fermentations underway.</em></p>
+        </div>
+
+        <div class="pg-course">
+          <p class="pg-course__label">Breads &amp; Butter &nbsp;·&nbsp; At the Table</p>
+          <p class="pg-course__dish">Artisan breads from the South-West, house-churned butter with Atlantic seaweed, olive oil</p>
+        </div>
+
+        <div class="pg-course">
+          <p class="pg-course__label">Starter</p>
+          <p class="pg-course__wine"><em>Pessac-Léognan blanc</em></p>
+          <p class="pg-course__dish">Meagre from the Gironde estuary, gravlax with lemon verbena and wild fennel, warm Graves white wine beurre blanc, garden pickles (cucumber, fennel, pink shallot, pink radish), watercress, fleur de sel</p>
+          <p class="pg-course__hint"><em>Signature cold-to-warm contrast.</em></p>
+        </div>
+
+        <div class="pg-course">
+          <p class="pg-course__label">Main Course</p>
+          <p class="pg-course__wine"><em>Château Laffitte Carcasset, young vintage</em></p>
+          <p class="pg-course__dish">Bazas beef cheek braised six hours in the house wine, crushed potato with duck fat, glazed baby carrots, Médoc cèpes confit</p>
+        </div>
+
+        <div class="pg-course">
+          <p class="pg-course__label">Dessert — Estate Honey</p>
+          <p class="pg-course__wine"><em>Sauternes</em></p>
+          <p class="pg-course__dish">Estate honey — Basque farm-yoghurt siphon with honey and rosemary, flowing gel of South-West black fig, caramelised buckwheat tuile, edible flowers</p>
+        </div>
+
+        <div class="pg-course">
+          <p class="pg-course__label">Mignardises with Coffee</p>
+          <p class="pg-course__dish">Pâte de fruit of the house wine</p>
+        </div>
+
+        <div class="pg-course pg-course--signature">
+          <p class="pg-course__label">Signature</p>
+          <p class="pg-course__dish">Tartlet of single-origin dark chocolate, Gironde caviar, fleur de sel</p>
+        </div>
+      </div>
+
+      <p class="pg-menu__foot"><span>A table written for one evening</span></p>
+    </section>
+
+    <section class="pg-cta">
+      <a href="/signature" class="pg-cta__link">Return to the invitation</a>
+    </section>
+
+  </main>
+</Layout>
+
+<style>
+  html, body { background: #0a0707; }
+  .pg { color: #f0e9dd; font-family: var(--font-body); background: #0a0707; }
+
+  .pg-nav {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: clamp(1.1rem, 2vh, 1.5rem) clamp(1.5rem, 4vw, 3rem);
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    background: rgba(10, 7, 7, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(240, 233, 221, 0.06);
+  }
+  .pg-nav a { color: rgba(240, 233, 221, 0.72); text-decoration: none; transition: color 0.3s ease; padding-left: 0.35em; }
+  .pg-nav a:hover { color: #f0e9dd; }
+  .pg-nav__links { display: flex; gap: clamp(1rem, 3vw, 2.2rem); }
+  @media (max-width: 600px) {
+    .pg-nav { font-size: 0.55rem; letter-spacing: 0.28em; }
+    .pg-nav__links { gap: 1rem; }
+  }
+
+  .pg-hero { padding: clamp(4rem, 10vh, 7rem) 1.5rem clamp(2rem, 5vh, 3.5rem); text-align: center; }
+  .pg-eyebrow { font-family: var(--font-body); font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: rgba(240, 233, 221, 0.6); margin: 0 0 1.4rem; padding-left: 0.4em; }
+  .pg-title { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.6rem, 5.5vw, 4.4rem); line-height: 1; margin: 0 0 0.6rem; }
+  .pg-sub { font-family: var(--font-display); font-size: clamp(1rem, 1.4vw, 1.25rem); color: rgba(240, 233, 221, 0.85); margin: 0; }
+  .pg-sub em { font-style: italic; }
+  .pg-rule { width: 3.5rem; height: 1px; background: rgba(240, 233, 221, 0.4); margin: 1.75rem auto 0; }
+
+  .pg-story { max-width: 40rem; margin: 0 auto; padding: clamp(3rem, 6vh, 5rem) 1.5rem; text-align: center; }
+  .pg-story__kicker { font-family: var(--font-body); font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: rgba(240, 233, 221, 0.6); margin: 0 0 1rem; padding-left: 0.4em; }
+  .pg-story__title { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.6rem, 3vw, 2.4rem); line-height: 1.2; margin: 0 0 2rem; }
+  .pg-story__title em { font-style: italic; }
+  .pg-story__body p { font-family: var(--font-display); font-size: 1rem; line-height: 1.7; color: rgba(240, 233, 221, 0.82); margin: 0 0 1rem; }
+
+  .pg-menu { padding: clamp(2rem, 5vh, 4rem) clamp(1.5rem, 5vw, 4rem) clamp(4rem, 8vh, 6rem); }
+  .pg-menu__col { max-width: 38rem; margin: 0 auto; }
+  .pg-menu__col-kicker { font-family: var(--font-body); font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: rgba(240, 233, 221, 0.55); margin: 0 0 0.8rem; padding-left: 0.4em; }
+  .pg-menu__col-title { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.5rem, 2.4vw, 2rem); line-height: 1.1; margin: 0 0 0.55rem; }
+  .pg-menu__col-title em { font-style: italic; }
+  .pg-menu__col-note { font-family: var(--font-display); font-style: italic; font-size: 0.95rem; color: rgba(240, 233, 221, 0.65); margin: 0 0 2.5rem; }
+
+  .pg-course { padding: 1.4rem 0; border-top: 1px solid rgba(240, 233, 221, 0.08); }
+  .pg-course:first-of-type { border-top: none; padding-top: 0; }
+  .pg-course__label { font-family: var(--font-body); font-size: 0.6rem; letter-spacing: 0.32em; text-transform: uppercase; color: rgba(240, 233, 221, 0.75); margin: 0 0 0.55rem; padding-left: 0.32em; }
+  .pg-course__wine { font-family: var(--font-display); font-size: 0.9rem; color: rgba(240, 233, 221, 0.65); margin: 0 0 0.45rem; }
+  .pg-course__wine em { font-style: italic; }
+  .pg-course__dish { font-family: var(--font-display); font-size: 1.02rem; line-height: 1.55; color: #f0e9dd; margin: 0; }
+  .pg-course__hint { font-family: var(--font-display); font-size: 0.82rem; line-height: 1.55; color: rgba(240, 233, 221, 0.5); margin: 0.55rem 0 0; }
+  .pg-course__hint em { font-style: italic; }
+  .pg-course--signature { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(240, 233, 221, 0.25); }
+  .pg-course--signature .pg-course__label { color: #f0e9dd; }
+
+  .pg-menu__foot { margin: 3.5rem auto 0; text-align: center; font-family: var(--font-body); font-size: 0.62rem; letter-spacing: 0.4em; text-transform: uppercase; color: rgba(240, 233, 221, 0.5); padding-left: 0.4em; }
+
+  .pg-cta { padding: clamp(5rem, 10vh, 7rem) 1.5rem; text-align: center; border-top: 1px solid rgba(240, 233, 221, 0.06); }
+  .pg-cta__link { font-family: var(--font-body); font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: #f0e9dd; text-decoration: none; padding: 1rem 2rem; border: 1px solid rgba(240, 233, 221, 0.35); transition: border-color 0.3s ease, background 0.3s ease; }
+  .pg-cta__link:hover { border-color: rgba(240, 233, 221, 0.85); background: rgba(240, 233, 221, 0.05); }
+</style>
