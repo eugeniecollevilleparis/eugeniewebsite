@@ -1,12 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import SigGate from "../components/SigGate.astro";
+import SigInteractions from "../components/SigInteractions.astro";
 
 const title = "SIGNATURE — Menu · A Médoc Composition";
 const description = "The full menu for Signature No. 01. A Médoc composition — course by course.";
 ---
 
 <Layout lang="en" title={title} description={description}>
+  <SigInteractions />
   <SigGate subtitle="Menu · By invitation only" />
 
   <main class="pg" id="sigMain" hidden>
@@ -44,60 +46,60 @@ const description = "The full menu for Signature No. 01. A Médoc composition �
         <h3 class="pg-menu__col-title"><em>A Médoc Composition</em></h3>
         <p class="pg-menu__col-note">A passage through the estate, course by course</p>
 
-        <div class="pg-course">
+        <div class="pg-course" data-reveal style="--reveal-delay:0.05s">
           <p class="pg-course__label">Apéro &nbsp;·&nbsp; Standing Welcome</p>
           <p class="pg-course__wine"><em>Crémant de Bordeaux</em></p>
           <p class="pg-course__dish">Bayonne ham croquettes, Ossau-Iraty béchamel</p>
         </div>
 
-        <div class="pg-course">
+        <div class="pg-course" data-reveal style="--reveal-delay:0.1s">
           <p class="pg-course__label">Canapé I</p>
           <p class="pg-course__wine"><em>Crémant de Bordeaux</em></p>
           <p class="pg-course__dish">Savoury canelé with South-West confit duck, Ente plum compote</p>
           <p class="pg-course__hint"><em>A second canapé, chosen from the two proposals below.</em></p>
         </div>
 
-        <div class="pg-course">
+        <div class="pg-course" data-reveal style="--reveal-delay:0.15s">
           <p class="pg-course__label">Canapé II</p>
           <p class="pg-course__dish">Arcachon Bay oyster, mignonette of the estate's red wine and pink shallot, Graves white wine espuma</p>
         </div>
 
-        <div class="pg-course">
+        <div class="pg-course" data-reveal style="--reveal-delay:0.2s">
           <p class="pg-course__label">Canapé III &nbsp;·&nbsp; In the Chai</p>
           <p class="pg-course__dish">Granita of the estate's partially-fermented grape must, ribot milk, botrytised Sauternes jelly, fresh Périgord walnuts</p>
           <p class="pg-course__hint"><em>Served on a porcelain spoon among the barrels — a salute to the fermentations underway.</em></p>
         </div>
 
-        <div class="pg-course">
+        <div class="pg-course" data-reveal style="--reveal-delay:0.25s">
           <p class="pg-course__label">Breads &amp; Butter &nbsp;·&nbsp; At the Table</p>
           <p class="pg-course__dish">Artisan breads from the South-West, house-churned butter with Atlantic seaweed, olive oil</p>
         </div>
 
-        <div class="pg-course">
+        <div class="pg-course" data-reveal style="--reveal-delay:0.3s">
           <p class="pg-course__label">Starter</p>
           <p class="pg-course__wine"><em>Pessac-Léognan blanc</em></p>
           <p class="pg-course__dish">Meagre from the Gironde estuary, gravlax with lemon verbena and wild fennel, warm Graves white wine beurre blanc, garden pickles (cucumber, fennel, pink shallot, pink radish), watercress, fleur de sel</p>
           <p class="pg-course__hint"><em>Signature cold-to-warm contrast.</em></p>
         </div>
 
-        <div class="pg-course">
+        <div class="pg-course" data-reveal style="--reveal-delay:0.35s">
           <p class="pg-course__label">Main Course</p>
           <p class="pg-course__wine"><em>Château Laffitte Carcasset, young vintage</em></p>
           <p class="pg-course__dish">Bazas beef cheek braised six hours in the house wine, crushed potato with duck fat, glazed baby carrots, Médoc cèpes confit</p>
         </div>
 
-        <div class="pg-course">
+        <div class="pg-course" data-reveal style="--reveal-delay:0.4s">
           <p class="pg-course__label">Dessert — Estate Honey</p>
           <p class="pg-course__wine"><em>Sauternes</em></p>
           <p class="pg-course__dish">Estate honey — Basque farm-yoghurt siphon with honey and rosemary, flowing gel of South-West black fig, caramelised buckwheat tuile, edible flowers</p>
         </div>
 
-        <div class="pg-course">
+        <div class="pg-course" data-reveal style="--reveal-delay:0.45s">
           <p class="pg-course__label">Mignardises with Coffee</p>
           <p class="pg-course__dish">Pâte de fruit of the house wine</p>
         </div>
 
-        <div class="pg-course pg-course--signature">
+        <div class="pg-course pg-course--signature" data-reveal style="--reveal-delay:0.5s">
           <p class="pg-course__label">Signature</p>
           <p class="pg-course__dish">Tartlet of single-origin dark chocolate, Gironde caviar, fleur de sel</p>
         </div>
@@ -174,4 +176,56 @@ const description = "The full menu for Signature No. 01. A Médoc composition �
   .pg-cta { padding: clamp(5rem, 10vh, 7rem) 1.5rem; text-align: center; border-top: 1px solid rgba(240, 233, 221, 0.06); }
   .pg-cta__link { font-family: var(--font-body); font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: #f0e9dd; text-decoration: none; padding: 1rem 2rem; border: 1px solid rgba(240, 233, 221, 0.35); transition: border-color 0.3s ease, background 0.3s ease; }
   .pg-cta__link:hover { border-color: rgba(240, 233, 221, 0.85); background: rgba(240, 233, 221, 0.05); }
+
+  /* ---- Rich interactions ---- */
+  .pg-course {
+    position: relative;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), padding-left 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .pg-course::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 1.4rem; bottom: 1.4rem;
+    width: 2px;
+    background: rgba(240, 233, 221, 0.55);
+    transform: scaleY(0);
+    transform-origin: top center;
+    transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .pg-course:hover { transform: translateX(4px); padding-left: 1.5rem; }
+  .pg-course:hover::before { transform: scaleY(1); }
+  .pg-course:hover .pg-course__label { color: rgba(240, 233, 221, 1); }
+  .pg-course:hover .pg-course__dish { color: #fff; }
+
+  .pg-cta__link {
+    position: relative;
+    overflow: hidden;
+  }
+  .pg-cta__link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(240, 233, 221, 0.08);
+    transform: translateX(-101%);
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .pg-cta__link:hover::after { transform: translateX(0); }
+
+  .pg-nav a {
+    position: relative;
+    display: inline-block;
+  }
+  .pg-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -4px;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .pg-nav a:hover::after { transform: scaleX(1); }
+
 </style>

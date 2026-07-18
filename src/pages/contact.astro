@@ -1,12 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import SigGate from "../components/SigGate.astro";
+import SigInteractions from "../components/SigInteractions.astro";
 
 const title = "SIGNATURE — Contact";
 const description = "Get in touch about Signature No. 01 — for invitations, reservations and the newsletter.";
 ---
 
 <Layout lang="en" title={title} description={description}>
+  <SigInteractions />
   <SigGate subtitle="Contact · By invitation only" />
 
   <main class="pg" id="sigMain" hidden>
@@ -29,21 +31,21 @@ const description = "Get in touch about Signature No. 01 — for invitations, re
 
     <section class="pg-contact">
 
-      <a class="pg-tile" href="mailto:eugeniecolleville.paris@gmail.com?subject=SIGNATURE%20No.%2001">
+      <a class="pg-tile" href="mailto:eugeniecolleville.paris@gmail.com?subject=SIGNATURE%20No.%2001" data-reveal style="--reveal-delay:0.1s">
         <p class="pg-tile__eyebrow">Write to us</p>
         <p class="pg-tile__title">Invitations &amp; conversation</p>
         <p class="pg-tile__sub">A word about you, and we come back to you.</p>
         <span class="pg-tile__cta">Open mail →</span>
       </a>
 
-      <a class="pg-tile" href="mailto:eugeniecolleville.paris@gmail.com?subject=SIGNATURE%20No.%2001%20%E2%80%94%20Reservation&body=Hello%20Eug%C3%A9nie%2C%0A%0AI%20would%20like%20to%20reserve%20___%20place(s)%20for%20Signature%20No.%2001%20on%2026-27%20September%202026.%0A%0AName%3A%20%0APhone%3A%20%0ADietary%20notes%3A%20%0A%0AThank%20you.">
+      <a class="pg-tile" href="mailto:eugeniecolleville.paris@gmail.com?subject=SIGNATURE%20No.%2001%20%E2%80%94%20Reservation&body=Hello%20Eug%C3%A9nie%2C%0A%0AI%20would%20like%20to%20reserve%20___%20place(s)%20for%20Signature%20No.%2001%20on%2026-27%20September%202026.%0A%0AName%3A%20%0APhone%3A%20%0ADietary%20notes%3A%20%0A%0AThank%20you." data-reveal style="--reveal-delay:0.2s">
         <p class="pg-tile__eyebrow">Reserve</p>
         <p class="pg-tile__title">Your place at the table</p>
         <p class="pg-tile__sub">A short reply confirms your seat for the evening.</p>
         <span class="pg-tile__cta">Reserve by mail →</span>
       </a>
 
-      <div class="pg-tile pg-tile--form">
+      <div class="pg-tile pg-tile--form" data-reveal style="--reveal-delay:0.3s">
         <p class="pg-tile__eyebrow">Newsletter</p>
         <p class="pg-tile__title">Stay close</p>
         <p class="pg-tile__sub">Future editions, private dinners and seasonal menus.</p>
@@ -185,6 +187,42 @@ const description = "Get in touch about Signature No. 01 — for invitations, re
   .pg-cta { padding: clamp(5rem, 10vh, 7rem) 1.5rem; text-align: center; border-top: 1px solid rgba(240, 233, 221, 0.06); }
   .pg-cta__link { font-family: var(--font-body); font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: #f0e9dd; text-decoration: none; padding: 1rem 2rem; border: 1px solid rgba(240, 233, 221, 0.35); transition: border-color 0.3s ease, background 0.3s ease; }
   .pg-cta__link:hover { border-color: rgba(240, 233, 221, 0.85); background: rgba(240, 233, 221, 0.05); }
+
+  /* ---- Rich interactions ---- */
+  a.pg-tile {
+    position: relative;
+    overflow: hidden;
+  }
+  a.pg-tile::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at var(--mx, 50%) var(--my, 50%), rgba(240, 233, 221, 0.14) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+  a.pg-tile:hover::before { opacity: 1; }
+  a.pg-tile:hover .pg-tile__title { transform: translateX(3px); }
+  .pg-tile__title { transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+  .pg-tile__cta { position: relative; }
+  a.pg-tile:hover .pg-tile__cta {
+    color: #fff;
+    border-color: rgba(240, 233, 221, 0.75);
+  }
+  .pg-nav a { position: relative; display: inline-block; }
+  .pg-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -4px;
+    width: 100%; height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .pg-nav a:hover::after { transform: scaleX(1); }
+
 </style>
 
 <script>

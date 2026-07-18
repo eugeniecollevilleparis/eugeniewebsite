@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import SigInteractions from "../components/SigInteractions.astro";
 
 const title = "SIGNATURE — Programme · 26-27 September 2026";
 const description = "The full 24-hour programme of Signature No. 01 at Château Laffitte Carcasset, 26-27 September 2026.";
@@ -7,6 +8,7 @@ const description = "The full 24-hour programme of Signature No. 01 at Château 
 
 <Layout lang="en" title={title} description={description}>
 
+  <SigInteractions />
   <!-- ===== PASSCODE GATE (same code, shared session) ===== -->
   <div id="sigGate" class="sig-gate" data-code="carcasset" aria-hidden="false">
     <div class="sig-gate__bg sig-gate__bg--video">
@@ -405,6 +407,56 @@ const description = "The full 24-hour programme of Signature No. 01 at Château 
     .sig-gate__form { flex-direction: column; }
     .sig-gate__form input { width: 100%; }
   }
+
+  /* ---- Rich interactions ---- */
+  .prg-day__list li {
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+    cursor: default;
+  }
+  .prg-day__list li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 50%;
+    width: 2px; height: 0;
+    background: rgba(240, 233, 221, 0.7);
+    transform: translateY(-50%);
+    transition: height 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .prg-day__list li:hover { transform: translateX(6px); }
+  .prg-day__list li:hover::before { height: 60%; }
+  .prg-day__list li:hover .t { color: rgba(240, 233, 221, 1); letter-spacing: 0.32em; }
+  .prg-day__list li .t { transition: color 0.4s ease, letter-spacing 0.5s ease; }
+  .prg-day__list li:hover .e { color: #fff; }
+  .prg-day__list li .e { transition: color 0.4s ease; }
+
+  .prg-cta__link {
+    position: relative;
+    overflow: hidden;
+  }
+  .prg-cta__link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(240, 233, 221, 0.08);
+    transform: translateX(-101%);
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .prg-cta__link:hover::after { transform: translateX(0); }
+
+  .prg-nav a { position: relative; display: inline-block; }
+  .prg-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -4px;
+    width: 100%; height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .prg-nav a:hover::after { transform: scaleX(1); }
+
 </style>
 
 <script>

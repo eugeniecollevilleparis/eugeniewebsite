@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import SigInteractions from "../components/SigInteractions.astro";
 
 const title = "SIGNATURE — No. 01 · 26-27 September 2026 · Château Laffitte Carcasset";
 const description =
@@ -8,6 +9,7 @@ const description =
 
 <Layout lang="en" title={title} description={description}>
 
+  <SigInteractions />
   <!-- ===== PASSCODE GATE ===== -->
   <div id="sigGate" class="sig-gate" data-code="carcasset" aria-hidden="false">
     <div class="sig-gate__bg sig-gate__bg--video">
@@ -1338,6 +1340,26 @@ const description =
     .sig-gate__form { flex-direction: column; align-items: stretch; }
     .sig-gate__form input { width: 100%; }
   }
+
+  /* ---- Chapter card rich hover ---- */
+  .sig-chapter { position: relative; overflow: hidden; }
+  .sig-chapter::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(240, 233, 221, 0.08) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+  .sig-chapter:hover::before { opacity: 1; }
+  .sig-chapter__num { transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), color 0.4s ease; }
+  .sig-chapter:hover .sig-chapter__num { transform: translateY(-4px); color: rgba(240, 233, 221, 0.9); }
+  .sig-chapter__title { transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1); }
+  .sig-chapter:hover .sig-chapter__title { transform: translateX(3px); }
+  .sig-chapter__cta { transition: letter-spacing 0.55s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s ease; }
+  .sig-chapter:hover .sig-chapter__cta { letter-spacing: 0.42em; border-color: rgba(240, 233, 221, 0.8); }
+
 </style>
 
 <script>
