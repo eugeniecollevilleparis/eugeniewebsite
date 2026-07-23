@@ -43,7 +43,7 @@ const description =
         <button class="sigt__tab" role="tab" data-tab="programme" aria-selected="false">Programme</button>
         <button class="sigt__tab" role="tab" data-tab="menu" aria-selected="false">Menu</button>
         <button class="sigt__tab" role="tab" data-tab="artists" aria-selected="false">Artists</button>
-        <button class="sigt__tab" role="tab" data-tab="evening" aria-selected="false">The Evening</button>
+        <button class="sigt__tab" role="tab" data-tab="manifesto" aria-selected="false">Manifesto</button>
         <button class="sigt__tab" role="tab" data-tab="contact" aria-selected="false">Contact</button>
       </nav>
     </header>
@@ -215,29 +215,36 @@ const description =
       </div>
     </section>
 
-    <!-- ============ TAB · THE EVENING ============ -->
-    <section class="sigt-panel" data-panel="evening" role="tabpanel">
-      <div class="sigt-panel__bg" style="background-image: url('/images/signature/act5.jpg');"></div>
-      <div class="sigt-panel__veil sigt-panel__veil--deep"></div>
-      <div class="sigt-panel__inner sigt-panel__inner--scrollable">
+    <!-- ============ TAB · MANIFESTO (+ five acts) ============ -->
+    <section class="sigt-panel" data-panel="manifesto" role="tabpanel">
+      <div class="sigt-panel__bg" style="background-image: url('/images/signature/manifesto.jpg');"></div>
+      <div class="sigt-panel__veil"></div>
+      <div class="sigt-panel__inner sigt-panel__inner--split">
 
-        <header class="sigt-head" data-reveal>
-          <p class="sigt-head__kicker">The evening</p>
-          <h2 class="sigt-head__title">We shape atmosphere</h2>
-          <p class="sigt-head__sub"><em>26 – 27 September 2026 · Saint-Estèphe</em></p>
-        </header>
+        <div class="sigt-mani">
+          <p class="sigt-mani__lead" data-reveal>
+            We don't celebrate status.<br>
+            We shape atmosphere.
+          </p>
+          <div class="sigt-mani__body" data-reveal style="--reveal-delay:0.15s">
+            <p>SIGNATURE is built around consideration. For the place. For the people who share it.</p>
+            <p>We choose each setting carefully. We design every detail with intention. And we invite people who naturally contribute to the atmosphere rather than dominate it.</p>
+          </div>
+          <p class="sigt-mani__close" data-reveal style="--reveal-delay:0.3s">
+            <em>Architecture is never hidden.<br>Every detail is designed to reveal it.</em>
+          </p>
+        </div>
 
-        <p class="sigt-evening__lead" data-reveal style="--reveal-delay:0.1s">
-          SIGNATURE is built around consideration. For the place. For the people who share it. We design every detail with intention, and invite people who contribute to the atmosphere rather than dominate it.
-        </p>
-
-        <p class="sigt-evening__lead" data-reveal style="--reveal-delay:0.25s">
-          Nothing is left to chance — from the pace of the evening to the quiet in between. What we ask of every guest is simple: arrive with an open mind, and leave the rest to us.
-        </p>
-
-        <p class="sigt-colophon" data-reveal style="--reveal-delay:0.4s">
-          SIGNATURE &nbsp;·&nbsp; No. 01 &nbsp;·&nbsp; Château Laffitte Carcasset, Saint-Estèphe
-        </p>
+        <div class="sigt-acts">
+          <p class="sigt-acts__kicker" data-reveal style="--reveal-delay:0.2s">The Five Acts</p>
+          <ol class="sigt-acts__list">
+            <li data-reveal style="--reveal-delay:0.3s"><span class="n">ACT&nbsp;I.</span><span class="l">Every edition begins with a place chosen for what it already possesses.</span></li>
+            <li data-reveal style="--reveal-delay:0.4s"><span class="n">ACT&nbsp;II.</span><span class="l">Every place follows its own rhythm.</span></li>
+            <li data-reveal style="--reveal-delay:0.5s"><span class="n">ACT&nbsp;III.</span><span class="l">Some conversations deserve a setting.</span></li>
+            <li data-reveal style="--reveal-delay:0.6s"><span class="n">ACT&nbsp;IV.</span><span class="l">As daylight fades, the soundtrack arrives quietly.</span></li>
+            <li data-reveal style="--reveal-delay:0.7s"><span class="n">ACT&nbsp;V.</span><span class="l">The day finds its own pace. Nothing is rushed. Nothing is imposed.</span></li>
+          </ol>
+        </div>
 
       </div>
     </section>
