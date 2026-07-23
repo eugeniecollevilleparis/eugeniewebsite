@@ -40,11 +40,10 @@ const description =
       <span class="sigt__brand">SIGNATURE&nbsp;<em>No.&nbsp;01</em></span>
       <nav class="sigt__tabs" role="tablist" aria-label="Signature">
         <button class="sigt__tab is-active" role="tab" data-tab="invitation" aria-selected="true">Invitation</button>
-        <button class="sigt__tab" role="tab" data-tab="manifesto" aria-selected="false">Manifesto</button>
-        <button class="sigt__tab" role="tab" data-tab="menu" aria-selected="false">Menu</button>
         <button class="sigt__tab" role="tab" data-tab="programme" aria-selected="false">Programme</button>
-        <button class="sigt__tab" role="tab" data-tab="creators" aria-selected="false">Creators</button>
-        <button class="sigt__tab" role="tab" data-tab="contact" aria-selected="false">Contact</button>
+        <button class="sigt__tab" role="tab" data-tab="menu" aria-selected="false">Menu</button>
+        <button class="sigt__tab" role="tab" data-tab="artists" aria-selected="false">Artists</button>
+        <button class="sigt__tab" role="tab" data-tab="evening" aria-selected="false">The Evening</button>
       </nav>
     </header>
 
@@ -60,44 +59,15 @@ const description =
         <div class="sigt-cover__bottom">
           <p class="sigt-cover__venue" data-reveal>Château Laffitte Carcasset &nbsp;·&nbsp; Saint-Estèphe</p>
           <p class="sigt-cover__date" data-reveal style="--reveal-delay:0.15s">26&nbsp;–&nbsp;27&nbsp;September&nbsp;2026</p>
-          <button class="sigt-cover__enter" type="button" data-goto="manifesto" data-reveal style="--reveal-delay:0.3s">
-            Enter the evening →
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ TAB · MANIFESTO (+ five acts) ============ -->
-    <section class="sigt-panel" data-panel="manifesto" role="tabpanel">
-      <div class="sigt-panel__bg" style="background-image: url('/images/signature/manifesto.jpg');"></div>
-      <div class="sigt-panel__veil"></div>
-      <div class="sigt-panel__inner sigt-panel__inner--split">
-
-        <div class="sigt-mani">
-          <p class="sigt-mani__lead" data-reveal>
-            We don't celebrate status.<br>
-            We shape atmosphere.
-          </p>
-          <div class="sigt-mani__body" data-reveal style="--reveal-delay:0.15s">
-            <p>SIGNATURE is built around consideration. For the place. For the people who share it.</p>
-            <p>We choose each setting carefully. We design every detail with intention. And we invite people who naturally contribute to the atmosphere rather than dominate it.</p>
+          <div class="sigt-cover__ctas" data-reveal style="--reveal-delay:0.3s">
+            <a class="sigt-cover__tickets" href="mailto:eugeniecolleville.paris@gmail.com?subject=SIGNATURE%20No.%2001%20%E2%80%94%20Tickets&body=Hello%2C%0A%0AI%20would%20like%20to%20request%20___%20ticket(s)%20for%20Signature%20No.%2001%20on%2026-27%20September%202026.%0A%0AName%3A%20%0APhone%3A%20%0ADietary%20notes%3A%20%0A%0AThank%20you." data-noadvance>
+              Tickets →
+            </a>
+            <button class="sigt-cover__enter" type="button" data-goto="programme" data-noadvance>
+              Enter the evening →
+            </button>
           </div>
-          <p class="sigt-mani__close" data-reveal style="--reveal-delay:0.3s">
-            <em>Architecture is never hidden.<br>Every detail is designed to reveal it.</em>
-          </p>
         </div>
-
-        <div class="sigt-acts">
-          <p class="sigt-acts__kicker" data-reveal style="--reveal-delay:0.2s">The Five Acts</p>
-          <ol class="sigt-acts__list">
-            <li data-reveal style="--reveal-delay:0.3s"><span class="n">ACT&nbsp;I.</span><span class="l">Every edition begins with a place chosen for what it already possesses.</span></li>
-            <li data-reveal style="--reveal-delay:0.4s"><span class="n">ACT&nbsp;II.</span><span class="l">Every place follows its own rhythm.</span></li>
-            <li data-reveal style="--reveal-delay:0.5s"><span class="n">ACT&nbsp;III.</span><span class="l">Some conversations deserve a setting.</span></li>
-            <li data-reveal style="--reveal-delay:0.6s"><span class="n">ACT&nbsp;IV.</span><span class="l">As daylight fades, the soundtrack arrives quietly.</span></li>
-            <li data-reveal style="--reveal-delay:0.7s"><span class="n">ACT&nbsp;V.</span><span class="l">The day finds its own pace. Nothing is rushed. Nothing is imposed.</span></li>
-          </ol>
-        </div>
-
       </div>
     </section>
 
@@ -208,50 +178,51 @@ const description =
       </div>
     </section>
 
-    <!-- ============ TAB · CREATORS ============ -->
-    <section class="sigt-panel" data-panel="creators" role="tabpanel">
+    <!-- ============ TAB · ARTISTS ============ -->
+    <section class="sigt-panel" data-panel="artists" role="tabpanel">
       <div class="sigt-panel__bg" style="background-image: url('/images/signature/act1.jpg');"></div>
       <div class="sigt-panel__veil sigt-panel__veil--deep"></div>
       <div class="sigt-panel__inner sigt-panel__inner--scrollable">
 
         <header class="sigt-head" data-reveal>
           <p class="sigt-head__kicker">The hands behind the evening</p>
-          <h2 class="sigt-head__title">Creators</h2>
-          <p class="sigt-head__sub"><em>Three hands. One evening.</em></p>
+          <h2 class="sigt-head__title">Artists</h2>
+          <p class="sigt-head__sub"><em>Two hands. One evening.</em></p>
         </header>
 
-        <div class="sigt-creators">
+        <div class="sigt-creators sigt-creators--two">
           <article class="sigt-creator" data-reveal style="--reveal-delay:0.15s">
             <p class="cr-label">The Chef</p>
             <p class="cr-name"><em>Eugénie Colleville</em></p>
             <p class="cr-body">French chef, whose cuisine combines French culinary heritage with a contemporary, ingredient-led approach. The dinner is composed course by course, wine by wine — a table written for one evening.</p>
           </article>
           <article class="sigt-creator" data-reveal style="--reveal-delay:0.3s">
-            <p class="cr-label">Music Direction</p>
-            <p class="cr-name"><em>Accard Production</em></p>
-            <p class="cr-body">A selection shaped by years behind the decks, drawing from underground electronic music with a focus on atmosphere, rhythm and progression. The room is scored, not soundtracked.</p>
-          </article>
-          <article class="sigt-creator" data-reveal style="--reveal-delay:0.45s">
-            <p class="cr-label">The Setting</p>
-            <p class="cr-name"><em>Château Laffitte Carcasset</em></p>
-            <p class="cr-body">Built in the eighteenth century and surrounded by the vineyards of Saint-Estèphe, the estate reflects the character of the Médoc through its architecture, history and landscape.</p>
+            <p class="cr-label">The DJ</p>
+            <p class="cr-name"><em>Tanguy</em></p>
+            <p class="cr-body">Music direction by Accard Production. A selection shaped by years behind the decks, drawing from underground electronic music with a focus on atmosphere, rhythm and progression. The room is scored, not soundtracked.</p>
           </article>
         </div>
 
       </div>
     </section>
 
-    <!-- ============ TAB · CONTACT ============ -->
-    <section class="sigt-panel" data-panel="contact" role="tabpanel">
+    <!-- ============ TAB · THE EVENING ============ -->
+    <section class="sigt-panel" data-panel="evening" role="tabpanel">
       <div class="sigt-panel__bg" style="background-image: url('/images/signature/act5.jpg');"></div>
       <div class="sigt-panel__veil sigt-panel__veil--deep"></div>
       <div class="sigt-panel__inner sigt-panel__inner--scrollable">
 
         <header class="sigt-head" data-reveal>
-          <p class="sigt-head__kicker">By invitation</p>
-          <h2 class="sigt-head__title">Get&nbsp;in&nbsp;Touch</h2>
+          <p class="sigt-head__kicker">The evening</p>
+          <h2 class="sigt-head__title">We shape atmosphere</h2>
           <p class="sigt-head__sub"><em>26 – 27 September 2026 · Saint-Estèphe</em></p>
         </header>
+
+        <p class="sigt-evening__lead" data-reveal style="--reveal-delay:0.1s">
+          SIGNATURE is built around consideration. For the place. For the people who share it. We design every detail with intention, and invite people who contribute to the atmosphere rather than dominate it.
+        </p>
+
+        <p class="sigt-evening__reserve-kicker" data-reveal style="--reveal-delay:0.15s">Take your place</p>
 
         <div class="sigt-contact">
           <a class="sigt-tile" href="/signature.ics" download data-reveal style="--reveal-delay:0.15s">
@@ -474,8 +445,17 @@ const description =
     padding-left: 0.42em;
     margin: 0;
   }
-  .sigt-cover__enter {
+  .sigt-cover__ctas {
     margin-top: 1.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+  }
+  .sigt-cover__tickets,
+  .sigt-cover__enter {
+    display: inline-block;
     background: none;
     border: 1px solid rgba(240, 233, 221, 0.4);
     color: var(--sig-cream);
@@ -484,8 +464,19 @@ const description =
     font-size: 0.62rem;
     letter-spacing: 0.35em;
     text-transform: uppercase;
+    text-decoration: none;
     cursor: pointer;
-    transition: border-color 0.35s ease, background 0.35s ease, letter-spacing 0.5s ease;
+    transition: border-color 0.35s ease, background 0.35s ease, color 0.35s ease, letter-spacing 0.5s ease;
+  }
+  .sigt-cover__tickets {
+    background: var(--sig-cream);
+    border-color: var(--sig-cream);
+    color: var(--sig-ink);
+  }
+  .sigt-cover__tickets:hover {
+    background: #fff;
+    border-color: #fff;
+    letter-spacing: 0.42em;
   }
   .sigt-cover__enter:hover {
     border-color: rgba(240, 233, 221, 0.9);
@@ -767,6 +758,25 @@ const description =
   }
 
   /* ============ CONTACT TAB ============ */
+  .sigt-evening__lead {
+    max-width: 46rem;
+    margin: 0 auto clamp(1.5rem, 3.5vh, 2.5rem);
+    text-align: center;
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+    line-height: 1.75;
+    color: rgba(240, 233, 221, 0.85);
+  }
+  .sigt-evening__reserve-kicker {
+    text-align: center;
+    font-family: var(--font-body);
+    font-size: 0.58rem;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: rgba(240, 233, 221, 0.55);
+    margin: 0 0 clamp(1.1rem, 2.5vh, 1.75rem);
+  }
   .sigt-contact {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1159,6 +1169,18 @@ const description =
   // Arrows
   document.querySelector("[data-deck-prev]")?.addEventListener("click", () => step(-1));
   document.querySelector("[data-deck-next]")?.addEventListener("click", () => step(1));
+
+  // Click anywhere on the active panel -> advance to next (except on interactive elements)
+  const noAdvance = 'a, button, input, textarea, select, label, [role="tab"], [data-goto], [data-noadvance], .sigt__bar, .sigt-arrow';
+  panels.forEach((p) => {
+    p.addEventListener("click", (e) => {
+      if (p.dataset.panel !== current) return;
+      const t = e.target as HTMLElement;
+      if (t.closest(noAdvance)) return;         // let links/buttons/forms work
+      if (window.getSelection()?.toString()) return; // don't hijack text selection
+      if (order.indexOf(current) < order.length - 1) step(1);
+    });
+  });
 
   // Keyboard
   window.addEventListener("keydown", (e) => {
