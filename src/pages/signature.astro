@@ -44,6 +44,7 @@ const description =
         <button class="sigt__tab" role="tab" data-tab="menu" aria-selected="false">Menu</button>
         <button class="sigt__tab" role="tab" data-tab="artists" aria-selected="false">Artists</button>
         <button class="sigt__tab" role="tab" data-tab="evening" aria-selected="false">The Evening</button>
+        <button class="sigt__tab" role="tab" data-tab="contact" aria-selected="false">Contact</button>
       </nav>
     </header>
 
@@ -59,14 +60,25 @@ const description =
         <div class="sigt-cover__bottom">
           <p class="sigt-cover__venue" data-reveal>Château Laffitte Carcasset &nbsp;·&nbsp; Saint-Estèphe</p>
           <p class="sigt-cover__date" data-reveal style="--reveal-delay:0.15s">26&nbsp;–&nbsp;27&nbsp;September&nbsp;2026</p>
-          <div class="sigt-cover__ctas" data-reveal style="--reveal-delay:0.3s">
-            <a class="sigt-cover__tickets" href="mailto:eugeniecolleville.paris@gmail.com?subject=SIGNATURE%20No.%2001%20%E2%80%94%20Tickets&body=Hello%2C%0A%0AI%20would%20like%20to%20request%20___%20ticket(s)%20for%20Signature%20No.%2001%20on%2026-27%20September%202026.%0A%0AName%3A%20%0APhone%3A%20%0ADietary%20notes%3A%20%0A%0AThank%20you." data-noadvance>
-              Tickets →
+
+          <div class="sigt-cover__cards" data-reveal style="--reveal-delay:0.3s" data-noadvance>
+            <a class="sigt-cover__card" href="/signature.ics" download>
+              <p class="cc-eyebrow">Save the date</p>
+              <p class="cc-title">Add to calendar</p>
+              <p class="cc-sub">26 – 27 September 2026, from 6&nbsp;PM.</p>
+              <span class="cc-cta">Download →</span>
             </a>
-            <button class="sigt-cover__enter" type="button" data-goto="programme" data-noadvance>
-              Enter the evening →
-            </button>
+            <a class="sigt-cover__card" href="mailto:eugeniecolleville.paris@gmail.com?subject=SIGNATURE%20No.%2001%20%E2%80%94%20Presale%20Ticket&body=Hello%2C%0A%0AI%20would%20like%20to%20book%20___%20ticket(s)%20for%20Signature%20No.%2001%20on%2026-27%20September%202026%20(presale%20until%2012%20August).%0A%0AName%3A%20%0APhone%3A%20%0ADietary%20notes%3A%20%0A%0AThank%20you.">
+              <p class="cc-eyebrow">Presale · Until 12 August</p>
+              <p class="cc-title">Book your ticket</p>
+              <p class="cc-sub">Limited seats available.</p>
+              <span class="cc-cta">Reserve by mail →</span>
+            </a>
           </div>
+
+          <button class="sigt-cover__enter" type="button" data-goto="programme" data-reveal style="--reveal-delay:0.42s" data-noadvance>
+            Enter the evening →
+          </button>
         </div>
       </div>
     </section>
@@ -222,22 +234,59 @@ const description =
           SIGNATURE is built around consideration. For the place. For the people who share it. We design every detail with intention, and invite people who contribute to the atmosphere rather than dominate it.
         </p>
 
-        <p class="sigt-evening__reserve-kicker" data-reveal style="--reveal-delay:0.15s">Take your place</p>
+        <p class="sigt-evening__lead" data-reveal style="--reveal-delay:0.25s">
+          Nothing is left to chance — from the pace of the evening to the quiet in between. What we ask of every guest is simple: arrive with an open mind, and leave the rest to us.
+        </p>
+
+        <p class="sigt-colophon" data-reveal style="--reveal-delay:0.4s">
+          SIGNATURE &nbsp;·&nbsp; No. 01 &nbsp;·&nbsp; Château Laffitte Carcasset, Saint-Estèphe
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ============ TAB · CONTACT ============ -->
+    <section class="sigt-panel" data-panel="contact" role="tabpanel">
+      <div class="sigt-panel__bg" style="background-image: url('/images/signature/act5.jpg');"></div>
+      <div class="sigt-panel__veil sigt-panel__veil--deep"></div>
+      <div class="sigt-panel__inner sigt-panel__inner--scrollable">
+
+        <header class="sigt-head" data-reveal>
+          <p class="sigt-head__kicker">Contact</p>
+          <h2 class="sigt-head__title">Take your place</h2>
+          <p class="sigt-head__sub"><em>26 – 27 September 2026 · Saint-Estèphe</em></p>
+        </header>
 
         <div class="sigt-contact">
-          <a class="sigt-tile" href="/signature.ics" download data-reveal style="--reveal-delay:0.15s">
-            <p class="tl-eyebrow">Save the date</p>
-            <p class="tl-title">Add to calendar</p>
-            <p class="tl-sub">26 – 27 September 2026, from 6&nbsp;PM.</p>
-            <span class="tl-cta">Download →</span>
-          </a>
-          <a class="sigt-tile" href="mailto:eugeniecolleville.paris@gmail.com?subject=SIGNATURE%20No.%2001%20%E2%80%94%20Reservation&body=Hello%2C%0A%0AI%20would%20like%20to%20reserve%20___%20place(s)%20for%20Signature%20No.%2001%20on%2026-27%20September%202026.%0A%0AName%3A%20%0APhone%3A%20%0ADietary%20notes%3A%20%0A%0AThank%20you." data-reveal style="--reveal-delay:0.3s">
-            <p class="tl-eyebrow">Reserve</p>
-            <p class="tl-title">Your place at the table</p>
-            <p class="tl-sub">A short reply confirms your seat.</p>
-            <span class="tl-cta">Reserve by mail →</span>
-          </a>
-          <div class="sigt-tile sigt-tile--form" data-reveal style="--reveal-delay:0.45s">
+          <div class="sigt-tile" data-reveal style="--reveal-delay:0.1s">
+            <p class="tl-eyebrow">The venue</p>
+            <p class="tl-title">Château Laffitte Carcasset</p>
+            <p class="tl-sub">33180 Saint-Estèphe, Bordeaux.</p>
+            <span class="tl-cta">In the heart of the Médoc vineyards</span>
+          </div>
+
+          <div class="sigt-tile" data-reveal style="--reveal-delay:0.2s">
+            <p class="tl-eyebrow">On site</p>
+            <p class="tl-title">Six rooms, on request</p>
+            <p class="tl-sub">The château itself offers six rooms for guests wishing to stay the night. Available on request, subject to availability.</p>
+            <a class="tl-cta" href="mailto:eugeniecolleville.paris@gmail.com?subject=SIGNATURE%20No.%2001%20%E2%80%94%20Room%20request&body=Hello%2C%0A%0AI%20would%20like%20to%20request%20a%20room%20at%20the%20ch%C3%A2teau%20for%20the%20night(s)%20of%2026-27%20September%202026.%0A%0AName%3A%20%0APhone%3A%20%0A%0AThank%20you.">Request a room →</a>
+          </div>
+
+          <div class="sigt-tile" data-reveal style="--reveal-delay:0.3s">
+            <p class="tl-eyebrow">Getting there</p>
+            <p class="tl-title">Taxis &amp; transfers</p>
+            <p class="tl-sub">Saint-Estèphe sits within easy reach of Bordeaux. We are glad to arrange a taxi or private transfer to and from the château — simply let us know your arrival details.</p>
+            <a class="tl-cta" href="mailto:eugeniecolleville.paris@gmail.com?subject=SIGNATURE%20No.%2001%20%E2%80%94%20Transport&body=Hello%2C%0A%0AI%20would%20like%20information%20about%20taxis%2Ftransfers%20for%20Signature%20No.%2001.%0A%0AArrival%20details%3A%20%0A%0AThank%20you.">Ask about transport →</a>
+          </div>
+
+          <div class="sigt-tile" data-reveal style="--reveal-delay:0.4s">
+            <p class="tl-eyebrow">Nearby</p>
+            <p class="tl-title">Accommodation</p>
+            <p class="tl-sub">For guests preferring to stay off-site, a number of hotels and maisons d'hôtes can be found in and around Saint-Estèphe and Pauillac. Write to us for our recommendations.</p>
+            <a class="tl-cta" href="mailto:eugeniecolleville.paris@gmail.com?subject=SIGNATURE%20No.%2001%20%E2%80%94%20Accommodation&body=Hello%2C%0A%0ACould%20you%20send%20me%20accommodation%20recommendations%20near%20the%20ch%C3%A2teau%3F%0A%0AThank%20you.">Ask for recommendations →</a>
+          </div>
+
+          <div class="sigt-tile sigt-tile--form" data-reveal style="--reveal-delay:0.5s">
             <p class="tl-eyebrow">Newsletter</p>
             <p class="tl-title">Stay close</p>
             <form class="sigt-news" id="sigNews">
@@ -248,7 +297,7 @@ const description =
           </div>
         </div>
 
-        <p class="sigt-colophon" data-reveal style="--reveal-delay:0.55s">
+        <p class="sigt-colophon" data-reveal style="--reveal-delay:0.6s">
           SIGNATURE &nbsp;·&nbsp; No. 01 &nbsp;·&nbsp; <a href="mailto:eugeniecolleville.paris@gmail.com?subject=SIGNATURE%20No.%2001">For invitations &amp; conversation →</a>
         </p>
 
@@ -445,16 +494,68 @@ const description =
     padding-left: 0.42em;
     margin: 0;
   }
-  .sigt-cover__ctas {
-    margin-top: 1.4rem;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 0.85rem;
+  .sigt-cover__cards {
+    margin-top: 1.6rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(15rem, 17rem));
+    gap: 1rem;
+    width: 100%;
   }
-  .sigt-cover__tickets,
+  .sigt-cover__card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 1.35rem 1.5rem;
+    background: rgba(6, 4, 3, 0.45);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(240, 233, 221, 0.22);
+    text-decoration: none;
+    color: var(--sig-cream);
+    transition: border-color 0.4s ease, background 0.4s ease, transform 0.5s ease;
+  }
+  .sigt-cover__card:hover {
+    border-color: rgba(240, 233, 221, 0.6);
+    background: rgba(6, 4, 3, 0.6);
+    transform: translateY(-3px);
+  }
+  .sigt-cover__card .cc-eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.54rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(240, 233, 221, 0.6);
+    margin: 0 0 0.5rem;
+  }
+  .sigt-cover__card .cc-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+    color: var(--sig-cream);
+    margin: 0 0 0.35rem;
+  }
+  .sigt-cover__card .cc-sub {
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    line-height: 1.4;
+    color: rgba(240, 233, 221, 0.72);
+    margin: 0 0 0.9rem;
+  }
+  .sigt-cover__card .cc-cta {
+    font-family: var(--font-body);
+    font-size: 0.56rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(240, 233, 221, 0.9);
+    padding-top: 0.45rem;
+    border-top: 1px solid rgba(240, 233, 221, 0.25);
+    transition: letter-spacing 0.5s ease;
+  }
+  .sigt-cover__card:hover .cc-cta { letter-spacing: 0.4em; }
+
   .sigt-cover__enter {
+    margin-top: 1.5rem;
     display: inline-block;
     background: none;
     border: 1px solid rgba(240, 233, 221, 0.4);
@@ -464,19 +565,8 @@ const description =
     font-size: 0.62rem;
     letter-spacing: 0.35em;
     text-transform: uppercase;
-    text-decoration: none;
     cursor: pointer;
-    transition: border-color 0.35s ease, background 0.35s ease, color 0.35s ease, letter-spacing 0.5s ease;
-  }
-  .sigt-cover__tickets {
-    background: var(--sig-cream);
-    border-color: var(--sig-cream);
-    color: var(--sig-ink);
-  }
-  .sigt-cover__tickets:hover {
-    background: #fff;
-    border-color: #fff;
-    letter-spacing: 0.42em;
+    transition: border-color 0.35s ease, background 0.35s ease, letter-spacing 0.5s ease;
   }
   .sigt-cover__enter:hover {
     border-color: rgba(240, 233, 221, 0.9);
@@ -768,18 +858,9 @@ const description =
     line-height: 1.75;
     color: rgba(240, 233, 221, 0.85);
   }
-  .sigt-evening__reserve-kicker {
-    text-align: center;
-    font-family: var(--font-body);
-    font-size: 0.58rem;
-    letter-spacing: 0.42em;
-    text-transform: uppercase;
-    color: rgba(240, 233, 221, 0.55);
-    margin: 0 0 clamp(1.1rem, 2.5vh, 1.75rem);
-  }
   .sigt-contact {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     gap: clamp(1.25rem, 2vw, 1.75rem);
     max-width: 74rem;
     margin: 0 auto;
