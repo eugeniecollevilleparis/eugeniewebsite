@@ -43,7 +43,7 @@ const description =
         <button class="sigt__tab" role="tab" data-tab="manifesto" aria-selected="false">Manifesto</button>
         <button class="sigt__tab" role="tab" data-tab="programme" aria-selected="false">Programme</button>
         <button class="sigt__tab" role="tab" data-tab="menu" aria-selected="false">Menu</button>
-        <button class="sigt__tab" role="tab" data-tab="artists" aria-selected="false">Artists</button>
+        <button class="sigt__tab" role="tab" data-tab="creators" aria-selected="false">Creators</button>
         <button class="sigt__tab" role="tab" data-tab="contact" aria-selected="false">Contact</button>
       </nav>
     </header>
@@ -85,7 +85,7 @@ const description =
 
     <!-- ============ TAB · MENU ============ -->
     <section class="sigt-panel" data-panel="menu" role="tabpanel">
-      <div class="sigt-panel__bg" style="background-image: url('/images/signature/act2.jpg');"></div>
+      <div class="sigt-panel__bg" style="background-image: url('/images/signature/act3.jpg');"></div>
       <div class="sigt-panel__veil sigt-panel__veil--deep"></div>
       <div class="sigt-panel__inner sigt-panel__inner--scrollable">
 
@@ -152,7 +152,7 @@ const description =
 
     <!-- ============ TAB · PROGRAMME ============ -->
     <section class="sigt-panel" data-panel="programme" role="tabpanel">
-      <div class="sigt-panel__bg" style="background-image: url('/images/signature/act3.jpg');"></div>
+      <div class="sigt-panel__bg" style="background-image: url('/images/signature/act2.jpg');"></div>
       <div class="sigt-panel__veil sigt-panel__veil--deep"></div>
       <div class="sigt-panel__inner sigt-panel__inner--scrollable">
 
@@ -187,25 +187,27 @@ const description =
       </div>
     </section>
 
-    <!-- ============ TAB · ARTISTS ============ -->
-    <section class="sigt-panel" data-panel="artists" role="tabpanel">
+    <!-- ============ TAB · CREATORS ============ -->
+    <section class="sigt-panel" data-panel="creators" role="tabpanel">
       <div class="sigt-panel__bg" style="background-image: url('/images/signature/act1.jpg');"></div>
       <div class="sigt-panel__veil sigt-panel__veil--deep"></div>
       <div class="sigt-panel__inner sigt-panel__inner--scrollable">
 
         <header class="sigt-head" data-reveal>
           <p class="sigt-head__kicker">The hands behind the evening</p>
-          <h2 class="sigt-head__title">Artists</h2>
+          <h2 class="sigt-head__title">Creators</h2>
           <p class="sigt-head__sub"><em>Two hands. One evening.</em></p>
         </header>
 
         <div class="sigt-creators sigt-creators--two">
           <article class="sigt-creator" data-reveal style="--reveal-delay:0.15s">
+            <div class="cr-photo"><img src="/images/signature/eugenie-portrait.webp" alt="Eugénie Colleville" loading="lazy"></div>
             <p class="cr-label">The Chef</p>
             <p class="cr-name"><em>Eugénie Colleville</em></p>
             <p class="cr-body">French chef, whose cuisine combines French culinary heritage with a contemporary, ingredient-led approach. The dinner is composed course by course, wine by wine — a table written for one evening.</p>
           </article>
           <article class="sigt-creator" data-reveal style="--reveal-delay:0.3s">
+            <div class="cr-photo"><img src="/images/signature/tanguy-portrait.webp" alt="Tanguy Accard" loading="lazy"></div>
             <p class="cr-label">Creative Direction</p>
             <p class="cr-name"><em>Tanguy</em></p>
             <p class="cr-body">A vision shaped by years of experience in corporate, electronic music, hospitality and creative direction. Every detail is considered to create an atmosphere that feels natural, timeless and deeply human.</p>
@@ -266,7 +268,7 @@ const description =
             <p class="tl-eyebrow">The venue</p>
             <p class="tl-title">Château Laffitte Carcasset</p>
             <p class="tl-sub">33180 Saint-Estèphe, Bordeaux.</p>
-            <span class="tl-cta">In the heart of the Médoc vineyards</span>
+            <a class="tl-cta" href="https://laffittecarcasset.com/" target="_blank" rel="noopener">Visit the château →</a>
           </div>
 
           <div class="sigt-tile" data-reveal style="--reveal-delay:0.2s">
@@ -442,8 +444,21 @@ const description =
   }
   .sigt-panel__veil--deep {
     background:
-      radial-gradient(ellipse at top, rgba(8, 4, 4, 0.35) 0%, rgba(8, 4, 4, 0.6) 70%),
-      linear-gradient(180deg, rgba(8, 4, 4, 0.45) 0%, rgba(8, 4, 4, 0.55) 100%);
+      radial-gradient(ellipse at top, rgba(8, 4, 4, 0.18) 0%, rgba(8, 4, 4, 0.38) 70%),
+      linear-gradient(180deg, rgba(8, 4, 4, 0.3) 0%, rgba(8, 4, 4, 0.35) 100%);
+  }
+  .sigt-panel__inner--scrollable .sigt-head__kicker,
+  .sigt-panel__inner--scrollable .sigt-head__title,
+  .sigt-panel__inner--scrollable .sigt-head__sub,
+  .sigt-course .c-label,
+  .sigt-course .c-wine,
+  .sigt-course .c-dish,
+  .sigt-day__list li .t,
+  .sigt-day__list li .e,
+  .sigt-day__list li .s,
+  .sigt-day__note,
+  .sigt-colophon {
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.9), 0 1px 4px rgba(0, 0, 0, 0.95);
   }
   .sigt-panel__veil--cover {
     background:
@@ -818,12 +833,24 @@ const description =
     padding: clamp(1.5rem, 2.5vw, 2.25rem);
     border: 1px solid rgba(240, 233, 221, 0.12);
     background: rgba(6, 4, 3, 0.35);
+    overflow: hidden;
     transition: border-color 0.4s ease, transform 0.5s ease, background 0.4s ease;
   }
   .sigt-creator:hover {
     border-color: rgba(240, 233, 221, 0.45);
     background: rgba(6, 4, 3, 0.55);
     transform: translateY(-3px);
+  }
+  .sigt-creator .cr-photo {
+    margin: clamp(-2.25rem, -2.5vw, -1.5rem) clamp(-2.25rem, -2.5vw, -1.5rem) 1.25rem;
+    aspect-ratio: 3 / 4;
+  }
+  .sigt-creator .cr-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(1.05) contrast(1.04);
   }
   .sigt-creator .cr-label {
     font-family: var(--font-body);
