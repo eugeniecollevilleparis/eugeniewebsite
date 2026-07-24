@@ -1242,6 +1242,28 @@ const description =
   let current = "invitation";
   let switching = false;
 
+  // Auto-scroll the Menu so guests see every course, ending on the Signature tartlet
+  let menuScrollRAF = 0;
+  function autoScrollMenu(p: HTMLElement) {
+    const scroller = p.querySelector<HTMLElement>(".sigt-panel__inner--scrollable");
+    if (!scroller) return;
+    cancelAnimationFrame(menuScrollRAF);
+    const startAt = performance.now() + 2200;
+    const cancel = () => cancelAnimationFrame(menuScrollRAF);
+    scroller.addEventListener("wheel", cancel, { once: true, passive: true });
+    scroller.addEventListener("touchstart", cancel, { once: true, passive: true });
+    const stepScroll = (now: number) => {
+      const dist = scroller.scrollHeight - scroller.clientHeight;
+      if (now >= startAt) {
+        const y = Math.min(dist, ((now - startAt) / 1000) * 34);
+        scroller.scrollTop = y;
+        if (y >= dist) return;
+      }
+      menuScrollRAF = requestAnimationFrame(stepScroll);
+    };
+    menuScrollRAF = requestAnimationFrame(stepScroll);
+  }
+
   function activate(name: string, force = false) {
     if (!force && (switching || name === current)) return;
     if (!order.includes(name)) return;
@@ -1267,6 +1289,8 @@ const description =
         // Reset internal scroll of the panel
         const scroller = p.querySelector<HTMLElement>(".sigt-panel__inner--scrollable, .sigt-panel__inner--split");
         if (scroller) scroller.scrollTop = 0;
+        if (name === "menu") autoScrollMenu(p);
+        else cancelAnimationFrame(menuScrollRAF);
       } else {
         p.querySelectorAll("[data-reveal]").forEach((el) => el.classList.remove("is-visible"));
       }
