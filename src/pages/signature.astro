@@ -85,7 +85,7 @@ const description =
 
     <!-- ============ TAB · MENU ============ -->
     <section class="sigt-panel" data-panel="menu" role="tabpanel">
-      <div class="sigt-panel__bg" style="background-image: url('/images/signature/act3.jpg');"></div>
+      <div class="sigt-panel__bg" style="background-image: url('/images/signature/act2.jpg');"></div>
       <div class="sigt-panel__veil sigt-panel__veil--deep"></div>
       <div class="sigt-panel__inner sigt-panel__inner--scrollable">
 
@@ -152,12 +152,12 @@ const description =
 
     <!-- ============ TAB · PROGRAMME ============ -->
     <section class="sigt-panel" data-panel="programme" role="tabpanel">
-      <div class="sigt-panel__bg" style="background-image: url('/images/signature/act2.jpg');"></div>
+      <div class="sigt-panel__bg" style="background-image: url('/images/signature/act5.jpg');"></div>
       <div class="sigt-panel__veil sigt-panel__veil--deep"></div>
       <div class="sigt-panel__inner sigt-panel__inner--scrollable">
 
         <header class="sigt-head" data-reveal>
-          <p class="sigt-head__kicker">The Programme</p>
+          <p class="sigt-head__kicker">The Timeline</p>
           <h2 class="sigt-head__title">24&nbsp;Hours</h2>
           <p class="sigt-head__sub"><em>26 – 27 September 2026</em></p>
         </header>
@@ -184,6 +184,17 @@ const description =
           </div>
         </div>
 
+        <div class="sigt-acts sigt-acts--programme" data-reveal style="--reveal-delay:0.3s">
+          <p class="sigt-acts__kicker">The Five Acts</p>
+          <ol class="sigt-acts__list">
+            <li><span class="n">ACT&nbsp;I.</span><span class="l">Arrival — the gates open, and the evening begins.</span></li>
+            <li><span class="n">ACT&nbsp;II.</span><span class="l">Golden Hour — light fades gently over the estate.</span></li>
+            <li><span class="n">ACT&nbsp;III.</span><span class="l">Dinner — a seasonal gathering, course by course, wine by wine.</span></li>
+            <li><span class="n">ACT&nbsp;IV.</span><span class="l">Ambience, Rave &amp; Late Night — as daylight fades, the soundtrack arrives, and the night finds its own rhythm.</span></li>
+            <li><span class="n">ACT&nbsp;V.</span><span class="l">The Next Day — no rush, no schedule. Nothing is rushed. Nothing is imposed.</span></li>
+          </ol>
+        </div>
+
       </div>
     </section>
 
@@ -194,9 +205,9 @@ const description =
       <div class="sigt-panel__inner sigt-panel__inner--scrollable">
 
         <header class="sigt-head" data-reveal>
-          <p class="sigt-head__kicker">The hands behind the evening</p>
+          <p class="sigt-head__kicker">Meet the creators</p>
           <h2 class="sigt-head__title">Creators</h2>
-          <p class="sigt-head__sub"><em>Two hands. One evening.</em></p>
+          <p class="sigt-head__sub"><em>The hands behind Signature</em></p>
         </header>
 
         <div class="sigt-creators sigt-creators--two">
@@ -217,14 +228,19 @@ const description =
       </div>
     </section>
 
-    <!-- ============ TAB · MANIFESTO (+ five acts) ============ -->
+    <!-- ============ TAB · MANIFESTO ============ -->
     <section class="sigt-panel" data-panel="manifesto" role="tabpanel">
-      <div class="sigt-panel__bg" style="background-image: url('/images/signature/act4.jpg'); background-position: center 80%;"></div>
+      <div class="sigt-panel__bg" style="background-image: url('/images/signature/act3.jpg');"></div>
       <div class="sigt-panel__veil"></div>
-      <div class="sigt-panel__inner sigt-panel__inner--split">
+      <div class="sigt-panel__inner sigt-panel__inner--scrollable">
+
+        <header class="sigt-head" data-reveal>
+          <p class="sigt-head__kicker">A Vision</p>
+          <h2 class="sigt-head__title">About Signature</h2>
+        </header>
 
         <div class="sigt-mani">
-          <p class="sigt-mani__lead" data-reveal>
+          <p class="sigt-mani__lead" data-reveal style="--reveal-delay:0.1s">
             We don't celebrate status.<br>
             We shape atmosphere.
           </p>
@@ -235,17 +251,6 @@ const description =
           <p class="sigt-mani__close" data-reveal style="--reveal-delay:0.3s">
             <em>The difference has never been luxury.<br>It's always been human connection.</em>
           </p>
-        </div>
-
-        <div class="sigt-acts">
-          <p class="sigt-acts__kicker" data-reveal style="--reveal-delay:0.2s">The Five Acts</p>
-          <ol class="sigt-acts__list">
-            <li data-reveal style="--reveal-delay:0.3s"><span class="n">ACT&nbsp;I.</span><span class="l">Every edition begins with a place chosen for what it already possesses.</span></li>
-            <li data-reveal style="--reveal-delay:0.4s"><span class="n">ACT&nbsp;II.</span><span class="l">Every place follows its own rhythm.</span></li>
-            <li data-reveal style="--reveal-delay:0.5s"><span class="n">ACT&nbsp;III.</span><span class="l">Some conversations deserve a setting.</span></li>
-            <li data-reveal style="--reveal-delay:0.6s"><span class="n">ACT&nbsp;IV.</span><span class="l">As daylight fades, the soundtrack arrives quietly.</span></li>
-            <li data-reveal style="--reveal-delay:0.7s"><span class="n">ACT&nbsp;V.</span><span class="l">The day finds its own pace. Nothing is rushed. Nothing is imposed.</span></li>
-          </ol>
         </div>
 
       </div>
@@ -630,7 +635,7 @@ const description =
     align-items: center;
     gap: clamp(2.5rem, 6vw, 6rem);
   }
-  .sigt-mani { flex: 1.1; min-width: 0; }
+  .sigt-mani { max-width: 42rem; margin: 0 auto; }
   .sigt-mani__lead {
     font-family: var(--font-display);
     font-weight: 500;
@@ -657,6 +662,7 @@ const description =
   .sigt-mani__close em { font-style: italic; }
 
   .sigt-acts { flex: 1; min-width: 0; }
+  .sigt-acts--programme { max-width: 46rem; margin: 2.5rem auto 0; width: 100%; }
   .sigt-acts__kicker {
     font-family: var(--font-body);
     font-size: 0.58rem;
@@ -843,7 +849,7 @@ const description =
   }
   .sigt-creator .cr-photo {
     margin: clamp(-2.25rem, -2.5vw, -1.5rem) clamp(-2.25rem, -2.5vw, -1.5rem) 1.25rem;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 4 / 3;
   }
   .sigt-creator .cr-photo img {
     display: block;
