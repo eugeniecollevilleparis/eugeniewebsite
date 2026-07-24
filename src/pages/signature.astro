@@ -85,7 +85,11 @@ const description =
 
     <!-- ============ TAB · MENU ============ -->
     <section class="sigt-panel" data-panel="menu" role="tabpanel">
-      <div class="sigt-panel__bg" style="background-image: url('/images/signature/act2.jpg');"></div>
+      <div class="sigt-panel__bg sigt-panel__bg--video">
+        <video autoplay muted loop playsinline preload="auto" poster="/videos/signature/menu-poster.jpg">
+          <source src="/videos/signature/menu.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="sigt-panel__veil sigt-panel__veil--deep"></div>
       <div class="sigt-panel__inner sigt-panel__inner--scrollable">
 
@@ -236,11 +240,12 @@ const description =
         </video>
       </div>
       <div class="sigt-panel__veil"></div>
-      <div class="sigt-panel__inner sigt-panel__inner--scrollable">
+      <div class="sigt-panel__inner sigt-panel__inner--scrollable sigt-panel__inner--manifesto">
 
         <header class="sigt-head" data-reveal>
           <p class="sigt-head__kicker">A Vision</p>
           <h2 class="sigt-head__title">About Signature</h2>
+          <p class="sigt-head__sub"><em>Deeply human, and never manufactured</em></p>
         </header>
 
         <div class="sigt-mani">
@@ -251,7 +256,6 @@ const description =
           <div class="sigt-mani__body" data-reveal style="--reveal-delay:0.15s">
             <p>SIGNATURE brings together architecture, gastronomy, electronic music and hospitality, creating space for meaningful encounters.</p>
             <p>Thoughtful people. A remarkable setting. An atmosphere that feels effortless from the moment you arrive until long after you leave.</p>
-            <p>Deeply human, and never manufactured.</p>
           </div>
           <p class="sigt-mani__close" data-reveal style="--reveal-delay:0.3s">
             <em>The difference has never been luxury.<br>It's always been human connection.</em>
@@ -640,7 +644,8 @@ const description =
     align-items: center;
     gap: clamp(2.5rem, 6vw, 6rem);
   }
-  .sigt-mani { max-width: 42rem; margin: 0 auto; }
+  .sigt-mani { max-width: 42rem; margin: 0 auto; text-align: center; }
+  .sigt-panel__inner--manifesto { justify-content: center; }
   .sigt-mani__lead {
     font-family: var(--font-display);
     font-weight: 500;
@@ -654,7 +659,7 @@ const description =
     font-size: clamp(0.95rem, 1.15vw, 1.08rem);
     line-height: 1.65;
     color: rgba(240, 233, 221, 0.88);
-    margin: 0 0 2.6rem;
+    margin: 0 auto 2.6rem;
     max-width: 34rem;
   }
   .sigt-mani__body p:last-child { margin-bottom: 0; }
