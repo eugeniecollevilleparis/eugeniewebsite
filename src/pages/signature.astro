@@ -167,9 +167,13 @@ const description =
           <div class="sigt-day">
             <p class="sigt-day__label">Day 01 · Evening</p>
             <ol class="sigt-day__list">
+              <li class="act"><span class="an">Act&nbsp;I</span><span class="al"><em>The gates open, and the evening begins</em></span></li>
               <li><span class="t">18:00</span><span class="e">Arrival</span><span class="s"><em>Signature cocktail</em></span></li>
+              <li class="act"><span class="an">Act&nbsp;II</span><span class="al"><em>Light fades gently over the estate</em></span></li>
               <li><span class="t">19:00</span><span class="e">Golden Hour</span><span class="s"><em>Explore the Estate</em></span></li>
+              <li class="act"><span class="an">Act&nbsp;III</span><span class="al"><em>A seasonal gathering, course by course, wine by wine</em></span></li>
               <li><span class="t">20:30</span><span class="e">Dinner</span><span class="s"><em>Seasonal gathering</em></span></li>
+              <li class="act"><span class="an">Act&nbsp;IV</span><span class="al"><em>The soundtrack arrives, and the night finds its own rhythm</em></span></li>
               <li><span class="t">22:00</span><span class="e">Ambience</span><span class="s"><em>The rise</em></span></li>
               <li><span class="t">23:00</span><span class="e">Rave</span><span class="s"><em>The show is on</em></span></li>
               <li><span class="t">03:00</span><span class="e">Late Night</span><span class="s"><em>After glow</em></span></li>
@@ -178,22 +182,12 @@ const description =
           <div class="sigt-day">
             <p class="sigt-day__label">Day 02 · Morning Energy</p>
             <ol class="sigt-day__list">
+              <li class="act"><span class="an">Act&nbsp;V</span><span class="al"><em>The next day — no rush, no schedule</em></span></li>
               <li><span class="t">12:00</span><span class="e">Brunch</span><span class="s"><em>The perfect recovery</em></span></li>
               <li><span class="t">13:30</span><span class="e">Breath &amp; Reconnect</span><span class="s"><em>Yoga, breath work, poolside lounge</em></span></li>
               <li><span class="t">17:00</span><span class="e">Curtain Close</span><span class="s"><em>Act · 01 over</em></span></li>
             </ol>
           </div>
-        </div>
-
-        <div class="sigt-acts sigt-acts--programme" data-reveal style="--reveal-delay:0.3s">
-          <p class="sigt-acts__kicker">The Five Acts</p>
-          <ol class="sigt-acts__list">
-            <li><span class="n">ACT&nbsp;I.</span><span class="l">Arrival — the gates open, and the evening begins.</span></li>
-            <li><span class="n">ACT&nbsp;II.</span><span class="l">Golden Hour — light fades gently over the estate.</span></li>
-            <li><span class="n">ACT&nbsp;III.</span><span class="l">Dinner — a seasonal gathering, course by course, wine by wine.</span></li>
-            <li><span class="n">ACT&nbsp;IV.</span><span class="l">Ambience, Rave &amp; Late Night — as daylight fades, the soundtrack arrives, and the night finds its own rhythm.</span></li>
-            <li><span class="n">ACT&nbsp;V.</span><span class="l">The Next Day — no rush, no schedule. Nothing is rushed. Nothing is imposed.</span></li>
-          </ol>
         </div>
 
       </div>
@@ -830,6 +824,29 @@ const description =
     margin-top: 0.1rem;
   }
   .sigt-day__list li .s em { font-style: italic; }
+  .sigt-day__list li.act {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+    padding: 1.3rem 0 0.45rem;
+    border-top: none;
+  }
+  .sigt-day__list li.act:hover { transform: none; }
+  .sigt-day__list li.act .an {
+    font-family: var(--font-body);
+    font-size: 0.6rem;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    color: var(--sig-cream);
+    white-space: nowrap;
+  }
+  .sigt-day__list li.act .al {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    color: rgba(240, 233, 221, 0.55);
+  }
+  .sigt-day__list li.act .al em { font-style: italic; }
+  .sigt-day__list li.act + li { border-top: none; }
   .sigt-day__note {
     margin: 1.4rem 0 0;
     font-family: var(--font-display);
