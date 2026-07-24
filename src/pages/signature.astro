@@ -61,24 +61,25 @@ const description =
           <p class="sigt-cover__venue" data-reveal>Château Laffitte Carcasset &nbsp;·&nbsp; Saint-Estèphe</p>
           <p class="sigt-cover__date" data-reveal style="--reveal-delay:0.15s">26&nbsp;–&nbsp;27&nbsp;September&nbsp;2026</p>
 
-          <div class="sigt-cover__cards" data-reveal style="--reveal-delay:0.3s" data-noadvance>
-            <a class="sigt-cover__card" href="/signature.ics" download>
-              <p class="cc-eyebrow">Save the date</p>
-              <p class="cc-title">Add to calendar</p>
-              <p class="cc-sub">26 – 27 September 2026, from 6&nbsp;PM.</p>
-              <span class="cc-cta">Download →</span>
-            </a>
-            <a class="sigt-cover__card" href="https://checkout.revolut.com/pay/ede332d8-5e0e-43a9-8c2d-0cc13e60114c" target="_blank" rel="noopener">
-              <p class="cc-eyebrow">Presale · Until 12 August</p>
-              <p class="cc-title">Book your ticket</p>
-              <p class="cc-sub">Limited seats available.</p>
-              <span class="cc-cta">Pay & reserve →</span>
-            </a>
-          </div>
+          <div class="sigt-cover__row" data-noadvance>
+            <div class="sigt-cover__cards" data-reveal style="--reveal-delay:0.3s">
+              <a class="sigt-cover__card" href="/signature.ics" download>
+                <p class="cc-eyebrow">Save the date</p>
+                <p class="cc-title">Add to calendar</p>
+                <p class="cc-sub">26 – 27 September 2026, from 6&nbsp;PM.</p>
+                <span class="cc-cta">Download →</span>
+              </a>
+              <a class="sigt-cover__card" href="https://checkout.revolut.com/pay/ede332d8-5e0e-43a9-8c2d-0cc13e60114c" target="_blank" rel="noopener">
+                <p class="cc-eyebrow">Presale · Until 12 August</p>
+                <p class="cc-title">Become Part of Edition No.01</p>
+                <p class="cc-sub">Limited seats available.</p>
+              </a>
+            </div>
 
-          <button class="sigt-cover__enter" type="button" data-goto="programme" data-reveal style="--reveal-delay:0.42s" data-noadvance>
-            Enter the evening →
-          </button>
+            <button class="sigt-cover__enter" type="button" data-goto="programme" data-reveal style="--reveal-delay:0.42s">
+              Enter the evening →
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -100,54 +101,50 @@ const description =
         </header>
 
         <div class="sigt-menu" data-reveal style="--reveal-delay:0.15s">
-          <div class="sigt-menu__col">
-            <div class="sigt-course">
-              <p class="c-label">Apéro · Standing Welcome</p>
-              <p class="c-wine"><em>Crémant de Bordeaux</em></p>
-              <p class="c-dish">Bayonne ham croquettes, Ossau-Iraty béchamel</p>
-            </div>
-            <div class="sigt-course">
-              <p class="c-label">Canapé I</p>
-              <p class="c-wine"><em>Crémant de Bordeaux</em></p>
-              <p class="c-dish">Savoury canelé with South-West confit duck, Ente plum compote</p>
-            </div>
-            <div class="sigt-course">
-              <p class="c-label">Canapé II</p>
-              <p class="c-dish">Arcachon Bay oyster, mignonette of the estate's red wine, Graves white wine espuma</p>
-            </div>
-            <div class="sigt-course">
-              <p class="c-label">Canapé III · In the Chai</p>
-              <p class="c-dish">Granita of the estate's partially-fermented grape must, ribot milk, botrytised Sauternes jelly, fresh Périgord walnuts</p>
-            </div>
-            <div class="sigt-course">
-              <p class="c-label">Breads &amp; Butter · At the Table</p>
-              <p class="c-dish">Artisan breads from the South-West, house-churned seaweed butter, olive oil</p>
-            </div>
+          <div class="sigt-course">
+            <p class="c-label">Apéritif · Standing Welcome</p>
+            <p class="c-wine"><em>Paired with Crémant de Bordeaux</em></p>
+            <p class="c-dish">Bayonne ham croquettes, Ossau-Iraty béchamel</p>
           </div>
-          <div class="sigt-menu__col">
-            <div class="sigt-course">
-              <p class="c-label">Starter</p>
-              <p class="c-wine"><em>Pessac-Léognan blanc</em></p>
-              <p class="c-dish">Meagre from the Gironde estuary, gravlax with lemon verbena and wild fennel, warm Graves beurre blanc, garden pickles, watercress</p>
-            </div>
-            <div class="sigt-course">
-              <p class="c-label">Main Course</p>
-              <p class="c-wine"><em>Château Laffitte Carcasset, young vintage</em></p>
-              <p class="c-dish">Bazas beef cheek braised six hours in the house wine, crushed potato with duck fat, glazed carrots, Médoc cèpes confit</p>
-            </div>
-            <div class="sigt-course">
-              <p class="c-label">Dessert — Estate Honey</p>
-              <p class="c-wine"><em>Sauternes</em></p>
-              <p class="c-dish">Basque farm-yoghurt siphon with honey and rosemary, flowing black fig gel, caramelised buckwheat tuile, edible flowers</p>
-            </div>
-            <div class="sigt-course">
-              <p class="c-label">Mignardises with Coffee</p>
-              <p class="c-dish">Pâte de fruit of the house wine</p>
-            </div>
-            <div class="sigt-course sigt-course--signature">
-              <p class="c-label">Signature</p>
-              <p class="c-dish">Tartlet of single-origin dark chocolate, Gironde caviar, fleur de sel</p>
-            </div>
+          <div class="sigt-course">
+            <p class="c-label">Canapé I</p>
+            <p class="c-wine"><em>Paired with Crémant de Bordeaux</em></p>
+            <p class="c-dish">Savoury canelé with South-West confit duck, Ente plum compote</p>
+          </div>
+          <div class="sigt-course">
+            <p class="c-label">Canapé II</p>
+            <p class="c-dish">Arcachon Bay oyster, mignonette of the estate's red wine, Graves white wine espuma</p>
+          </div>
+          <div class="sigt-course">
+            <p class="c-label">Canapé III · In the Chai</p>
+            <p class="c-dish">Granita of the estate's partially-fermented grape must, ribot milk, botrytised Sauternes jelly, fresh Périgord walnuts</p>
+          </div>
+          <div class="sigt-course">
+            <p class="c-label">Breads &amp; Butter · At the Table</p>
+            <p class="c-dish">Artisan breads from the South-West, house-churned seaweed butter, olive oil</p>
+          </div>
+          <div class="sigt-course">
+            <p class="c-label">Starter</p>
+            <p class="c-wine"><em>Paired with Pessac-Léognan blanc</em></p>
+            <p class="c-dish">Meagre from the Gironde estuary, gravlax with lemon verbena and wild fennel, warm Graves beurre blanc, garden pickles, watercress</p>
+          </div>
+          <div class="sigt-course">
+            <p class="c-label">Main Course</p>
+            <p class="c-wine"><em>Paired with Château Laffitte Carcasset, young vintage</em></p>
+            <p class="c-dish">Bazas beef cheek braised six hours in the house wine, crushed potato with duck fat, glazed carrots, Médoc cèpes confit</p>
+          </div>
+          <div class="sigt-course">
+            <p class="c-label">Dessert — Estate Honey</p>
+            <p class="c-wine"><em>Paired with Sauternes</em></p>
+            <p class="c-dish">Basque farm-yoghurt siphon with honey and rosemary, flowing black fig gel, caramelised buckwheat tuile, edible flowers</p>
+          </div>
+          <div class="sigt-course">
+            <p class="c-label">Mignardises with Coffee</p>
+            <p class="c-dish">Pâte de fruit of the house wine</p>
+          </div>
+          <div class="sigt-course sigt-course--signature">
+            <p class="c-label">Signature</p>
+            <p class="c-dish">Tartlet of single-origin dark chocolate, Gironde caviar, fleur de sel</p>
           </div>
         </div>
 
@@ -508,7 +505,7 @@ const description =
     align-items: center;
     text-align: center;
   }
-  .sigt-cover__bottom { display: flex; flex-direction: column; align-items: center; gap: 0.9rem; }
+  .sigt-cover__bottom { display: flex; flex-direction: column; align-items: center; gap: 0.9rem; width: 100%; }
   .sigt-cover__venue {
     font-family: var(--font-display);
     font-weight: 400;
@@ -527,12 +524,18 @@ const description =
     padding-left: 0.42em;
     margin: 0;
   }
-  .sigt-cover__cards {
+  .sigt-cover__row {
     margin-top: 1.6rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    width: 100%;
+  }
+  .sigt-cover__cards {
     display: grid;
     grid-template-columns: repeat(2, minmax(15rem, 17rem));
     gap: 1rem;
-    width: 100%;
   }
   .sigt-cover__card {
     position: relative;
@@ -588,7 +591,9 @@ const description =
   .sigt-cover__card:hover .cc-cta { letter-spacing: 0.4em; }
 
   .sigt-cover__enter {
-    margin-top: 1.5rem;
+    flex-shrink: 0;
+    align-self: flex-end;
+    margin-right: calc(1rem - clamp(1.5rem, 5vw, 4.5rem));
     display: inline-block;
     background: none;
     border: 1px solid rgba(240, 233, 221, 0.4);
@@ -714,46 +719,36 @@ const description =
 
   /* ============ MENU TAB ============ */
   .sigt-menu {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(2rem, 4.5vw, 4.5rem);
-    max-width: 68rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 42rem;
     margin: 0 auto;
     width: 100%;
+    text-align: center;
   }
   .sigt-course {
-    padding: 0.85rem 0;
+    padding: 1.3rem 0;
     border-top: 1px solid rgba(240, 233, 221, 0.09);
     position: relative;
-    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), padding-left 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: opacity 0.4s ease;
   }
   .sigt-course:first-child { border-top: none; padding-top: 0; }
-  .sigt-course::before {
-    content: "";
-    position: absolute;
-    left: 0; top: 0.85rem; bottom: 0.85rem;
-    width: 2px;
-    background: rgba(240, 233, 221, 0.55);
-    transform: scaleY(0);
-    transform-origin: top center;
-    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  .sigt-course:hover { transform: translateX(4px); padding-left: 1.1rem; }
-  .sigt-course:hover::before { transform: scaleY(1); }
   .sigt-course .c-label {
     font-family: var(--font-body);
-    font-size: 0.56rem;
-    letter-spacing: 0.3em;
+    font-size: 0.62rem;
+    font-weight: 400;
+    letter-spacing: 0.32em;
     text-transform: uppercase;
-    color: rgba(240, 233, 221, 0.72);
-    margin: 0 0 0.35rem;
+    color: var(--sig-cream);
+    margin: 0 0 0.45rem;
     padding-left: 0.3em;
   }
   .sigt-course .c-wine {
     font-family: var(--font-display);
-    font-size: 0.82rem;
-    color: rgba(240, 233, 221, 0.6);
-    margin: 0 0 0.3rem;
+    font-size: 0.92rem;
+    color: rgba(240, 233, 221, 0.85);
+    margin: 0 0 0.4rem;
   }
   .sigt-course .c-wine em { font-style: italic; }
   .sigt-course .c-dish {
@@ -765,10 +760,18 @@ const description =
   }
   .sigt-course--signature {
     margin-top: 0.7rem;
-    padding-top: 1.1rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     border-top: 1px solid rgba(240, 233, 221, 0.3);
   }
-  .sigt-course--signature .c-label { color: var(--sig-cream); }
+  .sigt-course--signature .c-label {
+    color: var(--sig-cream);
+    font-size: 0.8rem;
+    letter-spacing: 0.4em;
+  }
+  .sigt-course--signature .c-dish {
+    font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+  }
 
   /* ============ PROGRAMME TAB ============ */
   .sigt-days {
@@ -1197,6 +1200,7 @@ const description =
     .sigt-days { grid-template-columns: 1fr; gap: 2rem; }
     .sigt-creators { grid-template-columns: 1fr; gap: 1rem; }
     .sigt-contact { grid-template-columns: 1fr; gap: 1rem; }
+    .sigt-cover__row { flex-direction: column; align-items: stretch; }
     .sigt-arrow { display: none; }
   }
 
